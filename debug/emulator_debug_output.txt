@@ -1,0 +1,1000 @@
+0000 NOP
+0001 NOP
+0002 NOP
+0003 JMP    addr: 18d4
+18d4 LXI    SP, 2400
+18d7 MVI    B, 00
+18d9 CALL   addr: 01e6
+01e6 LXI    D, 1b00
+01e9 LXI    H, 2000
+01ec JMP    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
+1a32 LDAX   D
+1a33 MOV    M, A
+1a34 INX    H
+1a35 INX    D
+1a36 DCR    B
+1a37 JNZ    addr: 1a32
