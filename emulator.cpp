@@ -1214,295 +1214,520 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0x90:
         {
             if (debug) { printf("SUB    B"); } // Subtracts contents of register B from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->b;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->b & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->b);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x91:
         {
             if (debug) { printf("SUB    C"); } // Subtracts contents of register C from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->c;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->c & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->c);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x92:
         {
             if (debug) { printf("SUB    D"); } // Subtracts contents of register D from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->d;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->d & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->d);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x93:
         {
             if (debug) { printf("SUB    E"); } // Subtracts contents of register E from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->e;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->e & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->e);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x94:
         {
             if (debug) { printf("SUB    H"); } // Subtracts contents of register H from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->h;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->h & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->h);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x95:
         {
             if (debug) { printf("SUB    L"); } // Subtracts contents of register L from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->l;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->l & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->l);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x96:
         {
-            if (debug) { printf("SUB    M"); } // Subtracts contents of register M from register A
+            if (debug) { printf("SUB    M"); } // Subtracts contents of memory[HL] from register A
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint16_t value = cpu->memory[addr];
+            uint16_t answer = (uint16_t)cpu->a - value;
+            cpu->flags.ac = (cpu->a & 0x0F) < (value & 0x0F);
+            cpu->flags.c = (cpu->a < value);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x97:
         {
             if (debug) { printf("SUB    A"); } // Subtracts contents of register A from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->a;
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->a & 0x0F);
+            cpu->flags.c = (cpu->a < cpu->a);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x98:
         {
             if (debug) { printf("SBB    B"); } // Subtracts contents of register B from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->b - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->b + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->b + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x99:
         {
             if (debug) { printf("SBB    C"); } // Subtracts contents of register C from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->c - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->c + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->c + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9a:
         {
             if (debug) { printf("SBB    D"); } // Subtracts contents of register D from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->d - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->d + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->d + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9b:
         {
             if (debug) { printf("SBB    E"); } // Subtracts contents of register E from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->e - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->e + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->e + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9c:
         {
             if (debug) { printf("SBB    H"); } // Subtracts contents of register H from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->h - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->h + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->h + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9d:
         {
             if (debug) { printf("SBB    L"); } // Subtracts contents of register L from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->l - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->l + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->l + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9e:
         {
             if (debug) { printf("SBB    M"); } // Subtracts contents of register M from register A with borrow
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint16_t value = cpu->memory[addr];
+            uint16_t answer = (uint16_t)cpu->a - value - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((value + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (value + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0x9f:
         {
             if (debug) { printf("SBB    A"); } // Subtracts contents of register A from register A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)cpu->a - cpu->flags.c;
+            cpu->flags.ac = (cpu->a & 0x0F) < ((cpu->a + cpu->flags.c) & 0x0F);
+            cpu->flags.c = (cpu->a < (cpu->a + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa0:
         {
             if (debug) { printf("ANA    B"); } // Register B AND register A
+            cpu->a = cpu->a & cpu->b;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->b) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa1:
         {
             if (debug) { printf("ANA    C"); } // Register C AND register A
+            cpu->a = cpu->a & cpu->c;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->c) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa2:
         {
             if (debug) { printf("ANA    D"); } // Register D AND register A
+            cpu->a = cpu->a & cpu->d;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->d) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa3:
         {
             if (debug) { printf("ANA    E"); } // Register E AND register A
+            cpu->a = cpu->a & cpu->e;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->e) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa4:
         {
             if (debug) { printf("ANA    H"); } // Register H AND register A
+            cpu->a = cpu->a & cpu->h;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->h) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa5:
         {
             if (debug) { printf("ANA    L"); } // Register L AND register A
+            cpu->a = cpu->a & cpu->l;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->l) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa6:
         {
             if (debug) { printf("ANA    M"); } // Register M AND register A
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint8_t value = cpu->memory[addr];
+            cpu->a = cpu->a & value;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | value) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa7:
         {
             if (debug) { printf("ANA    A"); } // Register A AND register A
+            cpu->a = cpu->a & cpu->a;
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | cpu->a) & 0x08) != 0; // Not sure if this is correct, but space-invaders does not use auxiliary carry
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa8:
         {
             if (debug) { printf("XRA    B"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->b;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xa9:
         {
             if (debug) { printf("XRA    C"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->c;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xaa:
         {
             if (debug) { printf("XRA    D"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->d;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xab:
         {
             if (debug) { printf("XRA    E"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->e;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xac:
         {
             if (debug) { printf("XRA    H"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->h;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xad:
         {
             if (debug) { printf("XRA    L"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->l;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xae:
         {
             if (debug) { printf("XRA    M"); } // Register B OR register A (exclusive)
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint8_t value = cpu->memory[addr];
+            cpu->a = cpu->a ^ value;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0xaf:
         {
             if (debug) { printf("XRA    A"); } // Register B OR register A (exclusive)
+            cpu->a = cpu->a ^ cpu->a;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb0:
         {
             if (debug) { printf("ORA    B"); } // Register B OR register A
+            cpu->a = cpu->a | cpu->b;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb1:
         {
             if (debug) { printf("ORA    C"); } // Register C OR register A
+            cpu->a = cpu->a | cpu->c;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb2:
         {
             if (debug) { printf("ORA    D"); } // Register D OR register A
+            cpu->a = cpu->a | cpu->d;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb3:
         {
             if (debug) { printf("ORA    E"); } // Register E OR register A
+            cpu->a = cpu->a | cpu->e;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb4:
         {
             if (debug) { printf("ORA    H"); } // Register H OR register A
+            cpu->a = cpu->a | cpu->h;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb5:
         {
             if (debug) { printf("ORA    L"); } // Register L OR register A
+            cpu->a = cpu->a | cpu->l;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb6:
         {
             if (debug) { printf("ORA    M"); } // Register M OR register A
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint8_t value = cpu->memory[addr];
+            cpu->a = cpu->a | value;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb7:
         {
             if (debug) { printf("ORA    A"); } // Register A OR register A
+            cpu->a = cpu->a | cpu->a;
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 1;
             break;
         }
         case 0Xb8:
         {
             if (debug) { printf("CMP    B"); } // Compare register B with register A
+            uint8_t difference = cpu->a - cpu->b;
+            cpu->flags.c = (cpu->a < cpu->b);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->b & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xb9:
         {
             if (debug) { printf("CMP    C"); } // Compare register C with register A
+            uint8_t difference = cpu->a - cpu->c;
+            cpu->flags.c = (cpu->a < cpu->c);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->c & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xba:
         {
             if (debug) { printf("CMP    D"); } // Compare register D with register A
+            uint8_t difference = cpu->a - cpu->d;
+            cpu->flags.c = (cpu->a < cpu->d);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->d & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xbb:
         {
             if (debug) { printf("CMP    E"); } // Compare register E with register A
+            uint8_t difference = cpu->a - cpu->e;
+            cpu->flags.c = (cpu->a < cpu->e);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->e & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xbc:
         {
             if (debug) { printf("CMP    H"); } // Compare register H with register A
+            uint8_t difference = cpu->a - cpu->h;
+            cpu->flags.c = (cpu->a < cpu->h);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->h & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xbd:
         {
             if (debug) { printf("CMP    L"); } // Compare register L with register A
+            uint8_t difference = cpu->a - cpu->l;
+            cpu->flags.c = (cpu->a < cpu->l);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->l & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xbe:
         {
             if (debug) { printf("CMP    M"); } // Compare register M with register A
+            uint16_t addr = (cpu->h << 8) | cpu->l;
+            uint8_t value = cpu->memory[addr];
+            uint8_t difference = cpu->a - value;
+            cpu->flags.c = (cpu->a < cpu->h);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->h & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xbf:
         {
             if (debug) { printf("CMP    A"); } // Compare register A with register A
+            uint8_t difference = cpu->a - cpu->a;
+            cpu->flags.c = (cpu->a < cpu->a);
+            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->a & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 1;
             break;
         }
         case 0Xc0:
         {
             if (debug) { printf("RNZ"); } // Return on no zero: if zero flag is not set, jump to address stored on stack
-            cpu->pc += 1;
+            if (cpu->flags.z == 0) {
+                cpu->pc = (cpu->memory[cpu->sp + 1] << 8) | cpu->memory[cpu->sp];
+                cpu->sp += 2;
+            } else {
+                cpu->pc += 1;
+            }
             break;
         }
         case 0Xc1:
@@ -1574,7 +1799,12 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xc8:
         {
             if (debug) { printf("RZ"); } // Return on zero: if zero flag is set, jump to address stored on stack
-            cpu->pc += 1;
+            if (cpu->flags.z) {
+                cpu->pc = (cpu->memory[cpu->sp + 1] << 8) | cpu->memory[cpu->sp];
+                cpu->sp += 2;
+            } else {
+                cpu->pc += 1;
+            }
             break;
         }
         case 0Xc9:
@@ -1705,6 +1935,11 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xd6:
         {
             if (debug) { printf("SUI    %02x", code[1]); } // Subtract immediate from register A
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)code[1];
+            cpu->flags.ac = ((cpu->a & 0x0F) < (code[1] & 0x0F));
+            cpu->flags.c = (cpu->a < code[1]);
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 2;
             break;
         }
@@ -1780,6 +2015,11 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xde:
         {
             if (debug) { printf("SBI    %02x", code[1]); } // Subtract immediate from A with borrow
+            uint16_t answer = (uint16_t)cpu->a - (uint16_t)code[1] - cpu->flags.c;
+            cpu->flags.ac = ((cpu->a & 0x0F) < ((code[1] + cpu->flags.c) & 0x0F));
+            cpu->flags.c = (cpu->a < (code[1] + cpu->flags.c));
+            cpu->a = answer & 0xFF;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 2;
             break;
         }
@@ -1857,6 +2097,10 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xe6:
         {
             if (debug) { printf("ANI    %02x", code[1]); } // Add immediate to register A
+            cpu->a = cpu->a & code[1];
+            cpu->flags.c = 0;
+            cpu->flags.ac = ((cpu->a | code[1]) & 0x08) != 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 2;
             break;
         }
@@ -1932,6 +2176,10 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xee:
         {
             if (debug) { printf("XRI    %02x", code[1]); } // immediate OR A (exclusive)
+            cpu->a = cpu->a ^ code[1];
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 2;
             break;
         }
@@ -2019,6 +2267,10 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xf6:
         {
             if (debug) { printf("ORI    %02x", code[1]); } // Immediate OR register A
+            cpu->a = cpu->a | code[1];
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
+            setZSPflags(cpu, cpu->a);
             cpu->pc += 2;
             break;
         }
@@ -2089,6 +2341,10 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xfe:
         {
             if (debug) { printf("CPI    %02x", code[1]); } // Compare immediate with contents of A
+            uint8_t difference = cpu->a - code[1];
+            cpu->flags.c = (cpu->a < code[1]);
+            cpu->flags.ac = (cpu->a & 0x0F) < (code[1] & 0x0F);
+            setZSPflags(cpu, difference);
             cpu->pc += 2;
             break;
         }
