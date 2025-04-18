@@ -51,11 +51,13 @@ void setZSPflags(State8080* cpu, uint8_t result) {
 
 
 uint8_t input_port(uint8_t a, uint8_t port) {
+    // Still needs to be implemented
     return a;
 }
 
 
 void output_port(uint8_t a, uint8_t port) {
+    // Still needs to be implemented
     printf("Output, reg A: %02x", a);
 }
 
