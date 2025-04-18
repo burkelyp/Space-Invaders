@@ -28,6 +28,9 @@ struct State8080 {
     // Interrupt enable
     uint8_t interrupt_enabled;
 
+    // Halt capability
+    uint8_t halted = false;
+
     // Memory (64KB)
     uint8_t memory[0x10000]; // 65536 bytes
 };
@@ -44,6 +47,16 @@ void setZSPflags(State8080* cpu, uint8_t result) {
         x >>= 1;
     };
     cpu->flags.p = (count % 2 == 0);
+}
+
+
+uint8_t input_port(uint8_t a, uint8_t port) {
+    return a;
+}
+
+
+void output_port(uint8_t a, uint8_t port) {
+    printf("Output, reg A: %02x", a);
 }
 
 
@@ -112,6 +125,9 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0x07:
         {
             if (debug) { printf("RLC"); }
+            uint8_t a = cpu->a;
+            cpu->flags.c = a >> 7;
+            cpu->a = (a << 1) | (a >> 7);
             cpu->pc += 1;
             break;
         }
@@ -179,6 +195,9 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0x0f:
         {
             if (debug) { printf("RRC"); } // Rotate A right
+            uint8_t a = cpu->a;    
+            cpu->a = ((a & 1) << 7) | (a >> 1);    
+            cpu->flags.c = ((a & 1) == 1); 
             cpu->pc += 1;
             break;
         }
@@ -241,6 +260,9 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0x17:
         {
             if (debug) { printf("RAL"); } // Rotate A left through carry
+            uint8_t a = cpu->a;
+            cpu->a = (a << 1) | (cpu->flags.c);
+            cpu->flags.c = a >> 7;
             cpu->pc += 1;
             break;
         }
@@ -310,8 +332,13 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             /*
             "Rotate Accumulator Right through Carry" (RAR) is a bit-manipulation instruction that shifts the bits of an accumulator register to the right,
             with the least significant bit (LSB) being moved into the carry flag, and the carry flag being moved into the most significant bit (MSB)
+            (An) <- (A n+l); (CY)..- (AO)
+            (A7) <- (CY)
             */
             if (debug) { printf("RAR"); } // Rotate A right through carry
+            uint8_t a = cpu->a;
+            cpu->a = (cpu->flags.c << 7) | (a >> 1);
+            cpu->flags.c = a & 1;
             cpu->pc += 1;
             break;
         }
@@ -380,6 +407,21 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             coded decimal (BCD) numbers into two valid BCD digits.
             */
             if (debug) { printf("DAA"); } // Decimal adjust A
+            uint8_t ls4 = cpu->a & 0x0F;
+            bool set_ac = false;
+            bool set_c = false;
+            if (ls4 > 9 || cpu->flags.ac) {
+                cpu->a += 0x06;
+                set_ac = true;
+
+            }
+            if (cpu->a > 0x99 || cpu->flags.c) {
+                cpu->a += (0x60);
+                set_c = true;
+            }
+            setZSPflags(cpu, cpu->a);
+            cpu->flags.ac = set_ac;
+            cpu->flags.c = set_c;
             cpu->pc += 1;
             break;
         }
@@ -966,6 +1008,7 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             The CPU will remain in a waiting state, essentially doing nothing, until an external event signals it to resume operation. 
             */
             if (debug) { printf("HLT"); } // Halt
+            cpu->halted = true;
             break;
         }
         case 0x77:
@@ -1906,7 +1949,9 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             The content of register A is placed on the eight bit
             bi-directional data bus for transmission to the specified port.
             */
-            if (debug) { printf("OUT    port: %02x", code[1]); } // Output content from A to port address
+            uint8_t port = code[1];
+            if (debug) { printf("OUT    port: %02x", port); } // Output content from A to port address
+            output_port(cpu->a, port);
             cpu->pc += 2;
             break;
         }
@@ -1985,7 +2030,10 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             The data placed on the eight bit bi-directional data
             bus by the specified port is moved to register A.
             */
-            if (debug) { printf("IN     port: %02x", code[1]); } // Input content from port address
+            uint8_t port = code[1];
+            if (debug) { printf("IN     port: %02x", port); } // Input content from port address
+            // map keyboard input to this function
+            cpu->a = input_port(cpu->a, port);
             cpu->pc += 2;
             break;
         }
@@ -2230,6 +2278,7 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xf3:
         {
             if (debug) { printf("DI"); } // Disable interupt
+            cpu->interrupt_enabled = false;
             cpu->pc += 1;
             break;
         }
@@ -2312,6 +2361,7 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
         case 0Xfb:
         {
             if (debug) { printf("EI"); } // Enable interupts
+            cpu->interrupt_enabled = true;
             cpu->pc += 1;
             break;
         }
@@ -2396,7 +2446,7 @@ int main (int argc, char**argv) {
 
     int i = 0;
 
-    while (i < 1000) {
+    while (!cpu->halted) {
         Emulate8080Op(cpu, buffer, debug);
         i++;
     }
