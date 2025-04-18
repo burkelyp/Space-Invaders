@@ -13,7 +13,8 @@ struct State8080 {
     uint8_t a, b, c, d, e, h, l;
 
     // Stack Pointer and Program Counter
-    uint16_t sp, pc;
+    uint16_t sp;
+    uint16_t pc = 0;
 
     // Flags
     struct {
@@ -37,6 +38,13 @@ struct State8080 {
 
 
 void setZSPflags(State8080* cpu, uint8_t result) {
+    /**
+    * Sets Zero, Sign, and Parity flags based on {result}.
+    *
+    * @param cpu State of the cpu object.
+    * @param result Result that the flags will be based on.
+    * @return void: updates state of the flags in the cpu object.
+    */
     cpu->flags.z = (result == 0);
     cpu->flags.s = ((result * 0x80) != 0);
     
@@ -52,19 +60,53 @@ void setZSPflags(State8080* cpu, uint8_t result) {
 
 uint8_t input_port(uint8_t a, uint8_t port) {
     // Still needs to be implemented
+    /**
+    * Gets input from keyboard and returns value to in struction set 'IN'.
+    *
+    * @param port location of input to be returned.
+    * @param a Will not be in final function. Used to maintain value in register A until this function is implemented.
+    * @return value at {pot} to be sent back to register A.
+    */
     return a;
+    // Will look something like this:
+    // // Handle port-specific reads
+    // switch (port) {
+    //     case 0x00: return 0xFF; // example: input from switches
+    //     case 0x01: return some_input_state;
+    //     // ...
+    //     default: return 0x00;
+    // }
 }
 
 
-void output_port(uint8_t a, uint8_t port) {
+void output_port(uint8_t port, uint8_t a) {
     // Still needs to be implemented
+    /**
+    * Gets input from keyboard and returns value to in struction set 'IN'.
+    *
+    * @param port Location for output to be sent.
+    * @param a Value from register A, to be sent to {port}.
+    * @return Value at {port} to be sent back to register A.
+    */
     printf("Output, reg A: %02x", a);
 }
 
 
-void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false) {
+void Emulate8080Op(State8080* cpu, bool debug = false) {
+    /**
+    * Emulates the Intel 8080 cpu. The cpu has been initialized and the
+    * rom file should be loaded into memory. This function reads the
+    * current opcode that the program counter is pointing to, and carries
+    * out the corresponding instruction. This includes updating the state
+    * of the cpu: register values, flags, pointers, memory, stack, etc.
+    *
+    * @param cpu State of the cpu object.
+    * @param debug debug mode prints information about each instruction being called.
+    * @return void: executes instruction sets and updates cpu state.
+    */
+    
 
-    uint8_t *code = &codebuffer[cpu->pc];
+    uint8_t *code = &cpu->memory[cpu->pc];
     if (debug) { printf("%04x ", cpu->pc); }
     switch (*code) {
         case 0x00:
@@ -241,6 +283,7 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             cpu->flags.ac = ((cpu->d & 0x0F) + 1) > 0x0F;
             cpu->d += 1;
             setZSPflags(cpu, cpu->d);
+            cpu->pc += 1;
             break;
         }
         case 0x15:
@@ -1011,6 +1054,7 @@ void Emulate8080Op(State8080* cpu, unsigned char *codebuffer, bool debug = false
             */
             if (debug) { printf("HLT"); } // Halt
             cpu->halted = true;
+            cpu->pc += 1;
             break;
         }
         case 0x77:
@@ -2421,19 +2465,12 @@ int main (int argc, char**argv) {
     State8080* cpu = new State8080();
     memset(cpu, 0, sizeof(State8080));
 
-
+    // Open file
     FILE *f= fopen(argv[1], "rb");
     if (f==NULL)
     {
         printf("error: Couldn't open %s\n", argv[1]);
         exit(1);
-    };
-
-    bool debug = false;
-    if (argc >= 3) {
-        if (std::string(argv[2]) == "--debug") {
-        debug = true;
-        }
     };
 
     // Get the file size and read it into a memory buffer
@@ -2446,11 +2483,23 @@ int main (int argc, char**argv) {
     fread(buffer, fsize, 1, f);
     fclose(f);
 
-    int i = 0;
+    // Load file into cpu memory
+    memcpy(cpu->memory, buffer, fsize);
+    free(buffer);
 
+
+    // Option debug more
+    bool debug = false;
+    if (argc >= 3) {
+        if (std::string(argv[2]) == "--debug") {
+        debug = true;
+        }
+    };
+
+
+    // Main loop
     while (!cpu->halted) {
-        Emulate8080Op(cpu, buffer, debug);
-        i++;
+        Emulate8080Op(cpu, debug);
     }
     return 0;
 };
