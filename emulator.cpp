@@ -1,3 +1,16 @@
+/*
+ * This file is part of intel8080 emulator package.
+ *
+ * Developed for CS 467 - Capstone Project.
+ *
+ * This program can be run from the terminal with a rom file
+ * with or without the debug flag that disassembles the opcodes
+ * 
+ * ./emulator ./path/to/rom_file.bin --debug
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
@@ -10,10 +23,16 @@
 
 struct State8080 {
     // 8-bit registers
-    uint8_t a, b, c, d, e, h, l;
+    uint8_t a = 0;
+    uint8_t b = 0;
+    uint8_t c = 0;
+    uint8_t d = 0;
+    uint8_t e = 0;
+    uint8_t h = 0;
+    uint8_t l = 0;
 
     // Stack Pointer and Program Counter
-    uint16_t sp;
+    uint16_t sp = 0;
     uint16_t pc = 0;
 
     // Flags
@@ -67,15 +86,16 @@ uint8_t input_port(uint8_t a, uint8_t port) {
     * @param a Will not be in final function. Used to maintain value in register A until this function is implemented.
     * @return value at {pot} to be sent back to register A.
     */
-    return a;
-    // Will look something like this:
-    // // Handle port-specific reads
+    uint8_t value = a; // 0;
     // switch (port) {
-    //     case 0x00: return 0xFF; // example: input from switches
-    //     case 0x01: return some_input_state;
-    //     // ...
-    //     default: return 0x00;
+    //     case 0x01: value = ; // Player 1 input
+    //     case 0x02: value = ; // Player 2 input
+    //     case 0x03: value = ; // Shift register result
+    //     case 0x04: value = ; // Shift register offset (write only)
+    //     case 0x05: value = ; // Shift register data (write only)
+    //     case 0x06: value = ; // Sound (write only)
     // }
+    return value;
 }
 
 
@@ -1839,7 +1859,7 @@ void Emulate8080Op(State8080* cpu, bool debug = false) {
         case 0Xc3:
         {
             uint16_t addr = (code[2] << 8) | code[1];
-            if (debug) { printf("JMP    addr: %04x", addr); } // Jump unconditional
+            if (debug) { printf("JMP    addr: %04x, H: %02x, L: %02x", addr, code[2], code[1]); } // Jump unconditional
             cpu->pc = addr;
             break;
         }
@@ -1914,7 +1934,7 @@ void Emulate8080Op(State8080* cpu, bool debug = false) {
         case 0Xcb:
         {
             uint16_t addr = (code[2] << 8) | code[1];
-            if (debug) { printf("JMP    addr: %04x", addr); } // Jump unconditional
+            if (debug) { printf("JMP    addr: %04x, H: %02x, L: %02x", addr, code[2], code[1]); } // Jump unconditional
             cpu->pc = addr;            break;
         }
         case 0Xcc:
@@ -2483,7 +2503,7 @@ int main (int argc, char**argv) {
     fread(buffer, fsize, 1, f);
     fclose(f);
 
-    // Load file into cpu memory
+    // Load file into cpu memory and free buffer
     memcpy(cpu->memory, buffer, fsize);
     free(buffer);
 
@@ -2498,8 +2518,10 @@ int main (int argc, char**argv) {
 
 
     // Main loop
-    while (!cpu->halted) {
+    int i = 0;
+    while ((i < 200) && (!cpu->halted)) {
         Emulate8080Op(cpu, debug);
+        i++;
     }
     return 0;
 };
