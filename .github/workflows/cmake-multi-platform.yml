@@ -33,6 +33,9 @@ jobs:
         exclude:
           - os: ubuntu-latest
             c_compiler: clang
+          - os: ubuntu-latest
+            c_compiler: cl
+          - os: ubuntu-latest
             cpp_compiler: clang++
           - os: windows-latest
             c_compiler: gcc
