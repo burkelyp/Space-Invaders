@@ -14,8 +14,6 @@ void loadROM(const char* path, State8080* state) {
         exit(1);
     }
 
-    
-
     struct stat statbuf;
     if (stat(path, &statbuf) == -1) {
         std::cerr << "Failed to get size of ROM." << std::endl;
