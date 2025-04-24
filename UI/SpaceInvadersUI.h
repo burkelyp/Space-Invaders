@@ -14,6 +14,7 @@
 #include <qdir.h>
 
 #include "GraphicsWindow.h"
+#include "KeyboardMapper.h"
 
 class SIUI : public QMainWindow {
 	Q_OBJECT
@@ -28,4 +29,5 @@ private:
 	QMenu* fileMenu;
 	QDir ROMDir;
 	GraphicsWindow* window;
+	KeyBoardMapper* keyBoardMapper;
 };

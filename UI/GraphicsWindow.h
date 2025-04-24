@@ -2,6 +2,12 @@
 
 #include <qbytearray.h>
 #include <qcolortransform.h>
+#include <qimage.h>
+#include <qlayout.h>
+#include <qmatrix4x4.h>
+#include <qopenglbuffer.h>
+#include <qopenglshaderprogram.h>
+#include <qopengltexture.h>
 #include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
@@ -24,11 +30,28 @@ public:
 	   @param parent - the parent widget
 	   @return void
 	*/
-	GraphicsWindow(QWidget* parent);
+	GraphicsWindow(QWidget* parent = nullptr); 
+	~GraphicsWindow();
 
 private:
 	uchar map[SCREEN_RESOLUTION / 8] = { 0 };
-	QPixmap colorMap;
+	QImage colorMap;
+	//QImage gameImage;
+	int o = 0;
+	int change = 85;
+	int m_width;
+	int m_height;
+	QOpenGLTexture* m_texture = nullptr; 
+	QOpenGLBuffer* buff;
+	QOpenGLShader* vertex;
+	QOpenGLShader* shader;
+	QOpenGLShaderProgram* program;
+	int vertexLocation;
+	int matrixLocation;
+	int colorLocation;
+	GLuint tex;
+	QMatrix4x4 m_proj;
+	QRect rect;
 
 protected:
 	/**
@@ -45,9 +68,7 @@ protected:
 	   @return void
 	*/
 	void test();
-};
-
-class myPainter : public QPainter {
-public:
-	myPainter(QWidget* parent);
+	void initializeGL();
+	void resizeGL(int w, int h) override;
+	void paintGL() override;
 };

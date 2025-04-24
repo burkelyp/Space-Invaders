@@ -3,6 +3,7 @@
 #include <qapplication.h>
 #include <qfiledialog.h>
 #include <qmenubar.h>
+#include <qradiobutton.h>
 #include <qstylefactory.h>
 
 #include <qoperatingsystemversion.h>
@@ -37,8 +38,14 @@ SIUI::SIUI()
 
 	this->menuBar()->addMenu(fileMenu);
 
-	window = new GraphicsWindow(this);
-	this->setCentralWidget(window);
+	QWidget* centralWidget = new QWidget();
+	QVBoxLayout* layout = new QVBoxLayout(centralWidget);
+	centralWidget->setLayout(layout);
+
+	window = new GraphicsWindow(centralWidget);
+	layout->addWidget(window);
+	layout->addWidget(new QRadioButton());
+	this->setCentralWidget(centralWidget);
 }
 
 void SIUI::SelectROM()
