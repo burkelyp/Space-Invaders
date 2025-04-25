@@ -33,10 +33,15 @@ SIUI::SIUI()
 	fileMenu = new QMenu("File", this);
 	QAction* openROM = new QAction("Open ROM", fileMenu);
 	fileMenu->addAction(openROM);
+	
+	keyMenu = new QMenu("Settings", this);
+	QAction* mapKeys = new QAction("Configure Inputs", fileMenu);
+	keyMenu->addAction(mapKeys);
 
 	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM);
 
 	this->menuBar()->addMenu(fileMenu);
+	this->menuBar()->addMenu(keyMenu);
 
 	QWidget* centralWidget = new QWidget();
 	QVBoxLayout* layout = new QVBoxLayout(centralWidget);

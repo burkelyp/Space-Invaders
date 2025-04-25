@@ -27,6 +27,7 @@ private slots:
 
 private:
 	QMenu* fileMenu;
+	QMenu* keyMenu;
 	QDir ROMDir;
 	GraphicsWindow* window;
 	KeyBoardMapper* keyBoardMapper;
