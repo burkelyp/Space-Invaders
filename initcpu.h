@@ -5,16 +5,6 @@
 
 #include <iostream>
 
-// Flags
-struct ConditionCodes {
-    uint8_t    z : 1;
-    uint8_t    s : 1;
-    uint8_t    p : 1;
-    uint8_t    cy : 1;
-    uint8_t    ac : 1;
-    uint8_t    pad : 3;
-};
-
 // Registers, memory, and CoditionCodes maintain CPU state
 struct State8080 {
     uint8_t     a = 0;
@@ -27,8 +17,37 @@ struct State8080 {
     uint16_t    sp = 0;
     uint16_t    pc = 0;
     uint8_t* memory = 0;
-    ConditionCodes      cc;
+    //ConditionCodes      cc;
     uint8_t     int_enable = 0;
+
+    // Flags
+    struct {
+        uint8_t    z : 1;
+        uint8_t    s : 1;
+        uint8_t    p : 1;
+        uint8_t    c : 1; //or cy for carry flag
+        uint8_t    ac : 1;
+        uint8_t    pad : 3;
+    } flags;
+
+    struct {
+        uint8_t shift0 = 0;
+        uint8_t shift1 = 0;
+        uint8_t shift_offset = 0;
+    } shift_registers;
+
+    struct {
+        uint8_t port1 = 0;
+        uint8_t port2 = 0;
+        uint8_t port3 = 0;
+
+    } ports;
+
+    // Interrupt enable
+    uint8_t interrupt_enabled;
+
+    // Halt capability
+    uint8_t halted = false;
 };
 
 void initCPU(State8080* state);
