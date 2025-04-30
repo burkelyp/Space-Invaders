@@ -1,12 +1,4 @@
 
-#ifdef Q_OS_WIN
-// Windows-specific code
-#elif defined(Q_OS_LINUX)
-// Linux-specific code
-#elif defined(Q_OS_MAC)
-// macOS-specific code
-#endif
-
 #pragma once
 #include <qmainwindow.h>
 #include <qtoolbar.h>
