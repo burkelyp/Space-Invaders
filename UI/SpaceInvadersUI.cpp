@@ -29,16 +29,19 @@ SIUI::SIUI()
 {
 	this->resize(448, 533);
 	this->setMinimumSize(224, 277);
+	currEmu = SPACE_INVADERS;
 
 	fileMenu = new QMenu("File", this);
 	QAction* openROM = new QAction("Open ROM", fileMenu);
 	fileMenu->addAction(openROM);
 	
+	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM);
+
 	keyMenu = new QMenu("Settings", this);
 	QAction* mapKeys = new QAction("Configure Inputs", fileMenu);
 	keyMenu->addAction(mapKeys);
 
-	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM);
+	QObject::connect(mapKeys, &QAction::triggered, this, &SIUI::OpenKeyboardMapper);
 
 	this->menuBar()->addMenu(fileMenu);
 	this->menuBar()->addMenu(keyMenu);
@@ -58,4 +61,10 @@ void SIUI::SelectROM()
 	QString fileName = QFileDialog::getOpenFileName(this,
 		tr("Open ROM"), "/home");
 	ROMDir = QDir(fileName);
+}
+
+void SIUI::OpenKeyboardMapper()
+{
+	KeyBoardMapper* mapper = new KeyBoardMapper(this);
+	mapper->show();
 }

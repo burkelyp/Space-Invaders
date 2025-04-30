@@ -21,9 +21,13 @@ class SIUI : public QMainWindow {
 
 public:
 	SIUI();
+	enum Emulator {
+		SPACE_INVADERS = 1
+	};
 
 private slots:
 	void SelectROM();
+	void OpenKeyboardMapper();
 
 private:
 	QMenu* fileMenu;
@@ -31,4 +35,7 @@ private:
 	QDir ROMDir;
 	GraphicsWindow* window;
 	KeyBoardMapper* keyBoardMapper;
+
+protected:
+	Emulator currEmu;
 };
