@@ -55,8 +55,12 @@ GraphicsWindow::~GraphicsWindow()
 	CloseHandle(handle);
 #elif defined(Q_OS_LINUX)
 	// Linux-specific code
+	shm_unlink(MAPPED_NAME);
+	munmap(memptr, MEM_SIZE);
 #elif defined(Q_OS_MAC)
 	// macOS-specific code
+	shm_unlink(MAPPED_NAME);
+	munmap(memptr, MEM_SIZE);
 #endif
 
 	makeCurrent();
@@ -326,8 +330,41 @@ char* GraphicsWindow::setupMemMap()
 
 	#elif defined(Q_OS_LINUX)
 		// Linux-specific code
+	int handle;
+	//handle = shmget(IPC_PRIVATE, MEM_SIZE, IPC_CREAT);
+	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+
+	if (handle == -1) {
+		qDebug() << "Error mapping memory";
+		return nullptr;
+	}
+
+	ftruncate(handle, MEM_SIZE);
+	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
+	if (memptr == -1) {
+		qDebug() << "Error accessing memory";
+		return nullptr;
+	}
+	close(handle);
+
 	#elif defined(Q_OS_MAC)
 		// macOS-specific code
+	int handle;
+	//handle = shmget(IPC_PRIVATE, MEM_SIZE, IPC_CREAT);
+	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+
+	if (handle == -1) {
+		qDebug() << "Error mapping memory";
+		return nullptr;
+	}
+
+	ftruncate(handle, MEM_SIZE);
+	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
+	if (memptr == -1) {
+		qDebug() << "Error accessing memory";
+		return nullptr;
+	}
+	close(handle);
 	#endif
 
 	return nullptr;

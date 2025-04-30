@@ -31,7 +31,7 @@
 const int MEM_SIZE = 0x10003;
 const int SCREEN_RESOLUTION = 57344; //(256x224)
 const int FRAME_RATE = 60;
-const char MAPPED_NAME[] = "SpaceInvaders";
+const char MAPPED_NAME[] = "/SpaceInvaders";
 
 
 class GraphicsWindow : public QOpenGLWidget {
