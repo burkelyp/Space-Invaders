@@ -133,25 +133,98 @@ int main(int argc, char** argv) {
     uint64_t cycles = 0;
     int interrupt_num = 1;
 
+    bool paused = false;
+    bool debug_mode = false;
+    bool log_cycles = true;
+    bool single_step = false;
+
+    uint32_t last_interrupt_time = SDL_GetTicks();
+    uint32_t last_frame_time = SDL_GetTicks();
+
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) running = false;
+            if (event.type == SDL_QUIT) {
+                running = false;
+            } else if (event.type == SDL_KEYDOWN) {
+                switch (event.key.keysym.sym) {
+                    case SDLK_p:
+                        paused = !paused;
+                        std::cout << (paused ? "Paused\n" : "Resumed\n");
+                        break;
+                    case SDLK_d:
+                        debug_mode = !debug_mode;
+                        std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n");
+                        break;
+                    case SDLK_l:
+                        log_cycles = !log_cycles;
+                        std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n");
+                        break;
+                    case SDLK_n:
+                        if (paused) {
+                            single_step = true;
+                            std::cout << "Single step requested\n";
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        if (paused && !single_step) {
+            SDL_Delay(1);
+            continue;
+        }
+
+        if (paused && single_step) {
+            single_step = false;
         }
 
         cycles += Emulate8080Op(&state);
 
+        if (debug_mode) {
+            std::cout << std::hex;
+            std::cout << "[DEBUG] PC: " << state.pc
+                      << " SP: " << state.sp
+                      << " A: " << (int)state.a
+                      << " B: " << (int)state.b
+                      << " C: " << (int)state.c
+                      << " D: " << (int)state.d
+                      << " E: " << (int)state.e
+                      << " H: " << (int)state.h
+                      << " L: " << (int)state.l
+                      << std::dec << "\n";
+        }
+
         if (cycles >= CYCLES_PER_INTERRUPT) {
             cycles = 0;
+
+            uint32_t now = SDL_GetTicks();
+            uint32_t elapsed_interrupt = now - last_interrupt_time;
+            last_interrupt_time = now;
+
+            if (log_cycles) {
+                std::cout << "Time between interrupts: " << elapsed_interrupt << " ms\n";
+            }
+
+            if (interrupt_num == 0) {
+                uint32_t elapsed_frame = now - last_frame_time;
+                last_frame_time = now;
+
+                if (log_cycles) {
+                    std::cout << "Time for one full frame: " << elapsed_frame << " ms\n";
+                }
+            }
+
             if (state.int_enable) {
-                uint8_t rst_opcode = interrupt_num ? 0xd7 : 0xcf; // RST 2 or RST 1
-                // Push PC to stack and call interrupt vector here
-                // Not implemented yet
+                uint8_t rst_opcode = interrupt_num ? 0xd7 : 0xcf;
                 interrupt_num ^= 1;
             }
+
             DrawScreen(&state, renderer);
         }
 
-        SDL_Delay(1); // Basic timing control
+        SDL_Delay(1);
     }
 
     std::free(state.memory);
