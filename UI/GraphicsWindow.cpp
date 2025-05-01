@@ -304,11 +304,12 @@ void GraphicsWindow::paintGL()
 	//qDebug() << f->glGetError();
 }
 
-char* GraphicsWindow::setupMemMap()
+uchar* GraphicsWindow::setupMemMap()
 {
 	#ifdef Q_OS_WIN
 		// Windows-specific code
 
+	// Create Mapping
 	handle = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, MEM_SIZE, (LPCWSTR)MAPPED_NAME);
 
 	if (handle == NULL) {
@@ -316,6 +317,7 @@ char* GraphicsWindow::setupMemMap()
 		return nullptr;
 	}
 
+	// Get Map location
 	memptr = (uchar*)MapViewOfFile(handle, FILE_MAP_ALL_ACCESS, 0, 0, MEM_SIZE);
 
 	if (memptr == NULL) {
@@ -330,8 +332,9 @@ char* GraphicsWindow::setupMemMap()
 
 	#elif defined(Q_OS_LINUX)
 		// Linux-specific code
+
+	// Create Mapping
 	int handle;
-	//handle = shmget(IPC_PRIVATE, MEM_SIZE, IPC_CREAT);
 	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
 
 	if (handle == -1) {
@@ -340,6 +343,8 @@ char* GraphicsWindow::setupMemMap()
 	}
 
 	ftruncate(handle, MEM_SIZE);
+
+	// Get Map location
 	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
 	if (memptr == -1) {
 		qDebug() << "Error accessing memory";
@@ -349,8 +354,9 @@ char* GraphicsWindow::setupMemMap()
 
 	#elif defined(Q_OS_MAC)
 		// macOS-specific code
+
+	// Create Mapping
 	int handle;
-	//handle = shmget(IPC_PRIVATE, MEM_SIZE, IPC_CREAT);
 	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
 
 	if (handle == -1) {
@@ -359,14 +365,17 @@ char* GraphicsWindow::setupMemMap()
 	}
 
 	ftruncate(handle, MEM_SIZE);
+
+	// Get Map location
 	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
 	if (memptr == -1) {
 		qDebug() << "Error accessing memory";
 		return nullptr;
 	}
 	close(handle);
+
 	#endif
 
-	return nullptr;
+	return memptr;
 }
 

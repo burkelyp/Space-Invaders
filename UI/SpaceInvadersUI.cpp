@@ -15,6 +15,7 @@ int FILE_VERSION = 100;
 
 
 int main(int argc, char* argv[]) {
+	// Starting application
 	QApplication app = QApplication(argc, argv);
 	SIUI mainWindow;
 	mainWindow.show();
@@ -27,10 +28,12 @@ int main(int argc, char* argv[]) {
 
 SIUI::SIUI()
 {
+	// Initializing window
 	this->resize(448, 533);
 	this->setMinimumSize(224, 277);
 	currEmu = SPACE_INVADERS;
 
+	// Creating Menus
 	fileMenu = new QMenu("File", this);
 	QAction* openROM = new QAction("Open ROM", fileMenu);
 	fileMenu->addAction(openROM);
@@ -46,6 +49,7 @@ SIUI::SIUI()
 	this->menuBar()->addMenu(fileMenu);
 	this->menuBar()->addMenu(keyMenu);
 
+	// Setting layout
 	QWidget* centralWidget = new QWidget();
 	QVBoxLayout* layout = new QVBoxLayout(centralWidget);
 	centralWidget->setLayout(layout);
