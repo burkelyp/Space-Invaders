@@ -38,7 +38,8 @@ public:
 
 protected:
 	/**
-	   Overridden event to custom handle inputs
+	   Overridden event to handle custom inputs by mapping key names to 
+	   box rather than the corrisponding ASCII characters
 
 	   @param event - key press event
 	   @return void
@@ -46,7 +47,7 @@ protected:
 	virtual void keyPressEvent(QKeyEvent* event) override;
 
 	/**
-	   Overridden event to custom handle inputs
+	   Overridden event to to declare the input is done editing
 
 	   @param event - key press event
 	   @return void
@@ -151,5 +152,4 @@ private:
 	KeyEditTable* p1EditTable;
 	QVBoxLayout* mainLayout;
 	QHBoxLayout* buttonLayout;
-
 };
