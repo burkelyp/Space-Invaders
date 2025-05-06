@@ -8,6 +8,7 @@
 #include <qmatrix4x4.h>
 #include <qmenu.h>
 #include <qmenubar.h>
+#include <qmetaobject.h>
 #include <qobject.h>
 #include <qopenglfunctions.h>
 #include <qtimer.h>
@@ -19,6 +20,7 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 {
 	setupMemMap();
 	//this->setAutoFillBackground(false);
+	this->setFocusPolicy(Qt::StrongFocus);
 	colorMap = QImage("ColorMap.PNG");
 	
 	// Testing BitMap
@@ -65,6 +67,11 @@ GraphicsWindow::~GraphicsWindow()
 
 	makeCurrent();
 	delete m_texture;
+}
+
+void GraphicsWindow::updateKeyBind(const QString bind, const QString hotkey)
+{
+	keyBinds.setCombination(bind, hotkey);
 }
 
 void GraphicsWindow::initializeGL()
@@ -329,6 +336,7 @@ uchar* GraphicsWindow::setupMemMap()
 	// Initiallizing memory
 	memset(memptr, 0, MEM_SIZE);
 	map = memptr + 0x2400;
+	ports = memptr + 0x10000;
 
 	#elif defined(Q_OS_LINUX)
 		// Linux-specific code
@@ -379,3 +387,117 @@ uchar* GraphicsWindow::setupMemMap()
 	return memptr;
 }
 
+void GraphicsWindow::keyPressEvent(QKeyEvent* event)
+{
+	if (event->isAutoRepeat()) {
+		return;
+	}
+
+	// Testing to find the correctly bound key
+	if (keyBinds.getCombination("p1Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) { // If match or partial match
+		// Set proper bit in ports
+		editMemInputBit(5, true);
+	}
+	if (keyBinds.getCombination("p1Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(6, true);
+	}
+	if (keyBinds.getCombination("p1Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(4, true);
+	}
+	if (keyBinds.getCombination("p1Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(2, true);
+	}
+	if (keyBinds.getCombination("p2Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(12, true);
+	}
+	if (keyBinds.getCombination("p2Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(13, true);
+	}
+	if (keyBinds.getCombination("p2Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(11, true);
+	}
+	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(1, true);
+	}
+	QOpenGLWidget::keyPressEvent(event);
+}
+
+void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
+{
+	if (event->isAutoRepeat()) {
+		return;
+	}
+
+	// Testing to find the correctly bound key
+	if (keyBinds.getCombination("p1Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) { // If match or partial match
+		// Set proper bit in ports
+		editMemInputBit(5, false);
+	}
+	if (keyBinds.getCombination("p1Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(6, false);
+	}
+	if (keyBinds.getCombination("p1Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(4, false);
+	}
+	if (keyBinds.getCombination("p1Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(2, false);
+	}
+	if (keyBinds.getCombination("p2Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(12, false);
+	}
+	if (keyBinds.getCombination("p2Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(13, false);
+	}
+	if (keyBinds.getCombination("p2Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(11, false);
+	}
+	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(1, false);
+	}
+	QOpenGLWidget::keyReleaseEvent(event);
+}
+
+void GraphicsWindow::editMemInputBit(int bit, bool set)
+{
+	uchar* port = ports + bit / 8;
+	if (set) {
+		// Create bitmask to set input bit
+		int mask = 1 << (bit % 8);
+		*port |= mask;
+	} else {
+		// Create bitmask to unset input bit
+		int mask = ~(1 << (bit % 8));
+		*port &= mask;
+	}
+}
+
+SICombinations::SICombinations(QWidget* parent) :
+	QObject(parent)
+{
+	for (int i = 0; i < 8; i++) {
+		combos[i] = new QKeySequence(defaultCombos[i]);
+		qDebug() << combos[i]->toString();
+	}
+}
+
+QKeySequence* SICombinations::getCombination(QString action)
+{
+	for (int i = 0; i < 8; i++) {
+		if (comboNames[i] == action) {
+			return combos[i];
+		}
+	}
+	return nullptr;
+}
+
+bool SICombinations::setCombination(QString action, QString hotkey)
+{
+	for (int i = 0; i < 8; i++) {
+		if (comboNames[i] == action) {
+			combos[i] = new QKeySequence(hotkey);
+			qDebug() << "Sequence set: " << comboNames[i] << hotkey;
+			return true;
+		}
+	}
+	return false;
+}

@@ -15,7 +15,22 @@ KeyBoardMapper::KeyBoardMapper(QWidget* parent)
 	p1EditTable = new KeyEditTable(this);
 	mainLayout->addWidget(p1EditTable);
 
+	QObject::connect(p1EditTable, &QTableWidget::currentCellChanged, this, &KeyBoardMapper::emitKeyBindUpdated);
+
 	this->setLayout(mainLayout);
+}
+
+void KeyBoardMapper::emitKeyBindUpdated(int currentRow, int currentColumn, int previousRow, int previousColumn)
+{
+	// There might be a better way to do this, but this will work for now
+	if (currentRow == 0 && currentColumn == 0) {
+		// Grab changed hotkey and the action label and emit them when changed
+		QString label = p1EditTable->item(previousRow, 0)->text();
+		label.prepend("p1");
+		QString sequence = p1EditTable->item(previousRow, previousColumn)->text();
+		if (!sequence.isEmpty())
+			emit keyBindUpdated(label, sequence);
+	}
 }
 
 KeyEditTable::KeyEditTable(QWidget* parent) :
@@ -54,6 +69,7 @@ KeyEditTable::KeyEditTable(QWidget* parent) :
 
 void KeyEditTable::editorFinished()
 {
+	emit this->currentCellChanged(0, 0, this->currentRow(), this->currentColumn());
 	emit this->cellChanged(0, 0);
 }
 
@@ -131,7 +147,7 @@ char KeyEditor::convSymbols(const char sym)
 	case '~':
 		return '`';
 	default:
-		return sym; // Converts lowercase letters to uppercase
+		return sym; // Returns symbol otherwise
 	}
 }
 
@@ -168,7 +184,8 @@ void KeyEditor::keyPressEvent(QKeyEvent* event)
 	if (key != Qt::Key_Control && key != Qt::Key_Shift && key != Qt::Key_Alt && key != Qt::Key_Meta) {
 		QString k = QKeySequence(key).toString();
 		k.toUpper();
-		k = convSymbols(*(k.toStdString().c_str()));
+		if (k.length() == 1)
+			k = convSymbols(*(k.toStdString().c_str()));
 		contentToChange.append(k);
 	}
 	this->clear();

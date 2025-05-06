@@ -139,6 +139,7 @@ private:
  * keyboard inputs.
  */
 class KeyBoardMapper : public QWidget {
+	Q_OBJECT
 public:
 	/**
 	   Constructor sets defaults and initalizes tables and buttons
@@ -147,6 +148,22 @@ public:
 	   @return void
 	*/
 	KeyBoardMapper(QWidget* parent = nullptr);
+
+protected slots:
+	/**
+	   Indended to work with QTableWidgets currentCellChanged signal
+	   tests if the current cell has changed, if so, emit keyBindUpdated
+
+	   @param currentRow - row of the cell changed to
+	   @param currentColumn - column of the cell changed to
+	   @param previousRow - row of the previous cell
+	   @param previousColumn - column of the previous cell
+	   @return void
+	*/
+	void emitKeyBindUpdated(int currentRow, int currentColumn, int previousRow, int previousColumn);
+
+signals:
+	void keyBindUpdated(const QString name, const QString hotkey);
 
 private:
 	KeyEditTable* p1EditTable;

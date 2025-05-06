@@ -70,5 +70,6 @@ void SIUI::SelectROM()
 void SIUI::OpenKeyboardMapper()
 {
 	KeyBoardMapper* mapper = new KeyBoardMapper(this);
+	QObject::connect(mapper, &KeyBoardMapper::keyBindUpdated, window, &GraphicsWindow::updateKeyBind);
 	mapper->show();
 }
