@@ -34,7 +34,7 @@ void setZSPflags(State8080* cpu, uint8_t result) {
     * @return void: updates state of the flags in the cpu object.
     */
     cpu->flags.z = (result == 0);
-    cpu->flags.s = ((result * 0x80) != 0);
+    cpu->flags.s = (result >= 0x80);
     
     int count = 0;
     uint8_t x = result;
@@ -76,11 +76,11 @@ void initialize_emulator(State8080* state) {
 uint8_t input_port(uint8_t a, uint8_t port) {
     // Still needs to be implemented
     /**
-    * Gets input from keyboard and returns value to in struction set 'IN'.
+    * Gets input from keyboard and returns value to instruction set 'IN'.
     *
     * @param port location of input to be returned.
     * @param a Will not be in final function. Used to maintain value in register A until this function is implemented.
-    * @return value at {pot} to be sent back to register A.
+    * @return value at {port} to be sent back to register A.
     */
     uint8_t value = a; // 0;
     // switch (port) {
@@ -663,6 +663,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     case 0x36:
     {
         if (debug) { printf("MVI    M, %02x", code[1]); } // Move immediate to memory (memory designated by HL)
+        uint16_t addr = (cpu->h << 8) | cpu->l;
+        cpu->memory[addr] = code[1];
         cpu->pc += 2;
         cpu->cycles += 10;
         break;
