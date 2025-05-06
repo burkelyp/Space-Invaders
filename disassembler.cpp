@@ -1,3 +1,16 @@
+/*
+ * This file is part of intel8080 emulator package.
+ *
+ * Developed for CS 467 - Capstone Project.
+ *
+ * This program can be run from the terminal with a rom file
+ * to decode a set of instructions from a rom file
+ * 
+ * ./disassembler ./path/to/rom_file.bin
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -850,7 +863,7 @@ int Disassemble8080Op(unsigned char *codebuffer, int pc) {
 };
 
 int main (int argc, char**argv) {
-    FILE *f= fopen("test/disassembler_test_file.bin", "rb");   // fopen(argv[1], "rb");
+    FILE *f= fopen(argv[1], "rb");
     if (f==NULL)
     {
         printf("error: Couldn't open %s\n", argv[1]);
