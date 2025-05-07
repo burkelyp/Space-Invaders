@@ -1,16 +1,23 @@
 cmake_minimum_required(VERSION 3.10)
 # Define the project
 project(SpaceInvadersProject LANGUAGES CXX) # Choose a name for your project
+
+# --- Determine Platform ---
+# Detect platform and define macro
+if(WIN32)
+    add_definitions(-DPLATFORM_WINDOWS)
+endif()
+
 # --- Create a Library for Your Emulator Code ---
 # This bundles your core emulator logic so executables (like tests or the main app) can link against it.
 # *** Make sure to list ALL necessary .cpp files for the emulator here ***
 add_library(emulator_lib
     emulator.cpp
-    # cpu.cpp
     initcpu.cpp 
     disassembler.cpp
     io_ports.cpp
-    # loadrom.cpp
+    loadrom.cpp
+    # access_mmap.cpp
     # Add any other core .cpp files needed by the emulator
 )
 

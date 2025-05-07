@@ -21,10 +21,10 @@ void initCPU(State8080* state) {
         exit(1);
     }
 
-    memset(state->memory, 0, MEMORY_SIZE);
+    // memset(state->memory, 0, MEMORY_SIZE);
 }
 
-void initCPU(State8080* state, LPVOID memory_ptr) {
+void initCPU(State8080* state, PlatformMemoryPtr memory_ptr) {
     state->a = 0;
     state->b = 0;
     state->c = 0;

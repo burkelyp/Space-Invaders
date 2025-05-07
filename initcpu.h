@@ -4,12 +4,17 @@
 #define MEMORY_SIZE 0x10000 //0x10000 
 
 #include <iostream>
-#include <tchar.h>
 //#include <conio.h>
 #include <stdio.h>
-#include <Windows.h>
 #include <stdint.h>
 
+#ifdef PLATFORM_WINDOWS
+    #include <Windows.h>
+    #include <tchar.h>
+    typedef LPVOID PlatformMemoryPtr;
+#else
+    typedef void* PlatformMemoryPtr;  // fallback for non-Windows
+#endif
 
 // Registers, memory, and CoditionCodes maintain CPU state
 struct State8080 {
@@ -80,6 +85,6 @@ void initCPU(State8080* state);
 * @state Pointer to a State8080 struct.
 * @memory_ptr Pointer to shared memory map buffer for IPC with UI.
 */
-void initCPU(State8080* state, LPVOID memory_ptr);
+void initCPU(State8080* state, PlatformMemoryPtr memory_ptr);
 
 #endif

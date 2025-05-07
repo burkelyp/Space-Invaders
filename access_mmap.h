@@ -3,7 +3,10 @@
 #define MAPPED_NAME TEXT("/SpaceInvaders")
 
 #include "initcpu.h"
-#include <Windows.h>
+
+#ifdef PLATFORM_WINDOWS
+    #include <Windows.h>
+#endif
 
 struct memory_map {
 
