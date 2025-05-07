@@ -1,7 +1,7 @@
 #ifndef IO_PORTS
 #define IO_PORTS
 
-#include "initCPU.h"
+#include "initcpu.h"
 #include <cstdint>
 
 // Block comments written partly by Burkely and updated by Zach after implementing code. Currently unable to test without keyboard mapping. 

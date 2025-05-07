@@ -1,4 +1,5 @@
 #include "initcpu.h"
+#include <iostream>
 
 
 void initCPU(State8080* state) {
@@ -13,17 +14,17 @@ void initCPU(State8080* state) {
     state->pc = 0;
     state->flags = { 1, 1, 1, 1, 1, 3 };
     state->shift_registers = { 0, 0, 0 };
-    state->ports = { 0, 0, 0 };
+    state->ports = { 0, 0, 0, 0, 0, 0, 0 };
 
     if ((state->memory = (uint8_t*)malloc(MEMORY_SIZE)) == nullptr) {
         std::cerr << "Failed to allocate memory." << std::endl;
         exit(1);
     }
 
-    memset(state->memory, 0, MEMORY_SIZE);
+    // memset(state->memory, 0, MEMORY_SIZE);
 }
 
-void initCPU(State8080* state, LPVOID memory_ptr) {
+void initCPU(State8080* state, PlatformMemoryPtr memory_ptr) {
     state->a = 0;
     state->b = 0;
     state->c = 0;

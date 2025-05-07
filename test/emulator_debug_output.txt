@@ -1,0 +1,256 @@
+0000 NOP
+0001 LXI    B, b3b2
+0004 STAX   B
+0005 INX    B
+0006 INR    B
+0007 DCR    B
+0008 MVI    B, b2
+000a RLC
+000b NOP
+000c DAD    B
+000d LDAX   B
+000e DCX    B
+000f INR    C
+0010 DCR    C
+0011 MVI    C, b2
+0013 RRC
+0014 NOP
+0015 LXI    D, b3b2
+0018 STAX   D
+0019 INX    D
+001a INR    D
+001b DCR    D
+001c MVI    D, b2
+001e RAL
+001f NOP
+0020 DAD    D
+0021 LDAX   D
+0022 DCX    D
+0023 INR    E
+0024 DCR    E
+0025 MVI    E, b2
+0027 RAR
+0028 NOP
+0029 LXI    H, b3b2
+002c SHLD   addr: b3b2
+002f INX    H
+0030 INR    H
+0031 DCR    H
+0032 MVI    H, b2
+0034 DAA
+0035 NOP
+0036 DAD    H
+0037 LHLD   addr: b3b2
+003a DCX    H
+003b INR    L
+003c DCR    L
+003d MVI    L, b2
+003f CMA
+0040 NOP
+0041 LXI    SP, b3b2
+0044 STA    addr: b3b2
+0047 INX    SP
+0048 INR    M
+0049 DCR    M
+004a MVI    M, b2
+004c STC
+004d NOP
+004e DAD    SP
+004f LDA    addr: b3b2
+0052 DCX    SP
+0053 INR    A
+0054 DCR    A
+0055 MVI    A, b2
+0057 CMC
+0058 MOV    B, B
+0059 MOV    B, C
+005a MOV    B, D
+005b MOV    B, E
+005c MOV    B, H
+005d MOV    B, L
+005e MOV    B, M
+005f MOV    B, A
+0060 MOV    C, B
+0061 MOV    C, C
+0062 MOV    C, D
+0063 MOV    C, E
+0064 MOV    C, H
+0065 MOV    C, L
+0066 MOV    C, M
+0067 MOV    C, A
+0068 MOV    D, B
+0069 MOV    D, C
+006a MOV    D, D
+006b MOV    D, E
+006c MOV    D, H
+006d MOV    D, L
+006e MOV    D, M
+006f MOV    D, A
+0070 MOV    E, B
+0071 MOV    E, C
+0072 MOV    E, D
+0073 MOV    E, E
+0074 MOV    E, H
+0075 MOV    E, L
+0076 MOV    E, M
+0077 MOV    E, A
+0078 MOV    H, B
+0079 MOV    H, C
+007a MOV    H, D
+007b MOV    H, E
+007c MOV    H, H
+007d MOV    H, L
+007e MOV    H, M
+007f MOV    H, A
+0080 MOV    L, B
+0081 MOV    L, C
+0082 MOV    L, D
+0083 MOV    L, E
+0084 MOV    L, H
+0085 MOV    L, L
+0086 MOV    L, M
+0087 MOV    L, A
+0088 MOV    M, B
+0089 MOV    M, C
+008a MOV    M, D
+008b MOV    M, E
+008c MOV    M, H
+008d MOV    M, L
+008e HLT
+008f MOV    M, A
+0090 MOV    A, B
+0091 MOV    A, C
+0092 MOV    A, D
+0093 MOV    A, E
+0094 MOV    A, H
+0095 MOV    A, L
+0096 MOV    A, M
+0097 MOV    A, A
+0098 ADD    B
+0099 ADD    C
+009a ADD    D
+009b ADD    E
+009c ADD    H
+009d ADD    L
+009e ADD    M
+009f ADD    A
+00a0 ADC    B
+00a1 ADC    C
+00a2 ADC    D
+00a3 ADC    E
+00a4 ADC    H
+00a5 ADC    L
+00a6 ADC    M
+00a7 ADC    A
+00a8 SUB    B
+00a9 SUB    C
+00aa SUB    D
+00ab SUB    E
+00ac SUB    H
+00ad SUB    L
+00ae SUB    M
+00af SUB    A
+00b0 SBB    B
+00b1 SBB    C
+00b2 SBB    D
+00b3 SBB    E
+00b4 SBB    H
+00b5 SBB    L
+00b6 SBB    M
+00b7 SBB    A
+00b8 ANA    B
+00b9 ANA    C
+00ba ANA    D
+00bb ANA    E
+00bc ANA    H
+00bd ANA    L
+00be ANA    M
+00bf ANA    A
+00c0 XRA    B
+00c1 XRA    C
+00c2 XRA    D
+00c3 XRA    E
+00c4 XRA    H
+00c5 XRA    L
+00c6 XRA    M
+00c7 XRA    A
+00c8 ORA    B
+00c9 ORA    C
+00ca ORA    D
+00cb ORA    E
+00cc ORA    H
+00cd ORA    L
+00ce ORA    M
+00cf ORA    A
+00d0 CMP    B
+00d1 CMP    C
+00d2 CMP    D
+00d3 CMP    E
+00d4 CMP    H
+00d5 CMP    L
+00d6 CMP    M
+00d7 CMP    A
+00d8 RNZ
+00d9 POP    B
+00da JNZ    addr: b3b2
+00dd JMP    addr: b3b2
+00e0 CNZ    addr: b3b2
+00e3 PUSH   B
+00e4 ADI    b2
+00e6 RST    0
+00e7 RZ
+00e8 RET
+00e9 JZ     addr: b3b2
+00ec JMP    addr: b3b2
+00ef CZ     addr: b3b2
+00f2 CALL   addr: b3b2
+00f5 ACI    b2
+00f7 RST    1
+00f8 RNC
+00f9 POP    D
+00fa JNC    addr: b3b2
+00fd OUT    port: b2
+00ff CNC    addr: b3b2
+0102 PUSH   D
+0103 SUI    b2
+0105 RST    2
+0106 RC
+0107 RET
+0108 JC     addr: b3b2
+010b IN     port: b2
+010d CC     addr: b3b2
+0110 CALL   addr: b3b2
+0113 SBI    b2
+0115 RST    3
+0116 RPO
+0117 POP    H
+0118 JPO    addr: b3b2
+011b XTHL
+011c CPO    addr: b3b2
+011f PUSH   H
+0120 ANI    b2
+0122 RST    4
+0123 RPE
+0124 PCHL
+0125 JPE    addr: b3b2
+0128 XCHG
+0129 CPE    addr: b3b2
+012c CALL   addr: b3b2
+012f XRI    b2
+0131 RST    5
+0132 RP
+0133 POP    PSW
+0134 JP     addr: b3b2
+0137 DI
+0138 CP     addr: b3b2
+013b PUSH   PSW
+013c ORI    b2
+013e RST    6
+013f RM
+0140 SPHL
+0141 JM     addr: b3b2
+0144 EI
+0145 CM     addr: b3b2
+0148 CALL   addr: b3b2
+014b CPI    b2
+014d RST    7
