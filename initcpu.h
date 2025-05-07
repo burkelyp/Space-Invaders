@@ -61,8 +61,24 @@ struct State8080 {
 
 };
 
+/**
+* Initializes the CPU state by setting default values of flags,
+* registers, and pointers. Allocates 16KB of memory and sets
+* memory to zero.
+*
+* @state Pointer to a State8080 struct.
+*/
 void initCPU(State8080* state);
 
+/**
+* Initializes the CPU state by setting default values of flags,
+* registers, and pointers. Allocates 16KB of memory and sets
+* memory to zero.
+* Uses memory map pointer for Windows.
+*
+* @state Pointer to a State8080 struct.
+* @memory_ptr Pointer to shared memory map buffer for IPC with UI.
+*/
 void initCPU(State8080* state, LPVOID memory_ptr);
 
 #endif

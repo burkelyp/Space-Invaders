@@ -1,12 +1,5 @@
 #include "initcpu.h"
 
-/**
-* Initializes the CPU state by setting default values of flags,
-* registers, and pointers. Allocates 16KB of memory and sets
-* memory to zero.
-*
-* @state Pointer to a State8080 struct.
-*/
 
 void initCPU(State8080* state) {
     state->a = 0;
@@ -30,15 +23,6 @@ void initCPU(State8080* state) {
     memset(state->memory, 0, MEMORY_SIZE);
 }
 
-/**
-* Initializes the CPU state by setting default values of flags,
-* registers, and pointers. Allocates 16KB of memory and sets
-* memory to zero.
-* Uses memory map pointer for Windows. 
-*
-* @state Pointer to a State8080 struct.
-* @memory_ptr Pointer to shared memory map buffer for IPC with UI.
-*/
 void initCPU(State8080* state, LPVOID memory_ptr) {
     state->a = 0;
     state->b = 0;
