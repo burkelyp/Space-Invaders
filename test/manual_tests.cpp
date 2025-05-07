@@ -16,7 +16,7 @@ void test_passed(const char* test_name) {
 void test_op_nop() {
     const char* test_name = "0x00 NOP";
     State8080 state;
-    initCPU(&state); // Reset state
+    initCPU(&state, false); // Reset state
 
     state.pc = 0x0100; // Start PC at some address
     state.memory[state.pc] = 0x00; // Put NOP opcode in memory
@@ -36,7 +36,7 @@ void test_op_nop() {
 void test_op_mvi_b() {
      const char* test_name = "0x06 MVI B";
      State8080 state;
-     initCPU(&state);
+     initCPU(&state, false);
 
      state.pc = 0x0200;
      state.memory[state.pc] = 0x06; 
@@ -62,7 +62,7 @@ void test_op_mvi_b() {
 void test_op_lxi_b(){
     const char* test_name = "0x01 LXI B,D16";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x300;
     state.memory[state.pc] = 0x01;
@@ -89,7 +89,7 @@ void test_op_lxi_b(){
 void test_op_dcr_b(){
     const char* test_name = "0x05 DCR B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x400;
     state.b = 0x01;
@@ -135,7 +135,7 @@ void test_op_dcr_b(){
 void test_op_dad_b(){
     const char* test_name = "0x09 DAD B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.h = 0x12;
     state.l = 0x34;
@@ -170,7 +170,7 @@ void test_op_dad_b(){
 void test_op_dcr_c(){
     const char* test_name = "0x0d DCR C";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x200;
     state.c = 0x02;
@@ -217,7 +217,7 @@ void test_op_mvi_c(){
     
     const char* test_name = "0x0e MVI C, D8";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x0200;
     state.c = 0x01;
@@ -274,7 +274,7 @@ void test_op_mvi_c(){
 void test_op_rrc(){
     const char* test_name = "0x0f RRC";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x0100;
     state.a = 0x93;
@@ -307,7 +307,7 @@ void test_op_lxi_d(){
     
     const char* test_name = "0x11 LXI D,D16";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.pc = 0x0100;
     state.memory[state.pc] = 0x11;
@@ -340,7 +340,7 @@ void test_op_lxi_d(){
 void test_op_inx_d(){
     const char* test_name = "0x13 INX D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.d = 0x12;
     state.e = 0x33;
@@ -369,7 +369,7 @@ void test_op_inx_d(){
 void test_op_dad_d(){
     const char* test_name = "0x19 DAD D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.h = 0x12;
     state.l = 0x34;
@@ -407,7 +407,7 @@ void test_op_dad_d(){
 void test_op_ldax_d(){
     const char* test_name = "0x1a LDAX D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.d = 0x20;
     state.e = 0x10;
@@ -433,7 +433,7 @@ void test_op_ldax_d(){
 void test_op_lxi_h() {
     const char* test_name = "0x21 LXI H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x500;
     state.memory[state.pc] = 0x21;
@@ -461,7 +461,7 @@ void test_op_lxi_h() {
 void test_op_inx_h() {
     const char* test_name = "0x23 INX H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x12;
     state.l = 0xFF;
@@ -488,7 +488,7 @@ void test_op_inx_h() {
 void test_op_mvi_h() {
     const char* test_name = "0x26 MVI H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x700;
     state.memory[state.pc] = 0x26;
@@ -514,7 +514,7 @@ void test_op_mvi_h() {
 void test_op_dad_h() {
     const char* test_name = "0x29 DAD H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x12;
     state.l = 0x34;
@@ -544,7 +544,7 @@ void test_op_dad_h() {
 void test_op_lxi_sp() {
     const char* test_name = "0x31 LXI SP";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x900;
     state.memory[state.pc] = 0x31;
@@ -571,7 +571,7 @@ void test_op_lxi_sp() {
 void test_op_sta() {
     const char* test_name = "0x32 STA";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.a = 0x56;
     state.pc = 0xA00;
@@ -599,7 +599,7 @@ void test_op_sta() {
 void test_op_mvi_m() {
     const char* test_name = "0x36 MVI M";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x20;
     state.l = 0x00;
@@ -627,7 +627,7 @@ void test_op_mvi_m() {
 void test_op_mov_d() {
     const char* test_name = "0x42 MOV D,M";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x20;
     state.l = 0x10;
@@ -655,7 +655,7 @@ void test_op_mov_d() {
 void test_op_mov_e() {
     const char* test_name = "0x5B MOV E,E";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.e = 0x77;
     state.pc = 0xD00;
@@ -681,7 +681,7 @@ void test_op_mov_e() {
 void test_op_mov_h() {
     const char* test_name = "0x64 MOV H,H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x88;
     state.pc = 0xD10;
@@ -707,7 +707,7 @@ void test_op_mov_h() {
 void test_op_mov_l() {
     const char* test_name = "0x6D MOV L,L";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.l = 0x99;
     state.pc = 0xD20;
@@ -733,7 +733,7 @@ void test_op_mov_l() {
 void test_op_mov_m() {
     const char* test_name = "0x77 MOV M,A";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x20;
     state.l = 0x30;
@@ -761,7 +761,7 @@ void test_op_mov_m() {
 void test_op_mov_a_d() {
     const char* test_name = "0x7A MOV A,D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.d = 0x44;
     state.pc = 0xD40;
@@ -787,7 +787,7 @@ void test_op_mov_a_d() {
 void test_op_mov_a_e() {
     const char* test_name = "0x7B MOV A,E";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.e = 0x55;
     state.pc = 0xD50;
@@ -813,7 +813,7 @@ void test_op_mov_a_e() {
 void test_op_mov_a_h() {
     const char* test_name = "0x7C MOV A,H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x66;
     state.pc = 0xD60;
@@ -839,7 +839,7 @@ void test_op_mov_a_h() {
 void test_op_mov_a_m() {
     const char* test_name = "0x7E MOV A,M";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x20;
     state.l = 0x40;
@@ -867,7 +867,7 @@ void test_op_mov_a_m() {
 void test_op_ana_b(){
     const char* test_name = "0xa0 ANA B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.a = 0x12;
     state.b = 0x11;
@@ -919,7 +919,7 @@ void test_op_ana_b(){
 void test_op_xra_b() {
     const char* test_name = "0xA8 XRA B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.a = 0xFF;
     state.b = 0xFF;
@@ -971,7 +971,7 @@ void test_op_xra_b() {
 void test_op_pop_b(){
     const char* test_name = "0xc1 POP B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
     
     state.sp = 0x1000;
     state.memory[state.sp] = 0x34;
@@ -1011,7 +1011,7 @@ void test_op_pop_b(){
 void test_op_jnz_adr() {
     const char* test_name = "0xC2 JNZ adr";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x300;
     state.memory[state.pc] = 0xc2;
@@ -1033,7 +1033,7 @@ void test_op_jnz_adr() {
 void test_op_jmp_adr() {
     const char* test_name = "0xC3 JMP adr";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x400;
     state.memory[state.pc] = 0xc3;
@@ -1054,7 +1054,7 @@ void test_op_jmp_adr() {
 void test_op_push_b() {
     const char* test_name = "0xC5 PUSH B";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x500;
     state.sp = 0x3000;
@@ -1088,7 +1088,7 @@ void test_op_push_b() {
 void test_op_adi_d8() {
     const char* test_name = "0xC6 ADI d8";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x600;
     state.a = 0x10;
@@ -1115,7 +1115,7 @@ void test_op_adi_d8() {
 void test_op_ret() {
     const char* test_name = "0xC9 RET";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x4000;
     state.memory[state.sp] = 0x78;
@@ -1143,7 +1143,7 @@ void test_op_ret() {
 void test_op_call_adr() {
     const char* test_name = "0xCD CALL adr";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x5000;
     state.pc = 0x300;
@@ -1177,7 +1177,7 @@ void test_op_call_adr() {
 void test_op_pop_d() {
     const char* test_name = "0xD1 POP D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x4000;
     state.memory[state.sp] = 0x34;
@@ -1207,7 +1207,7 @@ void test_op_pop_d() {
 // void test_op_out() {
 //     const char* test_name = "0xD3 OUT d8";
 //     State8080 state;
-//     initCPU(&state);
+//     initCPU(&state, false);
 
 //     state.pc = 0x500;
 //     state.memory[state.pc] = 0xd3;
@@ -1229,7 +1229,7 @@ void test_op_pop_d() {
 void test_op_push_d() {
     const char* test_name = "0xD5 PUSH D";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x3000;
     state.d = 0x12;
@@ -1257,7 +1257,7 @@ void test_op_push_d() {
 void test_op_pop_h() {
     const char* test_name = "0xE1 POP H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x5000;
     state.memory[state.sp] = 0x56;
@@ -1285,7 +1285,7 @@ void test_op_pop_h() {
 void test_op_push_h() {
     const char* test_name = "0xE5 PUSH H";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x6000;
     state.h = 0x9a;
@@ -1313,7 +1313,7 @@ void test_op_push_h() {
 void test_op_ani() {
     const char* test_name = "0xE6 ANI d8";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x800;
     state.a = 0xf0;
@@ -1345,7 +1345,7 @@ void test_op_ani() {
 void test_op_xchg() {
     const char* test_name = "0xEB XCHG";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.h = 0x12;
     state.l = 0x34;
@@ -1368,7 +1368,7 @@ void test_op_xchg() {
 void test_op_pop_psw() {
     const char* test_name = "0xF1 POP PSW";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x4000;
     state.memory[state.sp] = 0x02; // fake flags
@@ -1401,7 +1401,7 @@ void test_op_pop_psw() {
 void test_op_push_psw() {
     const char* test_name = "0xF5 PUSH PSW";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.sp = 0x5000;
     state.a = 0xcd;
@@ -1432,7 +1432,7 @@ void test_op_push_psw() {
 void test_op_ei() {
     const char* test_name = "0xFB EI";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x600;
     state.memory[state.pc] = 0xfb;
@@ -1451,7 +1451,7 @@ void test_op_ei() {
 void test_op_cpi_d8() {
     const char* test_name = "0xFE CPI d8";
     State8080 state;
-    initCPU(&state);
+    initCPU(&state, false);
 
     state.pc = 0x700;
     state.a = 0x20;
