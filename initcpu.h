@@ -23,6 +23,7 @@ struct State8080 {
     uint8_t     l = 0;
     uint16_t    sp = 0;
     uint16_t    pc = 0;
+    uint32_t    cycles = 0;
     uint8_t* memory = 0;
     uint8_t     int_enable = 0;
 
