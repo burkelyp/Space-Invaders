@@ -2,6 +2,10 @@
 
 #include <qbytearray.h>
 #include <qcolortransform.h>
+#include <qopenglbuffer.h>
+#include <qopenglshaderprogram.h>
+#include <qopenglcontext.h>
+#include <qopengltexture.h>
 #include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
@@ -25,10 +29,21 @@ public:
 	   @return void
 	*/
 	GraphicsWindow(QWidget* parent);
+	~GraphicsWindow();
 
 private:
 	uchar map[SCREEN_RESOLUTION / 8] = { 0 };
-	QPixmap colorMap;
+	QImage colorMap;
+	int o = 0;
+	int change = 85;
+	QRect rect;
+	GLuint tex;
+	QOpenGLBuffer* buff;
+	QOpenGLShaderProgram* program;
+	int vertexLocation;
+	int matrixLocation;
+	int colorLocation;
+	QOpenGLTexture* m_texture = nullptr;
 
 protected:
 	/**
@@ -45,6 +60,10 @@ protected:
 	   @return void
 	*/
 	void test();
+	void paintGL() override;
+	void resizeGL(int w, int h) override;
+	void initializeGL() override;
+
 };
 
 class myPainter : public QPainter {
