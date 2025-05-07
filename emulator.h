@@ -41,6 +41,6 @@ struct State8080 {
 
 // Function Declarations
 void setZSPflags(State8080* cpu, uint8_t result);
-uint8_t input_port(uint8_t a, uint8_t port); // Or maybe void input_port(State8080* cpu, uint8_t port); ?
-void output_port(uint8_t port, uint8_t a);  // Or maybe void output_port(State8080* cpu, uint8_t port); ?
+uint8_t input_port(State8080* cpu, uint8_t port);
+void output_port(State8080* cpu, uint8_t port, uint8_t a);
 void Emulate8080Op(State8080* cpu, bool debug = false);
