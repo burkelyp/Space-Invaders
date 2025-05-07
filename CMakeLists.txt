@@ -6,8 +6,11 @@ project(SpaceInvadersProject LANGUAGES CXX) # Choose a name for your project
 # *** Make sure to list ALL necessary .cpp files for the emulator here ***
 add_library(emulator_lib
     emulator.cpp
-    #cpu.cpp
+    # cpu.cpp
+    initcpu.cpp 
     disassembler.cpp
+    io_ports.cpp
+    # loadrom.cpp
     # Add any other core .cpp files needed by the emulator
 )
 
