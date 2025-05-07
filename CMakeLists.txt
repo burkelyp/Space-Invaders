@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 # Define the project
 project(SpaceInvadersProject LANGUAGES CXX) # Choose a name for your project
 
-# Find SDL2
-find_package(SDL2 REQUIRED)
+# Search for SDL2 using SDL2_DIR
+find_package(SDL2 REQUIRED PATHS $ENV{SDL2_DIR})
+
 
 # Add SDL2 include directories to all targets
 include_directories(${SDL2_INCLUDE_DIRS})

@@ -2240,7 +2240,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register B with register A
             uint8_t difference = cpu->a - cpu->b;
             cpu->flags.c = (cpu->a < cpu->b);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->b & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->b & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2253,7 +2253,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register C with register A
             uint8_t difference = cpu->a - cpu->c;
             cpu->flags.c = (cpu->a < cpu->c);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->c & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->c & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2266,7 +2266,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register D with register A
             uint8_t difference = cpu->a - cpu->d;
             cpu->flags.c = (cpu->a < cpu->d);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->d & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->d & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2279,7 +2279,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register E with register A
             uint8_t difference = cpu->a - cpu->e;
             cpu->flags.c = (cpu->a < cpu->e);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->e & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->e & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2292,7 +2292,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register H with register A
             uint8_t difference = cpu->a - cpu->h;
             cpu->flags.c = (cpu->a < cpu->h);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->h & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->h & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2305,7 +2305,7 @@ void Emulate8080Op(State8080* cpu) {
             #endif // Compare register L with register A
             uint8_t difference = cpu->a - cpu->l;
             cpu->flags.c = (cpu->a < cpu->l);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->l & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~cpu->l & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;
@@ -2320,7 +2320,7 @@ void Emulate8080Op(State8080* cpu) {
             uint8_t value = cpu->memory[addr];
             uint8_t difference = cpu->a - value;
             cpu->flags.c = (cpu->a < cpu->h);
-            cpu->flags.ac = (cpu->a & 0x0F) < (value & 0x0F);
+            cpu->flags.ac = ((cpu->a & 0x0F) + ((~value & 0x0F) + 1)) > 0x0F;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 7;
@@ -2332,8 +2332,8 @@ void Emulate8080Op(State8080* cpu) {
                 printf("CMP    A");
             #endif // Compare register A with register A
             uint8_t difference = cpu->a - cpu->a;
-            cpu->flags.c = (cpu->a < cpu->a);
-            cpu->flags.ac = (cpu->a & 0x0F) < (cpu->a & 0x0F);
+            cpu->flags.c = 0;
+            cpu->flags.ac = 0;
             setZSPflags(cpu, difference);
             cpu->pc += 1;
             cpu->cycles += 4;

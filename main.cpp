@@ -41,31 +41,6 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
     SDL_RenderPresent(renderer);
 }
 
-/**
-   Disassembles a single 8080 instruction from the code buffer and prints its assembly equivalent
-
-   @param codebuffer - pointer to the start of the 8080 program code
-   @param pc - current program counter (offset into codebuffer)
-   @return number of bytes the current instruction occupies
-*/
-int Disassemble8080Op(uint8_t* codebuffer, int pc) {
-    uint8_t* code = &codebuffer[pc];
-    int opbytes = 1;
-    std::printf("%04x ", pc);
-    switch (*code) {
-    case 0x00: std::printf("NOP"); break;
-    case 0x01: std::printf("LXI    B,#$%02x%02x", code[2], code[1]); opbytes = 3; break;
-    case 0x02: std::printf("STAX   B"); break;
-    case 0x03: std::printf("INX    B"); break;
-    case 0x04: std::printf("INR    B"); break;
-    case 0x05: std::printf("DCR    B"); break;
-    case 0x06: std::printf("MVI    B,#$%02x", code[1]); opbytes = 2; break;
-    case 0x07: std::printf("RLC"); break;
-    default: std::printf("UNKNOWN %02x", *code); break;
-    }
-    std::printf("\n");
-    return opbytes;
-}
 
 /**
    Entry point for emulator. Loads ROM and executes main loop
@@ -79,8 +54,6 @@ int main(int argc, char** argv) {
         std::cerr << "Usage: " << argv[0] << " <filename>\n";
         return 1;
     }
-
-
 
     State8080 state;
     initCPU(&state);
