@@ -1,6 +1,8 @@
 #include <cstdint> // Needed for uint8_t, uint16_t
+#include "initcpu.h"
 
 // Put the State8080 struct definition here...
+/*
 struct State8080 {
     // 8-bit registers
     uint8_t a = 0;
@@ -35,10 +37,10 @@ struct State8080 {
     // Memory (64KB)
     uint8_t memory[0x10000]; // 65536 bytes
 };
+*/
 
 // Function Declarations
 void setZSPflags(State8080* cpu, uint8_t result);
 uint8_t input_port(uint8_t a, uint8_t port); // Or maybe void input_port(State8080* cpu, uint8_t port); ?
 void output_port(uint8_t port, uint8_t a);  // Or maybe void output_port(State8080* cpu, uint8_t port); ?
 void Emulate8080Op(State8080* cpu, bool debug = false);
-void initialize_emulator(State8080* state);

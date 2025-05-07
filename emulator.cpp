@@ -45,67 +45,7 @@ void setZSPflags(State8080* cpu, uint8_t result) {
     cpu->flags.p = (count % 2 == 0);
 }
 
-void initialize_emulator(State8080* state) {
-    state->a = 0;
-    state->b = 0;
-    state->c = 0;
-    state->d = 0;
-    state->e = 0;
-    state->h = 0;
-    state->l = 0;
-    
-    state->sp = 0;
-    state->pc = 0;
-    state->cycles = 0;
 
-    state->flags.z = 0;
-    state->flags.s = 0;
-    state->flags.p = 0;
-    state->flags.c = 0;
-    state->flags.ac = 0;
-    state->flags.pad = 0;
-
-    state->interrupt_enabled = 0;
-    state->halted = 0;
-
-    std::memset(state->memory, 0, sizeof(state->memory));
-
-}
-
-
-uint8_t input_port(uint8_t a, uint8_t port) {
-    // Still needs to be implemented
-    /**
-    * Gets input from keyboard and returns value to instruction set 'IN'.
-    *
-    * @param port location of input to be returned.
-    * @param a Will not be in final function. Used to maintain value in register A until this function is implemented.
-    * @return value at {port} to be sent back to register A.
-    */
-    uint8_t value = a; // 0;
-    // switch (port) {
-    //     case 0x01: value = ; // Player 1 input
-    //     case 0x02: value = ; // Player 2 input
-    //     case 0x03: value = ; // Shift register result
-    //     case 0x04: value = ; // Shift register offset (write only)
-    //     case 0x05: value = ; // Shift register data (write only)
-    //     case 0x06: value = ; // Sound (write only)
-    // }
-    return value;
-}
-
-
-void output_port(uint8_t port, uint8_t a) {
-    // Still needs to be implemented
-    /**
-    * Gets input from keyboard and returns value to in struction set 'IN'.
-    *
-    * @param port Location for output to be sent.
-    * @param a Value from register A, to be sent to {port}.
-    * @return Value at {port} to be sent back to register A.
-    */
-    printf("Output, reg A: %02x", a);
-}
 
 
 void Emulate8080Op(State8080* cpu, bool debug) {
@@ -327,7 +267,7 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         if (debug) { printf("DCR    D"); } // Decrement D
         cpu->flags.ac = ((cpu->c & 0x0F) - 1) < 0;
-        cpu->c -= 1;
+        cpu->d -= 1;
         setZSPflags(cpu, cpu->c);
         cpu->pc += 1;
         cpu->cycles += 5;
@@ -355,8 +295,9 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         if (debug) { printf("NOP"); }
         cpu->pc += 1;
-        break;
         cpu->cycles += 4;
+        break;
+        
     }
     case 0x19:
     {
@@ -398,7 +339,7 @@ void Emulate8080Op(State8080* cpu, bool debug) {
         cpu->e += 1;
         setZSPflags(cpu, cpu->e);
         cpu->pc += 1;
-        cpu->pc += 5;
+        cpu->cycles += 5;
         break;
     }
     case 0x1d:
@@ -2000,7 +1941,7 @@ void Emulate8080Op(State8080* cpu, bool debug) {
         uint8_t value = cpu->memory[addr];
         uint8_t difference = cpu->a - value;
         cpu->flags.c = (cpu->a < cpu->h);
-        cpu->flags.ac = (cpu->a & 0x0F) < (cpu->h & 0x0F);
+        cpu->flags.ac = (cpu->a & 0x0F) < (value & 0x0F);
         setZSPflags(cpu, difference);
         cpu->pc += 1;
         cpu->cycles += 7;
@@ -2247,7 +2188,7 @@ void Emulate8080Op(State8080* cpu, bool debug) {
         */
         uint8_t port = code[1];
         if (debug) { printf("OUT    port: %02x", port); } // Output content from A to port address
-        output_port(cpu->a, port);
+        output_port(cpu, port, cpu->a);
         cpu->pc += 2;
         cpu->cycles += 10;
         break;
@@ -2344,7 +2285,7 @@ void Emulate8080Op(State8080* cpu, bool debug) {
         uint8_t port = code[1];
         if (debug) { printf("IN     port: %02x", port); } // Input content from port address
         // map keyboard input to this function
-        cpu->a = input_port(cpu->a, port);
+        cpu->a = input_port(cpu, port);
         cpu->pc += 2;
         cpu->cycles += 10;
         break;

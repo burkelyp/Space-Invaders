@@ -1,5 +1,6 @@
 #include "initcpu.h"
-#include "memory_map.h"
+//#include "memory_map.h"
+#include "access_mmap.h"
 
 int init_mmap(State8080* state, memory_map* mmap) {
     //#ifdef Q_OS_WIN

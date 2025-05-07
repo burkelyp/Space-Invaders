@@ -2,7 +2,7 @@
 #define MEMORY_MAP
 #define MAPPED_NAME TEXT("/SpaceInvaders")
 
-
+#include "initcpu.h"
 #include <Windows.h>
 
 struct memory_map {

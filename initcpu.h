@@ -8,6 +8,7 @@
 //#include <conio.h>
 #include <stdio.h>
 #include <Windows.h>
+#include <stdint.h>
 
 
 
