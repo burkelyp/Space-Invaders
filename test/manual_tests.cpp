@@ -227,14 +227,14 @@ void test_op_mvi_c(){
     
     Emulate8080Op(&state, false);
     
+
+    if(state.c != 0x00){
+        test_failed(test_name, "Register C should be 0x00");
+        printf("Register C is 0x%2x\n", state.c);
+        return;
+    }
     // Flags should not be affected by mvi
-    //
-    // if(state.c != 0x00){
-    //     test_failed(test_name, "Register C should be 0x00");
-    //     printf("Register C is 0x%2x\n", state.c);
-    //     return;
-    // }
-    
+    //    
     // if (state.flags.z){
     //     test_failed(test_name, "Zero flag should not be set");
     //     printf("Zero flag is %d\n", state.flags.z);
@@ -267,8 +267,7 @@ void test_op_mvi_c(){
         printf("state.pc is showing as 0x%4x\n", state.pc);
         return;
     }
-                    
-    
+
     test_passed(test_name);
 }
 
