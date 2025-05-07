@@ -28,7 +28,15 @@ jobs:
             build_type: Release
             c_compiler: cl
             cpp_compiler: cl
-
+          - os: ubuntu-latest
+            build_type: debug
+            c_compiler: gcc
+            cpp_compiler: g++
+          - os: windows-latest
+            build_type: debug
+            c_compiler: cl
+            cpp_compiler: cl
+            
     steps:
     - uses: actions/checkout@v4
 
