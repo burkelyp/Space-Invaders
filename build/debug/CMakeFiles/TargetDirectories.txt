@@ -1,0 +1,5 @@
+/home/burkely/osu/Space-Invaders/build/debug/CMakeFiles/emulator_lib.dir
+/home/burkely/osu/Space-Invaders/build/debug/CMakeFiles/ManualEmulatorTests.dir
+/home/burkely/osu/Space-Invaders/build/debug/CMakeFiles/SpaceInvaders.dir
+/home/burkely/osu/Space-Invaders/build/debug/CMakeFiles/edit_cache.dir
+/home/burkely/osu/Space-Invaders/build/debug/CMakeFiles/rebuild_cache.dir

@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.10)
 # Define the project
 project(SpaceInvadersProject LANGUAGES CXX) # Choose a name for your project
 
+# Find SDL2
+find_package(SDL2 REQUIRED)
+
+# Add SDL2 include directories to all targets
+include_directories(${SDL2_INCLUDE_DIRS})
+
 # --- Determine Platform ---
 # Detect platform and define macro
 if(WIN32)
@@ -38,6 +44,25 @@ target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
 # Make sure the test executable can find emulator.h, cpu.h etc.
 # This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
 target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# --- Define the Main Emulator Executable ---
+add_executable(SpaceInvaders
+    main.cpp
+)
+
+# Link it with the emulator library
+target_link_libraries(SpaceInvaders PRIVATE emulator_lib ${SDL2_LIBRARIES})
+
+# Include paths (optional if already handled by the lib)
+target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# --- Debug mode --- 
+# To build with debug mode on:
+#       cmake -DCMAKE_BUILD_TYPE=debug ./target/dir
+if(CMAKE_BUILD_TYPE STREQUAL "debug")
+    target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
+    add_compile_definitions(DEBUG)
+endif()
 
 
 # --- Optional: CTest Integration ---
