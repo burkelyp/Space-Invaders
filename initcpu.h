@@ -11,7 +11,6 @@
 #include <stdint.h>
 
 
-
 // Registers, memory, and CoditionCodes maintain CPU state
 struct State8080 {
     uint8_t     a = 0;
