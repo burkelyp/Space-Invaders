@@ -21,6 +21,7 @@
 #include <qopenglbuffer.h>
 #include <qopenglshaderprogram.h>
 #include <qopengltexture.h>
+#include <qopenglvertexarrayobject.h>
 #include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
@@ -30,10 +31,11 @@
 
 #include "SDL3/SDL.h"
 
-const int MEM_SIZE = 0x10003;
+const int MEM_SIZE = 0x10007;
 const int SCREEN_RESOLUTION = 57344; //(256x224)
 const int FRAME_RATE = 60;
 const char MAPPED_NAME[] = "/SpaceInvaders";
+const int KEYBIND_AMOUNT = 9;
 
 // TODO make this class less proprietary so it can be used with all emulators
 
@@ -71,11 +73,11 @@ public:
 	bool setCombination(QString action, QString hotkey);
 
 protected:
-	QKeySequence* combos[8];
+	QKeySequence* combos[KEYBIND_AMOUNT];
 	// Contains keybind Names
-	QString comboNames[8] = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start" };
+	QString comboNames[KEYBIND_AMOUNT] = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
 	// Contains default Bindings
-	QString defaultCombos[8] = { "A", "D", "W", "Enter", "Left", "Right", "Up", "Num+Enter" };
+	QString defaultCombos[KEYBIND_AMOUNT] = { "A", "D", "W", "Enter", "Left", "Right", "Up", "Num+Enter", "1"};
 };
 
 /**
@@ -206,7 +208,8 @@ private:
 	int m_height;
 	QOpenGLTexture* m_texture = nullptr; 
 	QOpenGLBuffer* buff;
-	QOpenGLBuffer* vbo;
+	QOpenGLBuffer vbo = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+	QOpenGLVertexArrayObject vao;
 	QOpenGLShader* vertex;
 	QOpenGLShader* shader;
 	QOpenGLShaderProgram* program;

@@ -19,7 +19,7 @@
 GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 {
 	setupMemMap();
-	//this->setAutoFillBackground(false);
+	this->setAutoFillBackground(false);
 	this->setFocusPolicy(Qt::StrongFocus);
 	colorMap = QImage("ColorMap.PNG");
 	
@@ -76,28 +76,29 @@ void GraphicsWindow::updateKeyBind(const QString bind, const QString hotkey)
 
 void GraphicsWindow::initializeGL()
 {
-	QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
+	/*QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
 	f->initializeOpenGLFunctions();
 	f->glEnable(GL_TEXTURE_2D);
 
-	buff = new QOpenGLBuffer(QOpenGLBuffer::PixelPackBuffer);
-	buff->create();
-	buff->bind();
+	//buff = new QOpenGLBuffer(QOpenGLBuffer::PixelPackBuffer);
+	//buff->create();
+	//buff->bind();
 
-	vbo = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-	vbo->create();
-	vbo->bind();
+	//vbo = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+	vbo.create();
+	vbo.bind();
+	vbo.setUsagePattern(QOpenGLBuffer::StaticDraw);
 
-	/**/GLfloat vertices[] = {
+	GLfloat vertices[] = {
 		 0.0f,			0.0f,			0.0f,
 		 rect.width(),	0.0f,			0.0f,
 		 rect.width(),	rect.height(),	0.0f,
 		 0.0f,			rect.height(),	0.0f };
-	/*GLfloat vertices[] = {
+	GLfloat vertices[] = {
 		 0.0f,			0.0f,			0.0f, 0.0f, 0.0f,
 		 rect.width(),	0.0f,			0.0f, 1.0f, 0.0f,
 		 rect.width(),	rect.height(),	0.0f, 1.0f, 1.0f,
-		 0.0f,			rect.height(),	0.0f, 0.0f, 1.0f };*/
+		 0.0f,			rect.height(),	0.0f, 0.0f, 1.0f };
 
 	float texCo[] = {
 	0.0f, 0.0f,  // lower-left corner  
@@ -106,12 +107,14 @@ void GraphicsWindow::initializeGL()
 	0.0f, 1.0f   // top-left corner
 	};
 
-	vbo->allocate(vertices, sizeof(vertices));
-
-	f->glEnableVertexAttribArray(1);
+	vbo.allocate(vertices, sizeof(vertices));
+	//qDebug() << sizeof(GLfloat);
 	//f->glEnableVertexAttribArray(1);
-	f->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+	//f->glEnableVertexAttribArray(1);
+	//f->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 	//f->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), reinterpret_cast<void*>(3 * sizeof(GLfloat)));
+
+	vbo.release();
 
 	qDebug() << glGetError();
 	program = new QOpenGLShaderProgram(this);
@@ -135,26 +138,44 @@ void GraphicsWindow::initializeGL()
         "    gl_FragColor = texture2D(tex,texCoord);\n"
         "}\n");
 
-	program->bindAttributeLocation("vertex", 1);
+	//program->bindAttributeLocation("vertex", 1);
 	//program->bindAttributeLocation("vertTexCoord", 1);
 
 	qDebug() << glGetError();
 	program->link();
 	program->bind();
 
-
-
 	vertexLocation = program->attributeLocation("vertex");
 	matrixLocation = program->uniformLocation("matrix");
 	texCoords = program->attributeLocation("vertTexCoord");
 
-	//program->enableAttributeArray(0);
+	//vao = new QOpenGLVertexArrayObject();
+	if (vao.create()) {
+		qDebug() << "No VAO error";
+	}
+	vao.bind();
+
+	// Bind the vertex buffer to the VAO
+	//program->enableAttributeArray(vertexLocation);
+	f->glEnableVertexAttribArray(vertexLocation);
+	qDebug() << glGetError();
+	vbo.bind();
+	f->glVertexAttribPointer(vertexLocation, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+	qDebug() << glGetError();
+	//program->setAttributeBuffer(vertexLocation, GL_FLOAT, 0, 3, 0);
+	vao.release();
+
+	qDebug() << glGetError();
+	//program->disableAttributeArray(0);
 	//program->setAttributeArray(vertexLocation, vertices, 3);
 
 	QImage image = QImage("ColorMap.PNG");
 	delete m_texture;
 	m_texture = new QOpenGLTexture(image.flipped(), QOpenGLTexture::DontGenerateMipMaps);
 	m_texture->setWrapMode(QOpenGLTexture::ClampToEdge);
+
+	vbo.release();
+	program->release(); */
 }
 
 void GraphicsWindow::resizeGL(int w, int h)
@@ -179,7 +200,12 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 	QRect rect = event->rect();
 	QSize rotateSize = QSize(rect.height(), rect.width());
 
-	*(map + o) = change;
+	// Using bitmap as image mask 
+	uchar* m = map;
+	QImage image = colorMap.copy();
+
+	// Simple proof of concept animation
+	/**(map + o) = change;
 	o++;
 	if (o > SCREEN_RESOLUTION / 8) {
 		o = 0;
@@ -189,18 +215,16 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 		else {
 			change = 85;
 		}
-	}
+	}*/
 
-	// Using bitmap as image mask 
-	uchar* m = map;
-	QImage image = colorMap.copy();
 	for (int i = 0; i < 224; i++) {
 		for (int j = 0; j < 256; j++) {
 			if ((i * 224 + j) % 8 == 0) {
 				m++;
 			}
 			if (!(*m & (1 << (7 - ((i * 224 + j) % 8))))) {
-				image.setPixel(j, i, 0);
+				// Iterates over every row painting each byte backwards
+				image.setPixelColor(QPoint(((j - (j % 8)) + (7 - (j % 8))), i), QColor(Qt::black));
 			}
 		}
 	}
@@ -210,17 +234,19 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 	image = image.mirrored(true);
 
 	painter.drawImage(rect.topLeft(), image.scaled(rect.size()));
+	this->resize(rect.size());
 	//QOpenGLWidget::paintEvent(event);
+	//this->repaint();
 }
 
 void GraphicsWindow::test()
 {
 	update();
-	
 }
 
 void GraphicsWindow::paintGL()
 {
+	return;
 	QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
 	QOpenGLContext* context = QOpenGLContext::currentContext();
 
@@ -228,9 +254,10 @@ void GraphicsWindow::paintGL()
 	f->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	f->glEnable(GL_TEXTURE_2D);
 
-	m_texture->bind(0);
 	program->bind();
-	//vbo->bind();
+	m_texture->bind(0);
+	vao.bind();
+	vbo.bind();
 	f->glActiveTexture(GL_TEXTURE0);
 	//f->glPixelStorei(GL_UNPACK_SWAP_BYTES, GL_TRUE);
 
@@ -265,23 +292,24 @@ void GraphicsWindow::paintGL()
 	QColor color(0, 255, 0, 255);
 
 	//program->enableAttributeArray(0); 
+	//f->glEnableVertexAttribArray(vertexLocation);
 	//program->enableAttributeArray(vertexLocation);
 	//program->setAttributeArray(vertexLocation, vertices, 3);
 	program->enableAttributeArray(texCoords);
 	program->setAttributeArray(texCoords, texCo, 2);
 	program->setUniformValue(matrixLocation, pmvMatrix);
 	//f->glEnableVertexAttribArray(0);
-	f->glEnableVertexAttribArray(vertexLocation);
 
 	//f->glActiveTexture(GL_TEXTURE0);
 	program->setUniformValue("tex", 0);
+	qDebug() << f->glGetError();
 	f->glDrawArrays(GL_QUADS, 0, 4);
 
 	//qDebug() << f->glGetError();
 	//program->disableAttributeArray(0);
 	//program->disableAttributeArray(vertexLocation);
 	//f->glDisableVertexAttribArray(0);
-	f->glDisableVertexAttribArray(vertexLocation);
+	//f->glDisableVertexAttribArray(vertexLocation);
 	program->disableAttributeArray(texCoords);
 
 	// Using bitmap as image mask 
@@ -293,7 +321,7 @@ void GraphicsWindow::paintGL()
 				m++;
 			}
 			if (!(*m & (1 << (7 - ((i * 224 + j) % 8))))) {
-				image.setPixel(j, i, 0);
+				image.setPixelColor(QPoint(((j - (j % 8)) + (7 - (j % 8))), i), QColor(Qt::black));
 			}
 		}
 	}
@@ -308,6 +336,8 @@ void GraphicsWindow::paintGL()
 	//f->glFlush();
 
 	program->release();
+	vbo.release();
+	vao.release();
 	//qDebug() << f->glGetError();
 }
 
@@ -419,6 +449,9 @@ void GraphicsWindow::keyPressEvent(QKeyEvent* event)
 	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(1, true);
 	}
+	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(0, true);
+	}
 	QOpenGLWidget::keyPressEvent(event);
 }
 
@@ -474,7 +507,7 @@ void GraphicsWindow::editMemInputBit(int bit, bool set)
 SICombinations::SICombinations(QWidget* parent) :
 	QObject(parent)
 {
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
 		combos[i] = new QKeySequence(defaultCombos[i]);
 		qDebug() << combos[i]->toString();
 	}
@@ -482,7 +515,7 @@ SICombinations::SICombinations(QWidget* parent) :
 
 QKeySequence* SICombinations::getCombination(QString action)
 {
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
 		if (comboNames[i] == action) {
 			return combos[i];
 		}
@@ -492,7 +525,7 @@ QKeySequence* SICombinations::getCombination(QString action)
 
 bool SICombinations::setCombination(QString action, QString hotkey)
 {
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
 		if (comboNames[i] == action) {
 			combos[i] = new QKeySequence(hotkey);
 			qDebug() << "Sequence set: " << comboNames[i] << hotkey;
