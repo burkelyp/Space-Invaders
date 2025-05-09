@@ -1,0 +1,5217 @@
+pc: 0000    sp: 0000    NOP
+pc: 0001    sp: 0000    NOP
+pc: 0002    sp: 0000    NOP
+pc: 0003    sp: 0000    JMP    addr: 18d4, H: 18, L: d4
+pc: 18d4    sp: 0000    LXI    SP, 2400
+pc: 18d7    sp: 2400    MVI    B, 00
+pc: 18d9    sp: 2400    CALL   addr: 01e6
+pc: 01e6    sp: 23fe    LXI    D, 1b00
+pc: 01e9    sp: 23fe    LXI    H, 2000
+pc: 01ec    sp: 23fe    JMP    addr: 1a32, H: 1a, L: 32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+Time between interrupts: 1472 ms
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a32    sp: 23fe    LDAX   D
+pc: 1a33    sp: 23fe    MOV    M, A
+pc: 1a34    sp: 23fe    INX    H
+pc: 1a35    sp: 23fe    INX    D
+pc: 1a36    sp: 23fe    DCR    B
+pc: 1a37    sp: 23fe    JNZ    addr: 1a32
+pc: 1a3a    sp: 23fe    RET
+pc: 18dc    sp: 2400    CALL   addr: 1956
+pc: 1956    sp: 23fe    CALL   addr: 1a5c
+pc: 1a5c    sp: 23fc    LXI    H, 2400
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+Time between interrupts: 1334 ms
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+Time between interrupts: 1328 ms
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+Time between interrupts: 1317 ms
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H
+pc: 1a63    sp: 23fc    CPI    40
+pc: 1a65    sp: 23fc    JNZ    addr: 1a5f
+pc: 1a5f    sp: 23fc    MVI    M, 00
+pc: 1a61    sp: 23fc    INX    H
+pc: 1a62    sp: 23fc    MOV    A, H

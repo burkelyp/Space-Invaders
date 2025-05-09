@@ -139,13 +139,28 @@ CMakeFiles/emulator_lib.dir/loadrom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/emulator_lib.dir/loadrom.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/burkely/osu/Space-Invaders/loadrom.cpp -o CMakeFiles/emulator_lib.dir/loadrom.cpp.s
 
+CMakeFiles/emulator_lib.dir/access_mmap.cpp.o: CMakeFiles/emulator_lib.dir/flags.make
+CMakeFiles/emulator_lib.dir/access_mmap.cpp.o: /home/burkely/osu/Space-Invaders/access_mmap.cpp
+CMakeFiles/emulator_lib.dir/access_mmap.cpp.o: CMakeFiles/emulator_lib.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/burkely/osu/Space-Invaders/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/emulator_lib.dir/access_mmap.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/emulator_lib.dir/access_mmap.cpp.o -MF CMakeFiles/emulator_lib.dir/access_mmap.cpp.o.d -o CMakeFiles/emulator_lib.dir/access_mmap.cpp.o -c /home/burkely/osu/Space-Invaders/access_mmap.cpp
+
+CMakeFiles/emulator_lib.dir/access_mmap.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/emulator_lib.dir/access_mmap.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/burkely/osu/Space-Invaders/access_mmap.cpp > CMakeFiles/emulator_lib.dir/access_mmap.cpp.i
+
+CMakeFiles/emulator_lib.dir/access_mmap.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/emulator_lib.dir/access_mmap.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/burkely/osu/Space-Invaders/access_mmap.cpp -o CMakeFiles/emulator_lib.dir/access_mmap.cpp.s
+
 # Object files for target emulator_lib
 emulator_lib_OBJECTS = \
 "CMakeFiles/emulator_lib.dir/emulator.cpp.o" \
 "CMakeFiles/emulator_lib.dir/initcpu.cpp.o" \
 "CMakeFiles/emulator_lib.dir/disassembler.cpp.o" \
 "CMakeFiles/emulator_lib.dir/io_ports.cpp.o" \
-"CMakeFiles/emulator_lib.dir/loadrom.cpp.o"
+"CMakeFiles/emulator_lib.dir/loadrom.cpp.o" \
+"CMakeFiles/emulator_lib.dir/access_mmap.cpp.o"
 
 # External object files for target emulator_lib
 emulator_lib_EXTERNAL_OBJECTS =
@@ -155,9 +170,10 @@ libemulator_lib.a: CMakeFiles/emulator_lib.dir/initcpu.cpp.o
 libemulator_lib.a: CMakeFiles/emulator_lib.dir/disassembler.cpp.o
 libemulator_lib.a: CMakeFiles/emulator_lib.dir/io_ports.cpp.o
 libemulator_lib.a: CMakeFiles/emulator_lib.dir/loadrom.cpp.o
+libemulator_lib.a: CMakeFiles/emulator_lib.dir/access_mmap.cpp.o
 libemulator_lib.a: CMakeFiles/emulator_lib.dir/build.make
 libemulator_lib.a: CMakeFiles/emulator_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/burkely/osu/Space-Invaders/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libemulator_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/burkely/osu/Space-Invaders/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libemulator_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/emulator_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/emulator_lib.dir/link.txt --verbose=$(VERBOSE)
 

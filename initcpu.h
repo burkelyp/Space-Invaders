@@ -33,11 +33,11 @@ struct State8080 {
 
     // Flags
     struct {
-        uint8_t    z = 1;
-        uint8_t    s = 1;
-        uint8_t    p = 1;
-        uint8_t    c = 1;   // aka cy for carry flag
-        uint8_t    ac = 1;
+        uint8_t    z = 0;
+        uint8_t    s = 0;
+        uint8_t    p = 0;
+        uint8_t    c = 0;   // aka cy for carry flag
+        uint8_t    ac = 0;
         uint8_t    pad = 3;
     } flags;
 

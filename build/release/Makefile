@@ -155,6 +155,30 @@ SpaceInvaders/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceInvaders.dir/build.make CMakeFiles/SpaceInvaders.dir/build
 .PHONY : SpaceInvaders/fast
 
+access_mmap.o: access_mmap.cpp.o
+.PHONY : access_mmap.o
+
+# target to build an object file
+access_mmap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emulator_lib.dir/build.make CMakeFiles/emulator_lib.dir/access_mmap.cpp.o
+.PHONY : access_mmap.cpp.o
+
+access_mmap.i: access_mmap.cpp.i
+.PHONY : access_mmap.i
+
+# target to preprocess a source file
+access_mmap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emulator_lib.dir/build.make CMakeFiles/emulator_lib.dir/access_mmap.cpp.i
+.PHONY : access_mmap.cpp.i
+
+access_mmap.s: access_mmap.cpp.s
+.PHONY : access_mmap.s
+
+# target to generate assembly for a file
+access_mmap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/emulator_lib.dir/build.make CMakeFiles/emulator_lib.dir/access_mmap.cpp.s
+.PHONY : access_mmap.cpp.s
+
 disassembler.o: disassembler.cpp.o
 .PHONY : disassembler.o
 
@@ -334,6 +358,9 @@ help:
 	@echo "... ManualEmulatorTests"
 	@echo "... SpaceInvaders"
 	@echo "... emulator_lib"
+	@echo "... access_mmap.o"
+	@echo "... access_mmap.i"
+	@echo "... access_mmap.s"
 	@echo "... disassembler.o"
 	@echo "... disassembler.i"
 	@echo "... disassembler.s"

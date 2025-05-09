@@ -24,7 +24,7 @@ add_library(emulator_lib
     disassembler.cpp
     io_ports.cpp
     loadrom.cpp
-    # access_mmap.cpp
+    access_mmap.cpp
     # Add any other core .cpp files needed by the emulator
 )
 

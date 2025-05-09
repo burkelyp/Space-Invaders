@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/emulator_lib.dir/access_mmap.cpp.o"
+  "CMakeFiles/emulator_lib.dir/access_mmap.cpp.o.d"
   "CMakeFiles/emulator_lib.dir/disassembler.cpp.o"
   "CMakeFiles/emulator_lib.dir/disassembler.cpp.o.d"
   "CMakeFiles/emulator_lib.dir/emulator.cpp.o"

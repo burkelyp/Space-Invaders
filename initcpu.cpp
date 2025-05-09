@@ -12,7 +12,7 @@ void initCPU(State8080* state) {
     state->l = 0;
     state->sp = 0;
     state->pc = 0;
-    state->flags = { 1, 1, 1, 1, 1, 3 };
+    state->flags = { 0, 0, 0, 0, 0, 3 };
     state->shift_registers = { 0, 0, 0 };
     state->ports = { 0, 0, 0, 0, 0, 0, 0 };
 
@@ -47,5 +47,5 @@ void initCPU(State8080* state, PlatformMemoryPtr memory_ptr) {
         state->memory = (uint8_t*)memory_ptr; // loss of data? 
     }
 
-    //memset(state->memory, 0, MEMORY_SIZE);
+    // memset(state->memory, 0, MEMORY_SIZE);
 }

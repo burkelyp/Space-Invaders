@@ -59,7 +59,7 @@ void Emulate8080Op(State8080* cpu) {
 
     uint8_t* code = &cpu->memory[cpu->pc];
     #ifdef DEBUG
-        printf("%04x ", cpu->pc);
+        printf("pc: %04x    sp: %04x    ", cpu->pc, cpu->sp);
 	#endif
     switch (*code) {
         case 0x00:
@@ -2399,6 +2399,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CNZ    addr: %04x", addr);
             #endif // Call on non-zero: jump to a new location in memory if the zero flag is not set
+            cpu->pc += 3;
             if (cpu->flags.z == 0) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -2407,7 +2408,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2505,6 +2505,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CZ     addr: %04x", addr);
             #endif // Call on zero: jump to new location in memory if zero flag is set
+            cpu->pc += 3;
             if (cpu->flags.z) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -2513,7 +2514,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2524,6 +2524,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CALL   addr: %04x", addr);
             #endif // Unconditional call: jump to new location in memory
+            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2620,6 +2621,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CNC    addr: %04x", addr);
             #endif // Call on non-carry: jump to a new location in memory if the carry flag is not set
+            cpu->pc += 3;
             if (cpu->flags.c == 0) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -2628,7 +2630,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2733,6 +2734,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CC     addr: %04x", addr);
             #endif // Call on carry: jump to new location in memory if carry flag is set
+            cpu->pc += 3;
             if (cpu->flags.c) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -2741,7 +2743,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2752,6 +2753,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CALL   addr: %04x", addr);
             #endif // Unconditional call: jump to new location in memory
+            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2847,6 +2849,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CPO    addr: %04x", addr);
             #endif // Call on parity-odd: jump to a new location in memory if the parity flag is odd
+            cpu->pc += 3;
             if (cpu->flags.p == 0) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -2855,7 +2858,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2954,17 +2956,17 @@ void Emulate8080Op(State8080* cpu) {
         {
             uint16_t addr = (code[2] << 8) | code[1];
             #ifdef DEBUG
-                printf("CPO    addr: %04x", addr);
+                printf("CPE    addr: %04x", addr);
             #endif // Call on parity-even: jump to a new location in memory if the parity flag is even
+            cpu->pc += 3;
             if (cpu->flags.p) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
                 cpu->sp -= 2;
                 cpu->pc = addr;
-                cpu->cycles += 17; //should this be CPE?
+                cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -2975,6 +2977,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CALL   addr: %04x", addr);
             #endif // Unconditional call: jump to new location in memory
+            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -3071,6 +3074,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CP     addr: %04x", addr);
             #endif // Call on positive: jump to a new location in memory if the sign flag is not set
+            cpu->pc += 3;
             if (cpu->flags.s == 0) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -3079,7 +3083,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -3185,6 +3188,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CM     addr: %04x", addr);
             #endif // Call on minus: jump to new location in memory if sign flag is set
+            cpu->pc += 3;
             if (cpu->flags.s == 0) {
                 cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
                 cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
@@ -3193,7 +3197,6 @@ void Emulate8080Op(State8080* cpu) {
                 cpu->cycles += 17;
             }
             else {
-                cpu->pc += 3;
                 cpu->cycles += 11;
             }
             break;
@@ -3204,6 +3207,7 @@ void Emulate8080Op(State8080* cpu) {
             #ifdef DEBUG
                 printf("CALL   addr: %04x", addr);
             #endif // Unconditional call: jump to new location in memory
+            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
