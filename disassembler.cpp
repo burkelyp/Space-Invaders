@@ -3,12 +3,14 @@
 
 
 int Disassemble8080Op(unsigned char* codebuffer, int pc) {
+
     /*
     *codebuffer is a valid pointer to 8080 assembly code
     pc is the current offset into the code
 
     returns the number of bytes of the op
    */
+
     unsigned char* code = &codebuffer[pc];
     int opbytes = 1;
     printf("%04x: %02x: ", pc, *code);
@@ -841,6 +843,7 @@ int Disassemble8080Op(unsigned char* codebuffer, int pc) {
     case 0Xff:
         printf("RST    7"); // Restart 7
         break;
+
     }
 
 
@@ -848,29 +851,3 @@ int Disassemble8080Op(unsigned char* codebuffer, int pc) {
 
     return opbytes;
 };
-/*
-int main (int argc, char**argv) {
-    FILE *f= fopen("test/disassembler_test_file.bin", "rb");   // fopen(argv[1], "rb");
-    if (f==NULL)
-    {
-        printf("error: Couldn't open %s\n", argv[1]);
-        exit(1);
-    };
-
-    // Get the file size and read it into a memory buffer
-    fseek(f, 0L, SEEK_END);
-    int fsize = ftell(f);
-    fseek(f, 0L, SEEK_SET);
-
-    unsigned char *buffer = (unsigned char *) malloc(fsize);
-
-    fread(buffer, fsize, 1, f);
-    fclose(f);
-
-    int pc = 0;
-
-    while (pc < fsize) {
-        pc += Disassemble8080Op(buffer, pc);
-    }
-    return 0;
-};*/

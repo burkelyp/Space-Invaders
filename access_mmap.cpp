@@ -10,9 +10,13 @@ int init_mmap(State8080* state) {
         return 1;
     }
 
+<<<<<<< HEAD
     mem_map.buffer_ptr = MapViewOfFile(mem_map.h_map_file, FILE_MAP_ALL_ACCESS, 0, 0, MEMORY_SIZE);
     if (mem_map.buffer_ptr == NULL) {
         CloseHandle(mem_map.h_map_file);
+=======
+
+>>>>>>> 084aae831329db070c19a00d98197ffff7e19a45
         return 1;
     }
 
@@ -30,7 +34,13 @@ int init_mmap(State8080* state) {
 #endif
 
     // buffer_ptr for initcpu
+<<<<<<< HEAD
     initCPU(state, mem_map.buffer_ptr);
 
+=======
+    initCPU(state, mmap.buffer_ptr);
+
+    //#endif
+>>>>>>> 084aae831329db070c19a00d98197ffff7e19a45
     return 0;
 }

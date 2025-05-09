@@ -4,6 +4,7 @@
 #define MEMORY_SIZE 0x10007 //0x10003 For now
 #define PORT_LOCATION 0x10000 //0x10000 
 
+
 #include <iostream>
 //#include <conio.h>
 #include <stdio.h>
@@ -30,6 +31,7 @@ struct State8080 {
     uint16_t    pc = 0;
     uint32_t    cycles = 0;
     uint8_t* memory = nullptr;
+
     uint8_t     int_enable = 0;
 
     // Flags
@@ -39,6 +41,7 @@ struct State8080 {
         uint8_t    p = 0;
         uint8_t    c = 0;   // aka cy for carry flag
         uint8_t    ac = 0;
+
         uint8_t    pad = 3;
     } flags;
 
@@ -57,6 +60,7 @@ struct State8080 {
         uint8_t* port4 = nullptr;
         uint8_t* port5 = nullptr;
         uint8_t* port6 = nullptr;
+
     } ports;
 
     // Interrupt enable

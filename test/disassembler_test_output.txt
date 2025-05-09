@@ -1,0 +1,256 @@
+0000: 00: NOP
+0001: 01: LXI    B, b3b2
+0004: 02: STAX   B
+0005: 03: INX    B
+0006: 04: INR    B
+0007: 05: DCR    B
+0008: 06: MVI    B, b2
+000a: 07: RLC
+000b: 08: NOP
+000c: 09: DAD    B
+000d: 0a: LDAX   B
+000e: 0b: DCX    B
+000f: 0c: INR    C
+0010: 0d: DCR    C
+0011: 0e: MVI    C, b2
+0013: 0f: RRC
+0014: 10: NOP
+0015: 11: LXI    D, b3b2
+0018: 12: STAX   D
+0019: 13: INX    D
+001a: 14: INR    D
+001b: 15: DCR    D
+001c: 16: MVI    D, b2
+001e: 17: RAL
+001f: 18: NOP
+0020: 19: DAD    D
+0021: 1a: LDAX   D
+0022: 1b: DCX    D
+0023: 1c: INR    E
+0024: 1d: DCR    E
+0025: 1e: MVI    E, b2
+0027: 1f: RAR
+0028: 20: NOP
+0029: 21: LXI    H, b3b2
+002c: 22: SHLD   addr: b3b2
+002f: 23: INX    H
+0030: 24: INR    H
+0031: 25: DCR    H
+0032: 26: MVI    H, b2
+0034: 27: DAA
+0035: 28: NOP
+0036: 29: DAD    H
+0037: 2a: LHLD   addr: b3b2
+003a: 2b: DCX    H
+003b: 2c: INR    L
+003c: 2d: DCR    L
+003d: 2e: MVI    L, b2
+003f: 2f: CMA
+0040: 30: NOP
+0041: 31: LXI    SP, b3b2
+0044: 32: STA    addr: b3b2
+0047: 33: INX    SP
+0048: 34: INR    M
+0049: 35: DCR    M
+004a: 36: MVI    M, b2
+004c: 37: STC
+004d: 38: NOP
+004e: 39: DAD    SP
+004f: 3a: LDA    addr: b3b2
+0052: 3b: DCX    SP
+0053: 3c: INR    A
+0054: 3d: DCR    A
+0055: 3e: MVI    A, b2
+0057: 3f: CMC
+0058: 40: MOV    B, B
+0059: 41: MOV    B, C
+005a: 42: MOV    B, D
+005b: 43: MOV    B, E
+005c: 44: MOV    B, H
+005d: 45: MOV    B, L
+005e: 46: MOV    B, M
+005f: 47: MOV    B, A
+0060: 48: MOV    C, B
+0061: 49: MOV    C, C
+0062: 4a: MOV    C, D
+0063: 4b: MOV    C, E
+0064: 4c: MOV    C, H
+0065: 4d: MOV    C, L
+0066: 4e: MOV    C, M
+0067: 4f: MOV    C, A
+0068: 50: MOV    D, B
+0069: 51: MOV    D, C
+006a: 52: MOV    D, D
+006b: 53: MOV    D, E
+006c: 54: MOV    D, H
+006d: 55: MOV    D, L
+006e: 56: MOV    D, M
+006f: 57: MOV    D, A
+0070: 58: MOV    E, B
+0071: 59: MOV    E, C
+0072: 5a: MOV    E, D
+0073: 5b: MOV    E, E
+0074: 5c: MOV    E, H
+0075: 5d: MOV    E, L
+0076: 5e: MOV    E, M
+0077: 5f: MOV    E, A
+0078: 60: MOV    H, B
+0079: 61: MOV    H, C
+007a: 62: MOV    H, D
+007b: 63: MOV    H, E
+007c: 64: MOV    H, H
+007d: 65: MOV    H, L
+007e: 66: MOV    H, M
+007f: 67: MOV    H, A
+0080: 68: MOV    L, B
+0081: 69: MOV    L, C
+0082: 6a: MOV    L, D
+0083: 6b: MOV    L, E
+0084: 6c: MOV    L, H
+0085: 6d: MOV    L, L
+0086: 6e: MOV    L, M
+0087: 6f: MOV    L, A
+0088: 70: MOV    M, B
+0089: 71: MOV    M, C
+008a: 72: MOV    M, D
+008b: 73: MOV    M, E
+008c: 74: MOV    M, H
+008d: 75: MOV    M, L
+008e: 76: HLT
+008f: 77: MOV    M, A
+0090: 78: MOV    A, B
+0091: 79: MOV    A, C
+0092: 7a: MOV    A, D
+0093: 7b: MOV    A, E
+0094: 7c: MOV    A, H
+0095: 7d: MOV    A, L
+0096: 7e: MOV    A, M
+0097: 7f: MOV    A, A
+0098: 80: ADD    B
+0099: 81: ADD    C
+009a: 82: ADD    D
+009b: 83: ADD    E
+009c: 84: ADD    H
+009d: 85: ADD    L
+009e: 86: ADD    M
+009f: 87: ADD    A
+00a0: 88: ADC    B
+00a1: 89: ADC    C
+00a2: 8a: ADC    D
+00a3: 8b: ADC    E
+00a4: 8c: ADC    H
+00a5: 8d: ADC    L
+00a6: 8e: ADC    M
+00a7: 8f: ADC    A
+00a8: 90: SUB    B
+00a9: 91: SUB    C
+00aa: 92: SUB    D
+00ab: 93: SUB    E
+00ac: 94: SUB    H
+00ad: 95: SUB    L
+00ae: 96: SUB    M
+00af: 97: SUB    A
+00b0: 98: SBB    B
+00b1: 99: SBB    C
+00b2: 9a: SBB    D
+00b3: 9b: SBB    E
+00b4: 9c: SBB    H
+00b5: 9d: SBB    L
+00b6: 9e: SBB    M
+00b7: 9f: SBB    A
+00b8: a0: ANA    B
+00b9: a1: ANA    C
+00ba: a2: ANA    D
+00bb: a3: ANA    E
+00bc: a4: ANA    H
+00bd: a5: ANA    L
+00be: a6: ANA    M
+00bf: a7: ANA    A
+00c0: a8: XRA    B
+00c1: a9: XRA    C
+00c2: aa: XRA    D
+00c3: ab: XRA    E
+00c4: ac: XRA    H
+00c5: ad: XRA    L
+00c6: ae: XRA    M
+00c7: af: XRA    A
+00c8: b0: ORA    B
+00c9: b1: ORA    C
+00ca: b2: ORA    D
+00cb: b3: ORA    E
+00cc: b4: ORA    H
+00cd: b5: ORA    L
+00ce: b6: ORA    M
+00cf: b7: ORA    A
+00d0: b8: CMP    B
+00d1: b9: CMP    C
+00d2: ba: CMP    D
+00d3: bb: CMP    E
+00d4: bc: CMP    H
+00d5: bd: CMP    L
+00d6: be: CMP    M
+00d7: bf: CMP    A
+00d8: c0: RNZ
+00d9: c1: POP    B
+00da: c2: JNZ    addr: b3b2
+00dd: c3: JMP    addr: b3b2
+00e0: c4: CNZ    addr: b3b2
+00e3: c5: PUSH   B
+00e4: c6: ADI    b2
+00e6: c7: RST    0
+00e7: c8: RZ
+00e8: c9: RET
+00e9: ca: JZ     addr: b3b2
+00ec: cb: JMP    addr: b3b2
+00ef: cc: CZ     addr: b3b2
+00f2: cd: CALL   addr: b3b2
+00f5: ce: ACI    b2
+00f7: cf: RST    1
+00f8: d0: RNC
+00f9: d1: POP    D
+00fa: d2: JNC    addr: b3b2
+00fd: d3: OUT    port: b2
+00ff: d4: CNC    addr: b3b2
+0102: d5: PUSH   D
+0103: d6: SUI    b2
+0105: d7: RST    2
+0106: d8: RC
+0107: d9: RET
+0108: da: JC     addr: b3b2
+010b: db: IN     port: b2
+010d: dc: CC     addr: b3b2
+0110: dd: CALL   addr: b3b2
+0113: de: SBI    b2
+0115: df: RST    3
+0116: e0: RPO
+0117: e1: POP    H
+0118: e2: JPO    addr: b3b2
+011b: e3: XTHL
+011c: e4: CPO    addr: b3b2
+011f: e5: PUSH   H
+0120: e6: ANI    b2
+0122: e7: RST    4
+0123: e8: RPE
+0124: e9: PCHL
+0125: ea: JPE    addr: b3b2
+0128: eb: XCHG
+0129: ec: CPE    addr: b3b2
+012c: ed: CALL   addr: b3b2
+012f: ee: XRI    b2
+0131: ef: RST    5
+0132: f0: RP
+0133: f1: POP    PSW
+0134: f2: JP     addr: b3b2
+0137: f3: DI
+0138: f4: CP     addr: b3b2
+013b: f5: PUSH   PSW
+013c: f6: ORI    b2
+013e: f7: RST    6
+013f: f8: RM
+0140: f9: SPHL
+0141: fa: JM     addr: b3b2
+0144: fb: EI
+0145: fc: CM     addr: b3b2
+0148: fd: CALL   addr: b3b2
+014b: fe: CPI    addr: b2
+014d: ff: RST    7
