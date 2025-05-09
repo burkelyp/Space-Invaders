@@ -67,9 +67,4 @@ void output_port(State8080* cpu, uint8_t port, uint8_t a);
 * @param debug debug mode prints information about each instruction being called.
 * @return void: executes instruction sets and updates cpu state.
 */
-<<<<<<< HEAD
 void Emulate8080Op(State8080* cpu);
-=======
-
-void Emulate8080Op(State8080* cpu, bool debug = false);
->>>>>>> 084aae831329db070c19a00d98197ffff7e19a45
