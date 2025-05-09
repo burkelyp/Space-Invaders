@@ -35,8 +35,7 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
 
         for (int bit = 0; bit < 8; bit++) {
             if ((byte >> bit) & 1) {
-                SDL_RenderPoint(renderer, SCREEN_WIDTH - col, row + bit);
-
+                SDL_RenderPoint(renderer, col, SCREEN_HEIGHT - (row + bit) - 1);
             }
         }
     }

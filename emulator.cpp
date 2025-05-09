@@ -46,7 +46,8 @@ void setZSPflags(State8080* cpu, uint8_t result) {
 void Emulate8080Op(State8080* cpu) {
     uint8_t* code = &cpu->memory[cpu->pc];
     #ifdef DEBUG
-		printf("%04x ", cpu->pc);
+		printf("pc: %04x  sp: %04x  a: %02x  bc: %02x%02x  de: %02x%02x  hl: %02x%02x  flags: z: %01x  s: %01x  p: %01x  cy: %01x  ac: %01x\n\t",
+            cpu->pc, cpu->sp, cpu->a, cpu->b, cpu->c, cpu->d, cpu->e, cpu->h, cpu->l, cpu->flags.z, cpu->flags.s, cpu->flags.p, cpu->flags.c, cpu->flags.ac);
 	#endif
     switch (*code) {
     case 0x00:
