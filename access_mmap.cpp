@@ -19,11 +19,13 @@ int init_mmap(State8080* state) {
 
         CloseHandle(mmap.h_map_file);
 
+
         return 1;
     }
 
     // buffer_ptr for initcpu
     initCPU(state, mmap.buffer_ptr);
+
     //#endif
     return 0;
 }

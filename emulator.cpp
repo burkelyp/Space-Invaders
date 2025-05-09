@@ -23,6 +23,13 @@
 
 
 void setZSPflags(State8080* cpu, uint8_t result) {
+    /**
+    * Sets Zero, Sign, and Parity flags based on {result}.
+    *
+    * @param cpu State of the cpu object.
+    * @param result Result that the flags will be based on.
+    * @return void: updates state of the flags in the cpu object.
+    */
     cpu->flags.z = (result == 0);
     cpu->flags.s = (result >= 0x80);
     
@@ -37,6 +44,18 @@ void setZSPflags(State8080* cpu, uint8_t result) {
 
 
 void Emulate8080Op(State8080* cpu, bool debug) {
+    /**
+    * Emulates the Intel 8080 cpu. The cpu has been initialized and the
+    * rom file should be loaded into memory. This function reads the
+    * current opcode that the program counter is pointing to, and carries
+    * out the corresponding instruction. This includes updating the state
+    * of the cpu: register values, flags, pointers, memory, stack, etc.
+    *
+    * @param cpu State of the cpu object.
+    * @param debug debug mode prints information about each instruction being called.
+    * @return void: executes instruction sets and updates cpu state.
+    */
+
     uint8_t* code = &cpu->memory[cpu->pc];
     if (debug) { printf("%04x ", cpu->pc); }
     switch (*code) {
@@ -1983,8 +2002,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CNZ    addr: %04x", addr); } // Call on non-zero: jump to a new location in memory if the zero flag is not set
+        cpu->pc += 3;
         if (cpu->flags.z == 0) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -1992,7 +2011,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2074,8 +2092,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CZ     addr: %04x", addr); } // Call on zero: jump to new location in memory if zero flag is set
+        cpu->pc += 3;
         if (cpu->flags.z) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2083,7 +2101,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2175,8 +2192,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CNC    addr: %04x", addr); } // Call on non-carry: jump to a new location in memory if the carry flag is not set
+        cpu->pc += 3;
         if (cpu->flags.c == 0) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2184,7 +2201,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2273,8 +2289,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CC     addr: %04x", addr); } // Call on carry: jump to new location in memory if carry flag is set
+        cpu->pc += 3;
         if (cpu->flags.c) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2282,7 +2298,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2373,8 +2388,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CPO    addr: %04x", addr); } // Call on parity-odd: jump to a new location in memory if the parity flag is odd
+        cpu->pc += 3;
         if (cpu->flags.p == 0) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2382,7 +2397,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2467,8 +2481,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CPO    addr: %04x", addr); } // Call on parity-even: jump to a new location in memory if the parity flag is even
+        cpu->pc += 3;
         if (cpu->flags.p) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2476,7 +2490,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17; //should this be CPE?
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2568,8 +2581,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CP     addr: %04x", addr); } // Call on positive: jump to a new location in memory if the sign flag is not set
+        cpu->pc += 3;
         if (cpu->flags.s == 0) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2577,7 +2590,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;
@@ -2667,8 +2679,8 @@ void Emulate8080Op(State8080* cpu, bool debug) {
     {
         uint16_t addr = (code[2] << 8) | code[1];
         if (debug) { printf("CM     addr: %04x", addr); } // Call on minus: jump to new location in memory if sign flag is set
+        cpu->pc += 3;
         if (cpu->flags.s == 0) {
-            cpu->pc += 3;
             cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
             cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
             cpu->sp -= 2;
@@ -2676,7 +2688,6 @@ void Emulate8080Op(State8080* cpu, bool debug) {
             cpu->cycles += 17;
         }
         else {
-            cpu->pc += 3;
             cpu->cycles += 11;
         }
         break;

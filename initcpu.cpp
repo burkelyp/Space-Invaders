@@ -16,6 +16,7 @@ void initCPU(State8080* state) {
     state->shift_registers = { 0, 0, 0 };
     state->ports = { new uint8_t,  new uint8_t,  new uint8_t,  new uint8_t,  new uint8_t,  new uint8_t,  new uint8_t };
 
+
     if ((state->memory = (uint8_t*)malloc(MEMORY_SIZE)) == nullptr) {
         std::cerr << "Failed to allocate memory." << std::endl;
         exit(1);

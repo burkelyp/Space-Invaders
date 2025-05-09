@@ -1,4 +1,5 @@
 #pragma once
+
 #ifndef MEMORY_MAP
 #define MEMORY_MAP
 #define MAPPED_NAME TEXT("/SpaceInvaders")
@@ -6,6 +7,7 @@
 #include "initcpu.h"
 
 #ifdef _WIN64
+
     #include <Windows.h>
 #endif
 
@@ -16,5 +18,6 @@ struct memory_map {
 };
 
 int init_mmap(State8080* state);
+
 
 #endif

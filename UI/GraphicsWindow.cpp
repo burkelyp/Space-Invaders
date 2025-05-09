@@ -9,6 +9,7 @@
 #include <qmenu.h>
 #include <qmenubar.h>
 #include <qmetaobject.h>
+
 #include <qobject.h>
 #include <qopenglfunctions.h>
 #include <qtimer.h>
@@ -21,6 +22,7 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 	setupMemMap();
 	this->setAutoFillBackground(false);
 	this->setFocusPolicy(Qt::StrongFocus);
+
 	colorMap = QImage("ColorMap.PNG");
 	
 	// Testing BitMap
@@ -49,7 +51,8 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 
 GraphicsWindow::~GraphicsWindow()
 {
-	// Closing Memory Mapping
+
+  // Closing Memory Mapping
 #ifdef Q_OS_WIN
 	// Windows-specific code
 	UnmapViewOfFile(memptr);
@@ -181,8 +184,10 @@ void GraphicsWindow::initializeGL()
 void GraphicsWindow::resizeGL(int w, int h)
 {
 	QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
-	m_width = w;
+
+  m_width = w;
 	m_height = h;
+
 	//f->glViewport(0, -13, 220, h);
 }
 
@@ -190,12 +195,15 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 {
 	//resizeGL(event->rect().width(), event->rect().height());
 	rect = event->rect();
-	//paintGL();
+
+  //paintGL();
+
 	//((QWidget*)this->parent())->repaint();
 	//QOpenGLWidget::paintEvent(event);
 	
 	// Simple proof of concept animation
 	QPainter painter(this);
+
 	painter.setRenderHint(QPainter::Antialiasing);
 	QRect rect = event->rect();
 	QSize rotateSize = QSize(rect.height(), rect.width());
@@ -237,6 +245,7 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 	this->resize(rect.size());
 	//QOpenGLWidget::paintEvent(event);
 	//this->repaint();
+
 }
 
 void GraphicsWindow::test()
@@ -534,3 +543,4 @@ bool SICombinations::setCombination(QString action, QString hotkey)
 	}
 	return false;
 }
+

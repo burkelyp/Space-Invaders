@@ -8,6 +8,7 @@
 
 /**
 * Gets input from keyboard and returns value to instruction set 'IN'.
+
 *
 * @param port location of input to be returned.
 * @return val sent to port after funciton. Could change to initalize port
@@ -17,6 +18,7 @@ uint8_t input_port(State8080* cpu, uint8_t port);
 
 /**
 * Gets input from keyboard and returns value to instruction set 'IN'.
+
 *
 * @param cpu maintains cpu state. Can replace other arguments, but
 * keeping port and a for testing with other opcode implementations.
@@ -27,4 +29,3 @@ uint8_t input_port(State8080* cpu, uint8_t port);
 void output_port(State8080* cpu, uint8_t port, uint8_t a);
 
 #endif
-
