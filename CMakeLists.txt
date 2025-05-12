@@ -2,9 +2,25 @@ cmake_minimum_required(VERSION 3.10)
 # Define the project
 project(SpaceInvadersProject LANGUAGES CXX) # Choose a name for your project
 
+include(FetchContent)
+
+# Try to find SDL3 first
+find_package(SDL3 QUIET CONFIG)
+
+if (NOT SDL3_FOUND)
+    message(STATUS "SDL3 not found, fetching and building it...")
+
+    FetchContent_Declare(
+        SDL3
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
+        GIT_TAG release-3.0.0  # or main if you want bleeding edge
+    )
+    FetchContent_MakeAvailable(SDL3)
+endif()
+
 # --- Determine Platform ---
 # Detect platform and define macro
-if(_WIN64)
+if(WIN32)
     add_definitions(-DPLATFORM_WINDOWS)
 endif()
 
@@ -26,13 +42,8 @@ target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 add_executable(SpaceInvaders
     main.cpp
 )
-
-# Find SDL3 manually
-include_directories(/usr/local/include/SDL3)
-link_directories(/usr/local/lib)
-
-# Link it with the emulator library
-target_link_libraries(SpaceInvaders PRIVATE emulator_lib SDL3)
+# Link SDL3
+target_link_libraries(SpaceInvaders PRIVATE SDL3::SDL3)
 
 # Include paths (optional if already handled by the lib)
 target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -44,32 +55,17 @@ target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 if(CMAKE_BUILD_TYPE STREQUAL "debug")
     target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
     add_compile_definitions(DEBUG)
-    # --- Define the Manual Test Executable ---
-    # Add the new executable target for manual tests
-    add_executable(ManualEmulatorTests
-    test/manual_tests.cpp # Path to your new file
-    )
-
-    # Link it against your emulator code library
-    target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
-
-    # Make sure the test executable can find emulator.h, cpu.h etc.
-    # This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
-    target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
+# --- Define the Manual Test Executable ---
+# Add the new executable target for manual tests
+add_executable(ManualEmulatorTests
+test/manual_tests.cpp # Path to your new file
+)
 
-# --- Optional: CTest Integration ---
-# Uncomment these lines if you want to use `make test` or `ctest` later
-# Ensure include(CTest) and enable_testing() only appear ONCE in your entire CMakeLists.txt
-# include(CTest)
-# enable_testing()
-# add_test(NAME RunManualTests COMMAND ManualEmulatorTests)
+# Link it against your emulator code library
+target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
 
-# --- NOTE: ---
-# Make sure you have these lines near the TOP of your CMakeLists.txt file:
-# cmake_minimum_required(VERSION 3.14) # Or your preferred minimum version
-# project(SpaceInvadersEmulator LANGUAGES CXX)
-# set(CMAKE_CXX_STANDARD 11) # Or 14, 17, 20
-# set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# set(CMAKE_CXX_EXTENSIONS OFF)
+# Make sure the test executable can find emulator.h, cpu.h etc.
+# This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
+target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
