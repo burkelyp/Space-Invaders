@@ -21,7 +21,7 @@ void test_op_nop() {
     state.pc = 0x0100; // Start PC at some address
     state.memory[state.pc] = 0x00; // Put NOP opcode in memory
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     // Verify results
     if (state.pc != 0x0101) {
@@ -42,7 +42,7 @@ void test_op_mvi_b() {
      state.memory[state.pc] = 0x06; 
      state.memory[state.pc + 1] = 0xAB;
 
-     Emulate8080Op(&state, false);
+     Emulate8080Op(&state);
 
      if (state.b != 0xAB) {
          test_failed(test_name, "Register B should be 0xAB");
@@ -69,7 +69,7 @@ void test_op_lxi_b(){
     state.memory[state.pc +1] = 0x34;
     state.memory[state.pc +2] = 0x12;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if (state.b != 0x12 || state.c !=0x34){
         test_failed(test_name, "Register b should be 0x12");
@@ -96,7 +96,7 @@ void test_op_dcr_b(){
     state.flags.c = 1;
     state.memory[state.pc] = 0x05;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if(state.b != 0x00){
         test_failed(test_name, "Register B should have decremented");
@@ -144,7 +144,7 @@ void test_op_dad_b(){
     state.pc = 0x100;
     state.memory[state.pc] = 0x09;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     uint16_t hl = (state.h <<8) | state.l;
     if (hl != 0x2345){
@@ -177,7 +177,7 @@ void test_op_dcr_c(){
     state.flags.c = 1;
     state.memory[state.pc] = 0x0d;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if (state.c != 0x01){
         test_failed(test_name, "Register C should be 0x01");
@@ -225,7 +225,7 @@ void test_op_mvi_c(){
     state.memory[state.pc] = 0x0e;
     state.memory[state.pc + 1] = 0x00;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
 
     if(state.c != 0x00){
@@ -281,7 +281,7 @@ void test_op_rrc(){
     state.flags.c = 0;
     state.memory[state.pc] = 0x0f;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if(state.a != 0xC9){
         test_failed(test_name, "Register A should be 0xc9");
@@ -314,7 +314,7 @@ void test_op_lxi_d(){
     state.memory[state.pc + 1] = 0x34;
     state.memory[state.pc + 2] = 0x12;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if(state.d != 0x12){
         test_failed(test_name,"Register D should be 0x12");
@@ -348,7 +348,7 @@ void test_op_inx_d(){
     state.pc = 0x40f;
     state.memory[state.pc] = 0x13;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     uint16_t de = (state.d << 8) | state.e;
     
@@ -379,7 +379,7 @@ void test_op_dad_d(){
     state.pc = 0x0200;
     state.memory[state.pc] = 0x19;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     uint16_t hl = (state.h << 8) | state.l;
     uint16_t expected_hl = 0x1234 + 0x1112;
@@ -414,7 +414,7 @@ void test_op_ldax_d(){
     state.memory[0x2010] = 0xab;
     state.pc = 0x0300;
     state.memory[state.pc] = 0x1a;
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if (state.a!= 0xab){
         test_failed(test_name, "Register A should be been loaded from DE");
@@ -440,7 +440,7 @@ void test_op_lxi_h() {
     state.memory[state.pc + 1] = 0x78;
     state.memory[state.pc + 2] = 0x56;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.h != 0x56 || state.l != 0x78) {
         test_failed(test_name, "h should be 0x56 and l should be 0x78");
@@ -468,7 +468,7 @@ void test_op_inx_h() {
     state.pc = 0x600;
     state.memory[state.pc] = 0x23;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.h != 0x13 || state.l != 0x00) {
         test_failed(test_name, "hl should have incremented correctly");
@@ -494,7 +494,7 @@ void test_op_mvi_h() {
     state.memory[state.pc] = 0x26;
     state.memory[state.pc + 1] = 0xAB;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.h != 0xAB) {
         test_failed(test_name, "h should be 0xAB");
@@ -523,7 +523,7 @@ void test_op_dad_h() {
     state.pc = 0x800;
     state.memory[state.pc] = 0x29;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     uint16_t hl = (state.h << 8) | state.l;
     if (hl != 0xACF0) {
@@ -551,7 +551,7 @@ void test_op_lxi_sp() {
     state.memory[state.pc + 1] = 0x34;
     state.memory[state.pc + 2] = 0x12;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.sp != 0x1234) {
         test_failed(test_name, "sp should be 0x1234");
@@ -579,7 +579,7 @@ void test_op_sta() {
     state.memory[state.pc + 1] = 0x00;
     state.memory[state.pc + 2] = 0x20;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[0x2000] != 0x56) {
         test_failed(test_name, "memory at 0x2000 should be 0x56");
@@ -607,7 +607,7 @@ void test_op_mvi_m() {
     state.memory[state.pc] = 0x36;
     state.memory[state.pc + 1] = 0x78;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[0x2000] != 0x78) {
         test_failed(test_name, "memory at 0x2000 should be 0x78");
@@ -635,7 +635,7 @@ void test_op_mov_d() {
     state.pc = 0xC00;
     state.memory[state.pc] = 0x56;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.d != 0x99) {
         test_failed(test_name, "d should be 0x99");
@@ -661,7 +661,7 @@ void test_op_mov_e() {
     state.pc = 0xD00;
     state.memory[state.pc] = 0x5B;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.e != 0x77) {
         test_failed(test_name, "e should remain 0x77");
@@ -687,7 +687,7 @@ void test_op_mov_h() {
     state.pc = 0xD10;
     state.memory[state.pc] = 0x64;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.h != 0x88) {
         test_failed(test_name, "h should remain 0x88");
@@ -713,7 +713,7 @@ void test_op_mov_l() {
     state.pc = 0xD20;
     state.memory[state.pc] = 0x6D;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.l != 0x99) {
         test_failed(test_name, "l should remain 0x99");
@@ -741,7 +741,7 @@ void test_op_mov_m() {
     state.pc = 0xD30;
     state.memory[state.pc] = 0x77;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[0x2030] != 0xAB) {
         test_failed(test_name, "memory at 0x2030 should be 0xAB");
@@ -767,7 +767,7 @@ void test_op_mov_a_d() {
     state.pc = 0xD40;
     state.memory[state.pc] = 0x7A;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x44) {
         test_failed(test_name, "a should be 0x44");
@@ -793,7 +793,7 @@ void test_op_mov_a_e() {
     state.pc = 0xD50;
     state.memory[state.pc] = 0x7B;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x55) {
         test_failed(test_name, "a should be 0x55");
@@ -819,7 +819,7 @@ void test_op_mov_a_h() {
     state.pc = 0xD60;
     state.memory[state.pc] = 0x7C;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x66) {
         test_failed(test_name, "a should be 0x66");
@@ -847,7 +847,7 @@ void test_op_mov_a_m() {
     state.pc = 0xD70;
     state.memory[state.pc] = 0x7E;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x77) {
         test_failed(test_name, "a should be 0x77");
@@ -875,7 +875,7 @@ void test_op_ana_b(){
     state.memory[state.pc] = 0xa0;
     uint8_t expected_a = state.a & state.b;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if(state.a != expected_a){
         test_failed(test_name, "Expected value of Register A incorrect.");
@@ -926,7 +926,7 @@ void test_op_xra_b() {
     state.pc = 0x600;
     state.memory[state.pc] = 0xA8;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x00) {
         test_failed(test_name, "a should be 0x00");
@@ -979,7 +979,7 @@ void test_op_pop_b(){
     state.memory[0x0200] = 0xc1;
     state.pc = 0x0200;
     
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
     
     if (state.b != 0x12){
         test_failed(test_name, "Register B should be 0x12");
@@ -1019,7 +1019,7 @@ void test_op_jnz_adr() {
     state.memory[state.pc + 2] = 0x56;
     state.flags.z = 0;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.pc != 0x5678) {
         test_failed(test_name, "PC should jump to 0x5678 when zero flag is not set");
@@ -1040,7 +1040,7 @@ void test_op_jmp_adr() {
     state.memory[state.pc + 1] = 0x00;
     state.memory[state.pc + 2] = 0x20;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.pc != 0x2000) {
         test_failed(test_name, "PC should jump to 0x2000");
@@ -1062,7 +1062,7 @@ void test_op_push_b() {
     state.c = 0x34;
     state.memory[state.pc] = 0xc5;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[state.sp + 1] != 0x12 || state.memory[state.sp] != 0x34) {
         test_failed(test_name, "Memory at SP should contain C and B after PUSH");
@@ -1095,7 +1095,7 @@ void test_op_adi_d8() {
     state.memory[state.pc] = 0xc6;
     state.memory[state.pc + 1] = 0x22;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x32) {
         test_failed(test_name, "A should be 0x32 after addition");
@@ -1123,7 +1123,7 @@ void test_op_ret() {
     state.memory[0x200] = 0xc9;
     state.pc = 0x200;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.pc != 0x5678) {
         test_failed(test_name, "PC should be set to address popped from stack");
@@ -1151,7 +1151,7 @@ void test_op_call_adr() {
     state.memory[state.pc + 1] = 0x00;
     state.memory[state.pc + 2] = 0x20;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.pc != 0x2000) {
         test_failed(test_name, "PC should jump to 0x2000");
@@ -1159,7 +1159,7 @@ void test_op_call_adr() {
         return;
     }
 
-    if (state.memory[state.sp] != 0x00 || state.memory[state.sp + 1] != 0x03) {
+    if (state.memory[state.sp] != 0x03 || state.memory[state.sp + 1] != 0x03) {
         test_failed(test_name, "Return address should be pushed onto stack");
         printf("Memory at SP: 0x%02x 0x%02x\n", state.memory[state.sp], state.memory[state.sp + 1]);
         return;
@@ -1185,7 +1185,7 @@ void test_op_pop_d() {
     state.memory[0x300] = 0xd1;
     state.pc = 0x300;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.e != 0x34 || state.d != 0x12) {
         test_failed(test_name, "d and e should load values from stack");
@@ -1214,7 +1214,7 @@ void test_op_pop_d() {
 //     state.memory[state.pc + 1] = 0x42;
 //     state.a = 0xab;
 
-//     Emulate8080Op(&state, false);
+//     Emulate8080Op(&state);
 
 //     if (state.pc != 0x502) {
 //         test_failed(test_name, "pc should move forward by 2 after out");
@@ -1237,7 +1237,7 @@ void test_op_push_d() {
     state.pc = 0x400;
     state.memory[state.pc] = 0xd5;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[state.sp] != 0x34 || state.memory[state.sp + 1] != 0x12) {
         test_failed(test_name, "stack should contain e then d after push");
@@ -1265,7 +1265,7 @@ void test_op_pop_h() {
     state.memory[0x600] = 0xe1;
     state.pc = 0x600;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.l != 0x56 || state.h != 0x78) {
         test_failed(test_name, "h and l should load values from stack");
@@ -1293,7 +1293,7 @@ void test_op_push_h() {
     state.pc = 0x700;
     state.memory[state.pc] = 0xe5;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.memory[state.sp] != 0xbc || state.memory[state.sp + 1] != 0x9a) {
         test_failed(test_name, "stack should contain l then h after push");
@@ -1320,7 +1320,7 @@ void test_op_ani() {
     state.memory[state.pc] = 0xe6;
     state.memory[state.pc + 1] = 0x0f;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0x00) {
         test_failed(test_name, "a should be 0x00 after ani");
@@ -1354,7 +1354,7 @@ void test_op_xchg() {
     state.pc = 0x100;
     state.memory[state.pc] = 0xeb;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.h != 0x56 || state.l != 0x78 || state.d != 0x12 || state.e != 0x34) {
         test_failed(test_name, "h/l and d/e should be swapped");
@@ -1376,7 +1376,7 @@ void test_op_pop_psw() {
     state.pc = 0x200;
     state.memory[state.pc] = 0xf1;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.a != 0xab) {
         test_failed(test_name, "accumulator should be loaded from stack");
@@ -1409,7 +1409,7 @@ void test_op_push_psw() {
     state.pc = 0x300;
     state.memory[state.pc] = 0xf5;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     uint8_t flags_packed = (state.flags.s << 7) | (state.flags.z << 6) | (state.flags.ac << 4) |
                             (state.flags.p << 2) | (state.flags.c) | 0x02;
@@ -1437,7 +1437,7 @@ void test_op_ei() {
     state.pc = 0x600;
     state.memory[state.pc] = 0xfb;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.interrupt_enabled != 1) {
         test_failed(test_name, "interrupt_enable should be set to 1 after ei");
@@ -1458,7 +1458,7 @@ void test_op_cpi_d8() {
     state.memory[state.pc] = 0xfe;
     state.memory[state.pc + 1] = 0x20;
 
-    Emulate8080Op(&state, false);
+    Emulate8080Op(&state);
 
     if (state.flags.z != 1) {
         test_failed(test_name, "zero flag should be set when a == immediate");

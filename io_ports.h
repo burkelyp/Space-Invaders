@@ -7,7 +7,8 @@
 // Block comments written partly by Burkely and updated by Zach after implementing code. Currently unable to test without keyboard mapping. 
 
 /**
-* Gets input from keyboard and returns value to in struction set 'IN'.
+* Gets input from keyboard and returns value to instruction set 'IN'.
+
 *
 * @param port location of input to be returned.
 * @return val sent to port after funciton. Could change to initalize port
@@ -16,7 +17,8 @@
 uint8_t input_port(State8080* cpu, uint8_t port);
 
 /**
-* Gets input from keyboard and returns value to in struction set 'IN'.
+* Gets input from keyboard and returns value to instruction set 'IN'.
+
 *
 * @param cpu maintains cpu state. Can replace other arguments, but
 * keeping port and a for testing with other opcode implementations.
@@ -27,4 +29,3 @@ uint8_t input_port(State8080* cpu, uint8_t port);
 void output_port(State8080* cpu, uint8_t port, uint8_t a);
 
 #endif
-

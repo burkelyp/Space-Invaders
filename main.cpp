@@ -2,8 +2,9 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <SDL.h>
-#include "initcpu.h"
+#include <SDL3/SDL.h>
+//#include "initcpu.h"
+
 #include "loadrom.h"
 #include "emulator.h"
 
@@ -34,37 +35,11 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
 
         for (int bit = 0; bit < 8; bit++) {
             if ((byte >> bit) & 1) {
-                SDL_RenderDrawPoint(renderer, SCREEN_WIDTH - col, row + bit);
+                SDL_RenderPoint(renderer, col, SCREEN_HEIGHT - (row + bit) - 1);
             }
         }
     }
     SDL_RenderPresent(renderer);
-}
-
-/**
-   Disassembles a single 8080 instruction from the code buffer and prints its assembly equivalent
-
-   @param codebuffer - pointer to the start of the 8080 program code
-   @param pc - current program counter (offset into codebuffer)
-   @return number of bytes the current instruction occupies
-*/
-int Disassemble8080Op(uint8_t* codebuffer, int pc) {
-    uint8_t* code = &codebuffer[pc];
-    int opbytes = 1;
-    std::printf("%04x ", pc);
-    switch (*code) {
-    case 0x00: std::printf("NOP"); break;
-    case 0x01: std::printf("LXI    B,#$%02x%02x", code[2], code[1]); opbytes = 3; break;
-    case 0x02: std::printf("STAX   B"); break;
-    case 0x03: std::printf("INX    B"); break;
-    case 0x04: std::printf("INR    B"); break;
-    case 0x05: std::printf("DCR    B"); break;
-    case 0x06: std::printf("MVI    B,#$%02x", code[1]); opbytes = 2; break;
-    case 0x07: std::printf("RLC"); break;
-    default: std::printf("UNKNOWN %02x", *code); break;
-    }
-    std::printf("\n");
-    return opbytes;
 }
 
 /**
@@ -83,14 +58,17 @@ int main(int argc, char** argv) {
 
 
     State8080 state;
-    initCPU(&state);
+    if (init_mmap(&state)) {
+        initCPU(&state);
+    }
+
     loadROM(argv[1], &state);
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window* window = SDL_CreateWindow("Space Invaders",
-        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-        SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+        SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_RESIZABLE);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
+
 
     bool running = true;
     SDL_Event event;
@@ -98,7 +76,8 @@ int main(int argc, char** argv) {
     int interrupt_num = 1;
 
     bool paused = false;
-    bool debug_mode = false;
+    bool debug_mode = true;
+
     bool log_cycles = true;
     bool single_step = false;
 
@@ -108,24 +87,25 @@ int main(int argc, char** argv) {
 
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
+            if (event.type == SDL_EVENT_QUIT) {
                 running = false;
             }
-            else if (event.type == SDL_KEYDOWN) {
-                switch (event.key.keysym.sym) {
-                case SDLK_p:
+            else if (event.type == SDL_EVENT_KEY_DOWN) {
+                switch (event.key.key) {
+                case SDLK_P:
                     paused = !paused;
                     std::cout << (paused ? "Paused\n" : "Resumed\n");
                     break;
-                case SDLK_d:
+                case SDLK_D:
                     debug_mode = !debug_mode;
                     std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n");
                     break;
-                case SDLK_l:
+                case SDLK_L:
                     log_cycles = !log_cycles;
                     std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n");
                     break;
-                case SDLK_n:
+                case SDLK_N:
+
                     if (paused) {
                         single_step = true;
                         std::cout << "Single step requested\n";
@@ -147,11 +127,12 @@ int main(int argc, char** argv) {
         }
 
         uint64_t cycles_before_op = state.cycles;
-        Emulate8080Op(&state, debug_mode);
+        Emulate8080Op(&state);
         uint64_t op_cycles = state.cycles - cycles_before_op;
         cycles_for_interrupt_timing += op_cycles;
 
-        if (debug_mode) {
+        if (!debug_mode) {
+
             std::cout << std::hex;
             std::cout << "[DEBUG] PC: " << state.pc
                 << " SP: " << state.sp

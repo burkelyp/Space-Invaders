@@ -4,9 +4,10 @@ uint8_t input_port(State8080* cpu, uint8_t port) {
 
     uint8_t val = 0;
     switch (port) {
-    case 0x00: val = cpu->ports.port0; break;
-    case 0x01: val = cpu->ports.port1; break; // Player 1 input
-    case 0x02: val = cpu->ports.port2; break; // Player 2 input
+    case 0x00: val = *cpu->ports.port0; break;
+    case 0x01: val = *cpu->ports.port1; break; // Player 1 input
+    case 0x02: val = *cpu->ports.port2; break; // Player 2 input
+
     case 0x03: {
         uint16_t v = (cpu->shift_registers.shift1 << 8) | cpu->shift_registers.shift0;
         val = ((v >> (8 - cpu->shift_registers.shift_offset)) & 0xff); // Shift register result
@@ -28,7 +29,8 @@ void output_port(State8080* cpu, uint8_t port, uint8_t a) {
         break;
     }
     case 0x03: {
-        cpu->ports.port3 = a;
+        *cpu->ports.port3 = a;
+
         break;
     }
     case 0x04: {
@@ -37,7 +39,8 @@ void output_port(State8080* cpu, uint8_t port, uint8_t a) {
         break;
     }
     case 0x05: {
-        cpu->ports.port5 = a;
+        *cpu->ports.port5 = a;
+
         break;
     }
     default: {

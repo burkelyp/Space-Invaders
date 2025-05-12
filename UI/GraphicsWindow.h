@@ -1,11 +1,28 @@
 #pragma once
 
+#ifdef Q_OS_WIN
+	#include <windows.h>
+// Windows-specific code
+#elif defined(Q_OS_LINUX)
+	#include <sys/shm.h>
+// Linux-specific code
+#elif defined(Q_OS_MAC)
+	#include <sys/shm.h>
+// macOS-specific code
+#endif
+
+#include <qaction.h>
 #include <qbytearray.h>
 #include <qcolortransform.h>
+#include <qevent.h>
+#include <qimage.h>
+#include <qlayout.h>
+#include <qmatrix4x4.h>
 #include <qopenglbuffer.h>
 #include <qopenglshaderprogram.h>
-#include <qopenglcontext.h>
 #include <qopengltexture.h>
+#include <qopenglvertexarrayobject.h>
+
 #include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
@@ -15,10 +32,62 @@
 
 #include "SDL3/SDL.h"
 
+const int MEM_SIZE = 0x10007;
 const int SCREEN_RESOLUTION = 57344; //(256x224)
 const int FRAME_RATE = 60;
+const char MAPPED_NAME[] = "/SpaceInvaders";
+const int KEYBIND_AMOUNT = 9;
 
+// TODO make this class less proprietary so it can be used with all emulators
 
+/**
+ * Action manager for the Space Invaders hotkeys
+ *
+ * Instantiates, assigns, modifies, and retrieves actions for the 
+ * game Space Invaders
+ */
+class SICombinations : public QObject {
+public:
+	/**
+	   Constructor initializes actions
+
+	   @param parent - the parent widget
+	   @return void
+	*/
+	SICombinations(QWidget* parent = nullptr);
+
+	/**
+	   Retrieves the action specified by action
+
+	   @param action - the action to retrieve
+	   @return QAction* action that was specified else nullptr
+	*/
+	QKeySequence* getCombination(QString action);
+
+	/**
+	   Sets the provided hotkey key combination to the provided action
+
+	   @param action - the action to assign
+	   @param hotkey - the key combination to assign to the action
+	   @return true on sucess else false
+	*/
+	bool setCombination(QString action, QString hotkey);
+
+protected:
+	QKeySequence* combos[KEYBIND_AMOUNT];
+	// Contains keybind Names
+	QString comboNames[KEYBIND_AMOUNT] = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
+	// Contains default Bindings
+	QString defaultCombos[KEYBIND_AMOUNT] = { "A", "D", "W", "Enter", "Left", "Right", "Up", "Num+Enter", "1"};
+};
+
+/**
+ * Centralized openGL visuals renderer
+ *
+ * This class is the central widget that manages the space invaders 
+ * inter-process communication and reads and displays space invaders 
+ * video memory.
+ */
 class GraphicsWindow : public QOpenGLWidget {
 	Q_OBJECT
 public:
@@ -28,22 +97,25 @@ public:
 	   @param parent - the parent widget
 	   @return void
 	*/
-	GraphicsWindow(QWidget* parent);
+
+  GraphicsWindow(QWidget* parent = nullptr);
+
+	/**
+	   Deconstructor releases memory
+
+	   @return void
+	*/
 	~GraphicsWindow();
 
-private:
-	uchar map[SCREEN_RESOLUTION / 8] = { 0 };
-	QImage colorMap;
-	int o = 0;
-	int change = 85;
-	QRect rect;
-	GLuint tex;
-	QOpenGLBuffer* buff;
-	QOpenGLShaderProgram* program;
-	int vertexLocation;
-	int matrixLocation;
-	int colorLocation;
-	QOpenGLTexture* m_texture = nullptr;
+	/**
+	   Updates the specified bind to the hotkey hotkey
+
+	   @param bind - the map to update
+	   @param hotkey - the new key squence to bind
+	   @return void
+	*/
+	void updateKeyBind(const QString bind, const QString hotkey);
+
 
 protected:
 	/**
@@ -60,13 +132,95 @@ protected:
 	   @return void
 	*/
 	void test();
-	void paintGL() override;
-	void resizeGL(int w, int h) override;
+
+	/**
+	   Overrided initializeGL, Initializes openGL shaders and buffers
+
+	   @return void
+	*/
 	void initializeGL() override;
 
-};
+	/**
+	   Overrided resizeGL, Resizes openGL context
 
-class myPainter : public QPainter {
-public:
-	myPainter(QWidget* parent);
+	   @param w - the width to resize to
+	   @param h - the height to resize to
+	   @return void
+	*/
+	void resizeGL(int w, int h) override;
+
+	/**
+	   Overrided paintGL, renders openGL graphics onto the widget
+
+	   @return void
+	*/
+	void paintGL() override;
+
+	/**
+	   Initializes interprocess communication structure by setting up memory maps on a by-system basis
+
+	   @return uchar* memory location that was allocated and shared if successful else nullptr
+	*/
+	uchar* setupMemMap();
+
+	/**
+	   Overridden event to handle custom inputs by mapping key names to
+	   box rather than the corrisponding ASCII characters
+
+	   @param event - key press event
+	   @return void
+	*/
+	virtual void keyPressEvent(QKeyEvent* event) override;
+
+	/**
+	   Overridden event to to declare the input is done editing
+
+	   @param event - key press event
+	   @return void
+	*/
+	virtual void keyReleaseEvent(QKeyEvent* event) override;
+
+private:
+	/**
+	   Edits the given bit on the input ports stored in memory
+
+	   @param bit - the bit offset to edit
+	   @param set - if true set bit to 1 else set to 0
+	   @return void
+	*/
+	void editMemInputBit(int bit, bool set);
+
+private:
+	// Memory variables
+	uchar mem[MEM_SIZE] = { 0 };
+	uchar* map = mem + 0x2400;
+	uchar* ports = mem + 0x10000;
+	uchar* memptr;
+	void* handle;
+	int o = 0;
+	int change = 85;
+
+	// Keyboard Binds
+
+	SICombinations keyBinds;
+
+	// OpenGL variables
+	QImage colorMap;
+	//QImage gameImage;
+	int m_width;
+	int m_height;
+	QOpenGLTexture* m_texture = nullptr; 
+	QOpenGLBuffer* buff;
+	QOpenGLBuffer vbo = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+	QOpenGLVertexArrayObject vao;
+	QOpenGLShader* vertex;
+	QOpenGLShader* shader;
+	QOpenGLShaderProgram* program;
+	int vertexLocation;
+	int matrixLocation;
+	int colorLocation;
+	int texCoords;
+	GLuint tex;
+	QMatrix4x4 m_proj;
+	QRect rect;
 };

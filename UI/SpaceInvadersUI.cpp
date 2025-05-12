@@ -3,6 +3,7 @@
 #include <qapplication.h>
 #include <qfiledialog.h>
 #include <qmenubar.h>
+#include <qradiobutton.h>
 #include <qstylefactory.h>
 
 #include <qoperatingsystemversion.h>
@@ -14,6 +15,7 @@ int FILE_VERSION = 100;
 
 
 int main(int argc, char* argv[]) {
+	// Starting application
 	QApplication app = QApplication(argc, argv);
 	SIUI mainWindow;
 	mainWindow.show();
@@ -26,19 +28,36 @@ int main(int argc, char* argv[]) {
 
 SIUI::SIUI()
 {
+	// Initializing window
 	this->resize(448, 533);
 	this->setMinimumSize(224, 277);
+	currEmu = SPACE_INVADERS;
 
+	// Creating Menus
 	fileMenu = new QMenu("File", this);
 	QAction* openROM = new QAction("Open ROM", fileMenu);
 	fileMenu->addAction(openROM);
-
+	
 	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM);
 
-	this->menuBar()->addMenu(fileMenu);
+	keyMenu = new QMenu("Settings", this);
+	QAction* mapKeys = new QAction("Configure Inputs", fileMenu);
+	keyMenu->addAction(mapKeys);
 
-	window = new GraphicsWindow(this);
-	this->setCentralWidget(window);
+	QObject::connect(mapKeys, &QAction::triggered, this, &SIUI::OpenKeyboardMapper);
+
+	this->menuBar()->addMenu(fileMenu);
+	this->menuBar()->addMenu(keyMenu);
+
+	// Setting layout
+	QWidget* centralWidget = new QWidget();
+	QVBoxLayout* layout = new QVBoxLayout(centralWidget);
+	centralWidget->setLayout(layout);
+
+	window = new GraphicsWindow(centralWidget);
+	layout->addWidget(window);
+	layout->addWidget(new QRadioButton());
+	this->setCentralWidget(centralWidget);
 }
 
 void SIUI::SelectROM()
@@ -46,4 +65,11 @@ void SIUI::SelectROM()
 	QString fileName = QFileDialog::getOpenFileName(this,
 		tr("Open ROM"), "/home");
 	ROMDir = QDir(fileName);
+}
+
+void SIUI::OpenKeyboardMapper()
+{
+	KeyBoardMapper* mapper = new KeyBoardMapper(this);
+	QObject::connect(mapper, &KeyBoardMapper::keyBindUpdated, window, &GraphicsWindow::updateKeyBind);
+	mapper->show();
 }

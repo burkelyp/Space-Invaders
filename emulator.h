@@ -1,5 +1,7 @@
+#pragma once
 #include <cstdint> // Needed for uint8_t, uint16_t
-#include "initcpu.h"
+#include "access_mmap.h"
+
 
 
 // Put the State8080 struct definition here...
@@ -41,7 +43,28 @@ struct State8080 {
 */
 
 // Function Declarations
+/**
+* Sets Zero, Sign, and Parity flags based on {result}.
+*
+* @param cpu State of the cpu object.
+* @param result Result that the flags will be based on.
+* @return void: updates state of the flags in the cpu object.
+*/
 void setZSPflags(State8080* cpu, uint8_t result);
+
 uint8_t input_port(State8080* cpu, uint8_t port);
+
 void output_port(State8080* cpu, uint8_t port, uint8_t a);
-void Emulate8080Op(State8080* cpu, bool debug = false);
+
+/**
+* Emulates the Intel 8080 cpu. The cpu has been initialized and the
+* rom file should be loaded into memory. This function reads the
+* current opcode that the program counter is pointing to, and carries
+* out the corresponding instruction. This includes updating the state
+* of the cpu: register values, flags, pointers, memory, stack, etc.
+*
+* @param cpu State of the cpu object.
+* @param debug debug mode prints information about each instruction being called.
+* @return void: executes instruction sets and updates cpu state.
+*/
+void Emulate8080Op(State8080* cpu);
