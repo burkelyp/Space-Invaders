@@ -34,14 +34,15 @@ add_library(emulator_lib
     # Add any other core .cpp files needed by the emulator
 )
 
-# Tell CMake where to find headers for emulator_lib (cpu.h, emulator.h...)
-# PUBLIC makes the include path available to emulator_lib AND anything linking to it.
-target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
 # --- Define the Main Emulator Executable ---
 add_executable(SpaceInvaders
     main.cpp
 )
+
+# Tell CMake where to find headers for emulator_lib (cpu.h, emulator.h...)
+# PUBLIC makes the include path available to emulator_lib AND anything linking to it.
+target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
 # Link SDL3
 target_link_libraries(SpaceInvaders PRIVATE SDL3::SDL3)
 
