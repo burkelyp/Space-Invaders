@@ -95,11 +95,11 @@ jobs:
 
     - name: Run manual tests
       if: matrix.os == 'ubuntu-latest'
-      run: ./manual_tests
+      run: ./ManualEmulatorTests
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
 
     - name: Run manual tests (Windows)
       if: matrix.os == 'windows-latest'
-      run: manual_tests.exe
+      run: ManualEmulatorTests.exe
       shell: cmd
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
