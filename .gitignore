@@ -1,3 +1,9 @@
 .vscode/
 .env
 /.vs/
+bin/
+build/
+lib/
+lib64
+pyvenv.cfg
+
