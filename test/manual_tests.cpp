@@ -1530,7 +1530,12 @@ int main() {
     test_op_push_psw();
     test_op_ei();
     test_op_cpi_d8();
-    
+
+    if (failed_count > 0) {
+        printf("Manual testing failed with %d failures.\n", failed_count);
+        return 1;
+    }
+
     printf("Manual Tests Complete.\n");
 
     return 0;

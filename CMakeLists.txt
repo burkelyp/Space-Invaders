@@ -38,19 +38,3 @@ target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
 # Make sure the test executable can find emulator.h, cpu.h etc.
 # This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
 target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-
-# --- Optional: CTest Integration ---
-# Uncomment these lines if you want to use `make test` or `ctest` later
-# Ensure include(CTest) and enable_testing() only appear ONCE in your entire CMakeLists.txt
-# include(CTest)
-# enable_testing()
-# add_test(NAME RunManualTests COMMAND ManualEmulatorTests)
-
-# --- NOTE: ---
-# Make sure you have these lines near the TOP of your CMakeLists.txt file:
-# cmake_minimum_required(VERSION 3.14) # Or your preferred minimum version
-# project(SpaceInvadersEmulator LANGUAGES CXX)
-# set(CMAKE_CXX_STANDARD 11) # Or 14, 17, 20
-# set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# set(CMAKE_CXX_EXTENSIONS OFF)
