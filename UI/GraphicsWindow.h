@@ -22,7 +22,6 @@
 #include <qopenglshaderprogram.h>
 #include <qopengltexture.h>
 #include <qopenglvertexarrayobject.h>
-
 #include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
@@ -97,8 +96,7 @@ public:
 	   @param parent - the parent widget
 	   @return void
 	*/
-
-  GraphicsWindow(QWidget* parent = nullptr);
+	GraphicsWindow(QWidget* parent = nullptr);
 
 	/**
 	   Deconstructor releases memory
@@ -115,7 +113,6 @@ public:
 	   @return void
 	*/
 	void updateKeyBind(const QString bind, const QString hotkey);
-
 
 protected:
 	/**
