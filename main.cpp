@@ -2,10 +2,15 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <SDL2/SDL.h>
 #include "initcpu.h"
 #include "loadrom.h"
 #include "emulator.h"
+
+#ifdef PLATFORM_WINDOWS
+    #include <SDL.h>
+#else
+    #include <SDL2/SDL.h>
+#endif
 
 #define VIDEO_MEMORY_START 0x2400
 #define SCREEN_WIDTH 224
