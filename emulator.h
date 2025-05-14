@@ -52,9 +52,9 @@ struct State8080 {
 */
 void setZSPflags(State8080* cpu, uint8_t result);
 
-uint8_t input_port(State8080* cpu, uint8_t port);
+uint8_t input_port(State8080* cpu, uint8_t port); //Is this necessary with it in the io_ports.h file?
 
-void output_port(State8080* cpu, uint8_t port, uint8_t a);
+void output_port(State8080* cpu, uint8_t port, uint8_t a);//Is this necessary with it in the io_ports.h file?
 
 /**
 * Emulates the Intel 8080 cpu. The cpu has been initialized and the
