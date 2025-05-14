@@ -7,7 +7,7 @@
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <windows.h>
-    #define MAPPED_NAME TEXT("SpaceInvaders")
+const char MAPPED_NAME[] = "/SpaceInvaders";
 #else
     #include <sys/mman.h>
     #include <fcntl.h>

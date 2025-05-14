@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint> // Needed for uint8_t, uint16_t
-#include "access_mmap.h"
-
+//#include "access_mmap.h"
+#include "initcpu.h"
 
 
 // Put the State8080 struct definition here...

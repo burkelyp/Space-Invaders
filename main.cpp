@@ -7,6 +7,7 @@
 
 #include "loadrom.h"
 #include "emulator.h"
+#include "access_mmap.h"
 
 #define VIDEO_MEMORY_START 0x2400
 #define SCREEN_WIDTH 224
