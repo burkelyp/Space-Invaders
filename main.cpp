@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
         }
 
         if (paused && !single_step) {
-            SDL_Delay(1);
+            //SDL_Delay(1);
             continue;
         }
 
