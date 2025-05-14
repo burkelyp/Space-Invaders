@@ -44,42 +44,27 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    # Install SDL3 for Linux
-    - name: Install SDL3 (Linux)
+    # Install SDL2 for Linux
+    - name: Install SDL2 (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt update
-        sudo apt install -y cmake ninja-build build-essential \
-          libasound2-dev libpulse-dev libx11-dev libxext-dev libxrandr-dev \
-          libxcursor-dev libxi-dev libxinerama-dev libxss-dev libwayland-dev \
-          libdrm-dev libgbm-dev libudev-dev libgles2-mesa-dev libegl1-mesa-dev
-        git clone https://github.com/libsdl-org/SDL.git SDL3
-        cd SDL3
-        mkdir build && cd build
-        cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local -DSDL_TEST=OFF
-        make -j$(nproc)
-        sudo make install
-        sudo ldconfig
+        sudo apt install -y libsdl2-dev
 
-    # Build and install SDL3 on Windows
-    - name: Install SDL3 (Windows)
+    # Build and install SDL2 on Windows
+    - name: Install SDL2 (Windows)
       if: matrix.os == 'windows-latest'
       shell: pwsh
       run: |
-        git clone https://github.com/libsdl-org/SDL.git SDL3
-        cd SDL3
-        mkdir build
-        cd build
-        cmake .. -DCMAKE_INSTALL_PREFIX="C:/SDL3" -DSDL_TEST=OFF
-        cmake --build . --config Release
-        cmake --install . --config Release
-        echo "SDL3_DIR=C:/SDL3" >> $Env:GITHUB_ENV
+        choco install -y sdl2
+
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
       id: strings
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
@@ -89,6 +74,7 @@ jobs:
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         -S ${{ github.workspace }}
+
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
