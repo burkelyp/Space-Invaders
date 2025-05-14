@@ -193,7 +193,7 @@ int main(int argc, char** argv) {
         }
 
         uint64_t cycles_before_op = state.cycles;
-        Emulate8080Op(&state, debug_mode);
+        Emulate8080Op(&state);
         uint64_t op_cycles = state.cycles - cycles_before_op;
         cycles_for_interrupt_timing += op_cycles;
 
