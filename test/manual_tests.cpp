@@ -1533,5 +1533,10 @@ int main() {
     
     printf("Manual Tests Complete.\n");
 
+    if (failed_count > 0) {
+        printf("failed %d unit tests", failed_count);
+        return 1
+    }
+
     return 0;
 }
