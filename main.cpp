@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     loadROM(rom_g_path, &state, 0x0800);
     loadROM(rom_f_path, &state, 0x1000);
     loadROM(rom_e_path, &state, 0x1800);
-    state.ports.port1 = 0b00001001;
+    *state.ports.port1 = 0b00001001;
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window* window = SDL_CreateWindow("Space Invaders",
@@ -139,19 +139,19 @@ int main(int argc, char** argv) {
                     }
                     break;
                 case SDLK_c:
-                    state.ports.port1 &= ~0x01;
+                    *state.ports.port1 &= ~0x01;
                     break;
                 case SDLK_1:
-                    state.ports.port1 |= 0x04;
+                    *state.ports.port1 |= 0x04;
                     break;
                 case SDLK_SPACE:
-                    state.ports.port1 |= 0x10;
+                    *state.ports.port1 |= 0x10;
                     break;
                 case SDLK_LEFT:
-                    state.ports.port1 |= 0x20;
+                    *state.ports.port1 |= 0x20;
                     break;
                 case SDLK_RIGHT:
-                    state.ports.port1 |= 0x40;
+                    *state.ports.port1 |= 0x40;
                     break;
                 default:
                     break;
@@ -160,19 +160,19 @@ int main(int argc, char** argv) {
             else if (event.type == SDL_KEYUP) {
                 switch (event.key.keysym.sym) {
                 case SDLK_c:
-                    state.ports.port1 |= 0x01;
+                    *state.ports.port1 |= 0x01;
                     break;
                 case SDLK_1:
-                    state.ports.port1 &= ~0x04;
+                    *state.ports.port1 &= ~0x04;
                     break;
                 case SDLK_SPACE:
-                    state.ports.port1 &= ~0x10;
+                    *state.ports.port1 &= ~0x10;
                     break;
                 case SDLK_LEFT:
-                    state.ports.port1 &= ~0x20;
+                    *state.ports.port1 &= ~0x20;
                     break;
                 case SDLK_RIGHT:
-                    state.ports.port1 &= ~0x40;
+                    *state.ports.port1 &= ~0x40;
                     break;
                     // case SDLK_2:
                     //    state.ports.port1 &=  ;
