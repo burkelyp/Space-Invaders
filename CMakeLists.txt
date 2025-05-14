@@ -58,12 +58,3 @@ target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
 # Make sure the test executable can find emulator.h, cpu.h etc.
 # This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
 target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-# Add disassembler executable
-add_executable(Disassembler
-disassembler.cpp # Path to your new file
-)
-
-# Make sure the test executable can find emulator.h, cpu.h etc.
-# This might be redundant if the PUBLIC include from emulator_lib works, but ensures it.
-target_include_directories(Disassembler PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
