@@ -1,5 +1,6 @@
 #include "loadrom.h"
 #include <iostream>
+#include <sys/stat.h>
 #pragma warning(disable:4996)
 
 /**

@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "initcpu.h"
 #include "loadrom.h"
 #include "emulator.h"
@@ -12,10 +12,10 @@
 #define SCREEN_HEIGHT 256
 #define CYCLES_PER_INTERRUPT 16667
 
-const char* rom_h_path = "C:\\Users\\matttass\\source\\repos\\SpaceInvaders\\invaders.h";
-const char* rom_g_path = "C:\\Users\\matttass\\source\\repos\\SpaceInvaders\\invaders.g";
-const char* rom_f_path = "C:\\Users\\matttass\\source\\repos\\SpaceInvaders\\invaders.f";
-const char* rom_e_path = "C:\\Users\\matttass\\source\\repos\\SpaceInvaders\\invaders.e";
+const char* rom_h_path = "../../rom/space-invaders/invaders.h";
+const char* rom_g_path = "../../rom/space-invaders/invaders.g";
+const char* rom_f_path = "../../rom/space-invaders/invaders.f";
+const char* rom_e_path = "../../rom/space-invaders/invaders.e";
 
 
 /**
