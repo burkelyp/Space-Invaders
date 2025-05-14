@@ -89,6 +89,6 @@ jobs:
 
     - name: Run manual tests (Windows)
       if: matrix.os == 'windows-latest'
-      run: ManualEmulatorTests.exe
+      run: ${{ steps.strings.outputs.build-output-dir }}\\${{ matrix.build_type }}\\ManualEmulatorTests.exe
       shell: cmd
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
