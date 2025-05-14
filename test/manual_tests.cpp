@@ -1535,7 +1535,7 @@ int main() {
 
     if (failed_count > 0) {
         printf("failed %d unit tests", failed_count);
-        return 1
+        return 1;
     }
 
     return 0;
