@@ -2,19 +2,28 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include <SDL3/SDL.h>
-//#include "initcpu.h"
 
 #include "loadrom.h"
 #include "emulator.h"
 #include "access_mmap.h"
 
+#if defined(_WIN32) || defined(_WIN64)
+    #include <SDL.h>
+    #undef main
+#else
+    #include <SDL2/SDL.h>
+#endif
+
 #define VIDEO_MEMORY_START 0x2400
 #define SCREEN_WIDTH 224
 #define SCREEN_HEIGHT 256
-#define CYCLES_PER_INTERRUPT 8333
+#define CYCLES_PER_INTERRUPT 16667
 
-
+// For Debugging purposes only, UI will auto-combine rom files into one file
+const char* rom_h_path = "../../rom/space-invaders/invaders.h";
+const char* rom_g_path = "../../rom/space-invaders/invaders.g";
+const char* rom_f_path = "../../rom/space-invaders/invaders.f";
+const char* rom_e_path = "../../rom/space-invaders/invaders.e";
 
 
 /**
@@ -36,7 +45,7 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
 
         for (int bit = 0; bit < 8; bit++) {
             if ((byte >> bit) & 1) {
-                SDL_RenderPoint(renderer, col, SCREEN_HEIGHT - (row + bit) - 1);
+                SDL_RenderDrawPoint(renderer, col, SCREEN_HEIGHT - 1 - (row + bit));
             }
         }
     }
@@ -56,20 +65,18 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-
-
     State8080 state;
     if (init_mmap(&state)) {
         initCPU(&state);
     }
 
-    loadROM(argv[1], &state);
+    loadROM(argv[1], &state, 0); // Load ROM into beginning of memory
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window* window = SDL_CreateWindow("Space Invaders",
-        SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_RESIZABLE);
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, NULL);
-
+        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+        SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
 
     bool running = true;
     SDL_Event event;
@@ -77,8 +84,7 @@ int main(int argc, char** argv) {
     int interrupt_num = 1;
 
     bool paused = false;
-    bool debug_mode = true;
-
+    bool debug_mode = false;
     bool log_cycles = true;
     bool single_step = false;
 
@@ -88,30 +94,68 @@ int main(int argc, char** argv) {
 
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
+            if (event.type == SDL_QUIT) {
                 running = false;
             }
-            else if (event.type == SDL_EVENT_KEY_DOWN) {
-                switch (event.key.key) {
-                case SDLK_P:
+            else if (event.type == SDL_KEYDOWN) {
+                switch (event.key.keysym.sym) {
+                case SDLK_p:
                     paused = !paused;
                     std::cout << (paused ? "Paused\n" : "Resumed\n");
                     break;
-                case SDLK_D:
+                case SDLK_d:
                     debug_mode = !debug_mode;
                     std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n");
                     break;
-                case SDLK_L:
+                case SDLK_l:
                     log_cycles = !log_cycles;
                     std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n");
                     break;
-                case SDLK_N:
-
+                case SDLK_n:
                     if (paused) {
                         single_step = true;
                         std::cout << "Single step requested\n";
                     }
                     break;
+                case SDLK_c:
+                    *state.ports.port1 &= ~0x01;
+                    break;
+                case SDLK_1:
+                    *state.ports.port1 |= 0x04;
+                    break;
+                case SDLK_SPACE:
+                    *state.ports.port1 |= 0x10;
+                    break;
+                case SDLK_LEFT:
+                    *state.ports.port1 |= 0x20;
+                    break;
+                case SDLK_RIGHT:
+                    *state.ports.port1 |= 0x40;
+                    break;
+                default:
+                    break;
+                }
+            }
+            else if (event.type == SDL_KEYUP) {
+                switch (event.key.keysym.sym) {
+                case SDLK_c:
+                    *state.ports.port1 |= 0x01;
+                    break;
+                case SDLK_1:
+                    *state.ports.port1 &= ~0x04;
+                    break;
+                case SDLK_SPACE:
+                    *state.ports.port1 &= ~0x10;
+                    break;
+                case SDLK_LEFT:
+                    *state.ports.port1 &= ~0x20;
+                    break;
+                case SDLK_RIGHT:
+                    *state.ports.port1 &= ~0x40;
+                    break;
+                    // case SDLK_2:
+                    //    state.ports.port1 &=  ;
+                    //    break;
                 default:
                     break;
                 }
@@ -132,8 +176,7 @@ int main(int argc, char** argv) {
         uint64_t op_cycles = state.cycles - cycles_before_op;
         cycles_for_interrupt_timing += op_cycles;
 
-        if (!debug_mode) {
-
+        if (debug_mode) {
             std::cout << std::hex;
             std::cout << "[DEBUG] PC: " << state.pc
                 << " SP: " << state.sp
@@ -167,15 +210,26 @@ int main(int argc, char** argv) {
                 }
             }
 
-            if (state.int_enable) {
-                uint8_t rst_opcode = interrupt_num ? 0xd7 : 0xcf;
+            if (state.interrupt_enabled) {
+                state.interrupt_enabled = false;
+                state.memory[state.sp - 1] = (state.pc >> 8) & 0xff;
+                state.memory[state.sp - 2] = state.pc & 0xff;
+                state.sp -= 2;
+
+                if (interrupt_num == 1) {
+                    state.pc = 0x0008;
+                }
+                else {
+                    state.pc = 0x0010;
+                }
+                state.cycles += 11;
                 interrupt_num ^= 1;
             }
 
             DrawScreen(&state, renderer);
         }
 
-        SDL_Delay(1);
+        //SDL_Delay(1);
     }
 
     std::free(state.memory);
