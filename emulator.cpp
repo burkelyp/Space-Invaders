@@ -42,27 +42,6 @@ void setZSPflags(State8080* cpu, uint8_t result) {
     cpu->flags.p = (count % 2 == 0);
 }
 
-/**
-* Generates a maskable interrupt by pushing the current PC to the stack
-* and jumping to the interrupt vector (8 * interrupt_num).
-*
-* @param state Pointer to the current CPU state.
-* @param interrupt_num Interrupt number (0–7), corresponding to RST n.
-*/
-void GenerateInterrupt(State8080* state, uint8_t interrupt_num) {
-    // Push current PC onto the stack (high byte first)
-    uint16_t return_addr = state->pc;
-    state->memory[state->sp - 1] = (return_addr >> 8) & 0xFF;
-    state->memory[state->sp - 2] = return_addr & 0xFF;
-    state->sp -= 2;
-
-    // Jump to interrupt vector: RST n == 8 * n
-    state->pc = 8 * interrupt_num;
-
-    // Approximate cycle cost of interrupt handling
-    state->cycles += 11;
-}
-
 
 void Emulate8080Op(State8080* cpu) {
     uint8_t* code = &cpu->memory[cpu->pc];

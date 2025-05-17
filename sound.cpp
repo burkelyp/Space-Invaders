@@ -3,8 +3,9 @@
 #include "miniaudio.h"
 #include <iostream>
 
-static ma_engine engine;
-static ma_sound sounds[SOUND_COUNT];
+ma_engine engine;
+ma_sound sounds[SOUND_COUNT];  // 👈 Removed `static`
+
 
 /**
  * Maps a sound effect to its file path in the sounds directory
@@ -14,16 +15,16 @@ static ma_sound sounds[SOUND_COUNT];
  */
 const char* getFilePath(SoundEffect effect) {
     switch (effect) {
-        case SOUND_SHOOT:           return "sounds/shoot.wav";
-        case SOUND_INVADER_KILLED:  return "sounds/invaderkilled.wav";
-        case SOUND_FAST_INVADER_1:  return "sounds/fastinvader1.wav";
-        case SOUND_FAST_INVADER_2:  return "sounds/fastinvader2.wav";
-        case SOUND_FAST_INVADER_3:  return "sounds/fastinvader3.wav";
-        case SOUND_FAST_INVADER_4:  return "sounds/fastinvader4.wav";
-        case SOUND_UFO_HIGH:        return "sounds/ufo_highpitch.wav";
-        case SOUND_UFO_LOW:         return "sounds/ufo_lowpitch.wav";
-        case SOUND_EXPLOSION:       return "sounds/explosion.wav";
-        case SOUND_EXTENDED_PLAY:   return "sounds/extendedplay.wav";
+        case SOUND_SHOOT:           return "../../sounds/shoot.wav";
+        case SOUND_INVADER_KILLED:  return "../../sounds/invaderkilled.wav";
+        case SOUND_FAST_INVADER_1:  return "../../sounds/fastinvader1.wav";
+        case SOUND_FAST_INVADER_2:  return "../../sounds/fastinvader2.wav";
+        case SOUND_FAST_INVADER_3:  return "../../sounds/fastinvader3.wav";
+        case SOUND_FAST_INVADER_4:  return "../../sounds/fastinvader4.wav";
+        case SOUND_UFO_HIGH:        return "../../sounds/ufo_highpitch.wav";
+        case SOUND_UFO_LOW:         return "../../sounds/ufo_lowpitch.wav";
+        case SOUND_EXPLOSION:       return "../../sounds/explosion.wav";
+        case SOUND_EXTENDED_PLAY:   return "../../sounds/extendedplay.wav";
         default:                    return nullptr;
     }
 }
@@ -56,11 +57,24 @@ bool initSoundSystem() {
  * @param effect - the sound effect to play
  */
 void playSound(SoundEffect effect) {
-    if (effect < 0 || effect >= SOUND_COUNT) return;
-    ma_sound_stop(&sounds[effect]); // Stop any existing instance
-    ma_sound_seek_to_pcm_frame(&sounds[effect], 0); // Rewind
-    ma_sound_start(&sounds[effect]);
+    if (effect == SOUND_UFO_HIGH) {
+        ma_sound_start(&sounds[effect]); // Start the sound
+        ma_sound_set_looping(&sounds[effect], MA_TRUE); // Loop UFO sound
+    } else {
+        ma_sound_start(&sounds[effect]);
+    }
 }
+
+
+
+void stopSound(SoundEffect effect) {
+    if (effect == SOUND_UFO_HIGH) {
+        ma_sound_stop(&sounds[effect]);
+        ma_sound_seek_to_pcm_frame(&sounds[effect], 0); // Reset to beginning
+    }
+}
+
+
 
 /**
  * Shuts down the MiniAudio engine and releases resources

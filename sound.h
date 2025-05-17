@@ -2,10 +2,8 @@
 #define SOUND_H
 
 #include <cstdint>
+#include "miniaudio.h"
 
-/**
- * List of available sound effects
- */
 enum SoundEffect {
     SOUND_SHOOT,
     SOUND_INVADER_KILLED,
@@ -20,23 +18,12 @@ enum SoundEffect {
     SOUND_COUNT
 };
 
-/**
- * Initializes the MiniAudio sound system and loads all sounds
- * 
- * @return true if successful, false on error
- */
+extern ma_engine engine;
+extern ma_sound sounds[SOUND_COUNT];  // 👈 Add this line
+
 bool initSoundSystem();
-
-/**
- * Plays a specific sound effect
- * 
- * @param effect - the sound to play
- */
 void playSound(SoundEffect effect);
-
-/**
- * Shuts down the sound system and frees memory
- */
+void stopSound(SoundEffect effect);
 void shutdownSoundSystem();
 
 #endif // SOUND_H

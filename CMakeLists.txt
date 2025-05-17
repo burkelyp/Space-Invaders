@@ -1,56 +1,54 @@
 cmake_minimum_required(VERSION 3.10)
 project(SpaceInvadersProject LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# --- Determine Platform ---
+# --- Platform Detection ---
 if(WIN32)
     add_definitions(-DPLATFORM_WINDOWS)
+
+    # Validate SDL2 paths passed from the build system
+    if(NOT SDL2_INCLUDE_DIR OR NOT SDL2_LIBRARY OR NOT SDL2MAIN_LIBRARY)
+        message(FATAL_ERROR "Please define SDL2_INCLUDE_DIR, SDL2_LIBRARY, and SDL2MAIN_LIBRARY on Windows.")
+    endif()
+
+else()
+    # Use pkg-config to find SDL2 on Linux/macOS
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(SDL2 REQUIRED sdl2)
 endif()
 
-# --- Add Core Emulator Library ---
+# --- Core Emulator Library ---
 add_library(emulator_lib
     emulator.cpp
     initcpu.cpp
     io_ports.cpp
     loadrom.cpp
     access_mmap.cpp
+    sound.cpp
 )
-
-# --- SDL3 Setup for Windows ---
-if(WIN32)
-    include_directories("C:/sdl3/include")
-    set(SDL3_LIB_PATH "C:/sdl3/lib/x64/SDL3.lib")
-    target_link_libraries(emulator_lib PUBLIC "${SDL3_LIB_PATH}")
-endif()
+target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # --- Main Executable ---
-add_executable(SpaceInvaders
-    main.cpp
-)
+add_executable(SpaceInvaders main.cpp)
 
-# --- Link Libraries ---
-target_link_libraries(SpaceInvaders PRIVATE emulator_lib)
-
-# --- Include Path for Main ---
+# Include project headers
 target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-# --- Debug Mode: Manual Test Executable ---
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
-    add_compile_definitions(DEBUG)
-
-    add_executable(ManualEmulatorTests
-        test/manual_tests.cpp
-    )
-
-    target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
-    target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+# SDL2 setup
+if(WIN32)
+    target_include_directories(SpaceInvaders PRIVATE ${SDL2_INCLUDE_DIR})
+    target_link_libraries(SpaceInvaders PRIVATE emulator_lib ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})
+else()
+    target_include_directories(SpaceInvaders PRIVATE ${SDL2_INCLUDE_DIRS})
+    link_directories(${SDL2_LIBRARY_DIRS})
+    target_link_libraries(SpaceInvaders PRIVATE emulator_lib ${SDL2_LIBRARIES})
 endif()
 
-# Optional Testing Support
-# include(CTest)
-# enable_testing()
-# add_test(NAME RunManualTests COMMAND ManualEmulatorTests)
+# --- Debug Mode ---
+if(CMAKE_BUILD_TYPE STREQUAL "debug")
+    target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
+endif()
+
+# --- Manual Test Executable ---
+add_executable(ManualEmulatorTests test/manual_tests.cpp)
+target_link_libraries(ManualEmulatorTests PRIVATE emulator_lib)
+target_include_directories(ManualEmulatorTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
