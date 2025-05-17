@@ -426,31 +426,31 @@ void GraphicsWindow::keyPressEvent(QKeyEvent* event)
 	// Testing to find the correctly bound key
 	if (keyBinds.getCombination("p1Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) { // If match or partial match
 		// Set proper bit in ports
-		editMemInputBit(5, true);
+		editMemInputBit(SIPortLocations::P1Left, true);
 	}
 	if (keyBinds.getCombination("p1Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(6, true);
+		editMemInputBit(SIPortLocations::P1Right, true);
 	}
 	if (keyBinds.getCombination("p1Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(4, true);
+		editMemInputBit(SIPortLocations::P1Shoot, true);
 	}
 	if (keyBinds.getCombination("p1Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(2, true);
+		editMemInputBit(SIPortLocations::P1Start, true);
 	}
 	if (keyBinds.getCombination("p2Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(12, true);
+		editMemInputBit(SIPortLocations::P2Left, true);
 	}
 	if (keyBinds.getCombination("p2Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(13, true);
+		editMemInputBit(SIPortLocations::P2Right, true);
 	}
 	if (keyBinds.getCombination("p2Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(11, true);
+		editMemInputBit(SIPortLocations::P2Shoot, true);
 	}
 	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(1, true);
+		editMemInputBit(SIPortLocations::P2Start, true);
 	}
 	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(0, true);
+		editMemInputBit(SIPortLocations::Insert_Coin, false);
 	}
 	QOpenGLWidget::keyPressEvent(event);
 }
@@ -464,28 +464,31 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
 	// Testing to find the correctly bound key
 	if (keyBinds.getCombination("p1Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) { // If match or partial match
 		// Set proper bit in ports
-		editMemInputBit(5, false);
+		editMemInputBit(SIPortLocations::P1Left, false);
 	}
 	if (keyBinds.getCombination("p1Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(6, false);
+		editMemInputBit(SIPortLocations::P1Right, false);
 	}
 	if (keyBinds.getCombination("p1Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(4, false);
+		editMemInputBit(SIPortLocations::P1Shoot, false);
 	}
 	if (keyBinds.getCombination("p1Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(2, false);
+		editMemInputBit(SIPortLocations::P1Start, false);
 	}
 	if (keyBinds.getCombination("p2Left")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(12, false);
+		editMemInputBit(SIPortLocations::P2Left, false);
 	}
 	if (keyBinds.getCombination("p2Right")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(13, false);
+		editMemInputBit(SIPortLocations::P2Right, false);
 	}
 	if (keyBinds.getCombination("p2Shoot")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(11, false);
+		editMemInputBit(SIPortLocations::P2Shoot, false);
 	}
 	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(1, false);
+		editMemInputBit(SIPortLocations::P2Start, false);
+	}
+	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+		editMemInputBit(SIPortLocations::Insert_Coin, true);
 	}
 	QOpenGLWidget::keyReleaseEvent(event);
 }

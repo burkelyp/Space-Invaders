@@ -77,7 +77,7 @@ protected:
 	// Contains keybind Names
 	QString comboNames[KEYBIND_AMOUNT] = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
 	// Contains default Bindings
-	QString defaultCombos[KEYBIND_AMOUNT] = { "A", "D", "W", "Enter", "Left", "Right", "Up", "Num+Enter", "1"};
+	QString defaultCombos[KEYBIND_AMOUNT] = { "A", "D", "W", "Return", "Left", "Right", "Up", "Num+Enter", "1"};
 };
 
 /**
@@ -186,6 +186,20 @@ private:
 	   @return void
 	*/
 	void editMemInputBit(int bit, bool set);
+
+public:
+	// Holds port bit offsets to access and modify appropriate input bits
+	enum SIPortLocations {
+		Insert_Coin = 8,
+		P2Start = 9,
+		P1Start = 10,
+		P1Shoot = 12,
+		P1Left = 13,
+		P1Right = 14,
+		P2Shoot = 19,
+		P2Left = 20,
+		P2Right = 21
+	};
 
 private:
 	// Memory variables

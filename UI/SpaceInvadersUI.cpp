@@ -42,6 +42,12 @@ SIUI::SIUI(const QString emuPath)
 		intel8080Dir = findEmu();
 	}
 
+	// Error checking
+	if (intel8080Dir == "Error") {
+		qDebug() << "Error: Could not find emulator";
+		this->close();
+	}
+
 	// Creating Menus
 	fileMenu = new QMenu("File", this);
 	QAction* openROM = new QAction("Open ROM", fileMenu);
@@ -71,9 +77,11 @@ SIUI::SIUI(const QString emuPath)
 
 QString SIUI::findEmu()
 {
-	QDir def("");
-	def.cdUp();
+	QDir def("");	// Current working directory
+	def.cdUp();		// Up one directory
 	QDirIterator it(def, QDirIterator::Subdirectories);
+
+	// Search through all subdirectories
 	while (it.hasNext()) {
 		QString dir = it.next();
 		QString app = dir.split("/").back();
@@ -94,7 +102,7 @@ QString SIUI::findEmu()
 		}
 	#endif
 	}
-	return QString();
+	return QString("Error");
 }
 
 void SIUI::startEmu(QString process, QStringList arguments)
@@ -115,6 +123,11 @@ void SIUI::SelectROM()
 	// Open file browser and get rom file location
 	ROMDir = QFileDialog::getOpenFileNames(this,
 		tr("Select Space Invaders ROM File(s)"), "/home");
+
+	// Checking if emulator already running (Will probably add multiple instance support in the future)
+	if (!currEmu) {
+		return;
+	}
 
 	// Varify correctness of ROM files by comparing to correct size, maybe better way?
 	int totalSize = 0;
@@ -139,7 +152,7 @@ void SIUI::SelectROM()
 
 		char rawData[SI_SIZE];
 		int lenRead;
-		for (int i = ROMDir.size() - 1; i >= 0; i--) {
+		for (int i = ROMDir.size() - 1; i >= 0; i--) { //Iterating backwards because .h file comes first
 			// Opening individual files for reading
 			QFile romFile = QFile(ROMDir[i]);
 			if (!romFile.open(QIODevice::ReadOnly))
