@@ -2,12 +2,14 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
-#include "initcpu.h"
+
 #include "loadrom.h"
 #include "emulator.h"
+#include "access_mmap.h"
 
-#ifdef PLATFORM_WINDOWS
+#if defined(_WIN32) || defined(_WIN64)
     #include <SDL.h>
+    #undef main
 #else
     #include <SDL2/SDL.h>
 #endif
@@ -17,6 +19,7 @@
 #define SCREEN_HEIGHT 256
 #define CYCLES_PER_INTERRUPT 16667
 
+// For Debugging purposes only, UI will auto-combine rom files into one file
 const char* rom_h_path = "../../rom/space-invaders/invaders.h";
 const char* rom_g_path = "../../rom/space-invaders/invaders.g";
 const char* rom_f_path = "../../rom/space-invaders/invaders.f";
@@ -50,32 +53,6 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
 }
 
 /**
-   Disassembles a single 8080 instruction from the code buffer and prints its assembly equivalent
-
-   @param codebuffer - pointer to the start of the 8080 program code
-   @param pc - current program counter (offset into codebuffer)
-   @return number of bytes the current instruction occupies
-*/
-int Disassemble8080Op(uint8_t* codebuffer, int pc) {
-    uint8_t* code = &codebuffer[pc];
-    int opbytes = 1;
-    std::printf("%04x ", pc);
-    switch (*code) {
-    case 0x00: std::printf("NOP"); break;
-    case 0x01: std::printf("LXI    B,#$%02x%02x", code[2], code[1]); opbytes = 3; break;
-    case 0x02: std::printf("STAX   B"); break;
-    case 0x03: std::printf("INX    B"); break;
-    case 0x04: std::printf("INR    B"); break;
-    case 0x05: std::printf("DCR    B"); break;
-    case 0x06: std::printf("MVI    B,#$%02x", code[1]); opbytes = 2; break;
-    case 0x07: std::printf("RLC"); break;
-    default: std::printf("UNKNOWN %02x", *code); break;
-    }
-    std::printf("\n");
-    return opbytes;
-}
-
-/**
    Entry point for emulator. Loads ROM and executes main loop
 
    @param argc - argument count
@@ -83,20 +60,17 @@ int Disassemble8080Op(uint8_t* codebuffer, int pc) {
    @return 0 on success, 1 on failure
 */
 int main(int argc, char** argv) {
-    //if (argc < 2) {
-        //std::cerr << "Usage: " << argv[0] << " <filename>\n";
-        //return 1;
-    //}
-
-
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <filename>\n";
+        return 1;
+    }
 
     State8080 state;
-    initCPU(&state);
-    loadROM(rom_h_path, &state, 0x0000);
-    loadROM(rom_g_path, &state, 0x0800);
-    loadROM(rom_f_path, &state, 0x1000);
-    loadROM(rom_e_path, &state, 0x1800);
-    *state.ports.port1 = 0b00001001;
+    if (init_mmap(&state)) {
+        initCPU(&state);
+    }
+
+    loadROM(argv[1], &state, 0); // Load ROM into beginning of memory
 
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window* window = SDL_CreateWindow("Space Invaders",
@@ -189,7 +163,7 @@ int main(int argc, char** argv) {
         }
 
         if (paused && !single_step) {
-            SDL_Delay(1);
+            //SDL_Delay(1);
             continue;
         }
 

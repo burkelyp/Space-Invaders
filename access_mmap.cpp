@@ -4,7 +4,7 @@ int init_mmap(State8080* state) {
     memory_map mem_map;
 
 #if defined(_WIN32) || defined(_WIN64)
-    mem_map.h_map_file = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, MAPPED_NAME);
+    mem_map.h_map_file = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, (LPCWSTR)MAPPED_NAME);
 
     if (mem_map.h_map_file == NULL) {
         return 1;
