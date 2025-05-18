@@ -64,6 +64,12 @@ void output_port(State8080* cpu, uint8_t port, uint8_t a) {
                 break;
             }
         }
+        if ((a & 0x10) && !(last_port5 & 0x10)) {
+            playSound(SOUND_UFO_LOW);
+        }
+        if ((a & 0x20) && !(last_port5 & 0x20)) {
+            playSound(SOUND_EXTENDED_PLAY);
+        }
         last_port5 = a;
         *cpu->ports.port5 = a;
         break;
