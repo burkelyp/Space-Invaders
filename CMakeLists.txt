@@ -23,6 +23,7 @@ add_library(emulator_lib
     io_ports.cpp
     loadrom.cpp
     access_mmap.cpp
+    sound.cpp
 )
 target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
