@@ -31,16 +31,11 @@ void output_port(State8080* cpu, uint8_t port, uint8_t a) {
         break;
     case 0x03: {
         static uint8_t last_port3 = 0;
-        // // Detect rising edge (UFO appears)
-        // if ((a & 0x10) && !(last_port3 & 0x10)) {
-        //     printf("[DEBUG] UFO appeared (bit 4 set)\n");
-        //     playSound(SOUND_UFO_HIGH);
-        // }
-        // // Detect falling edge (UFO disappears)
-        // else if (!(a & 0x10) && (last_port3 & 0x10)) {
-        //     printf("[DEBUG] UFO disappeared (bit 4 cleared)\n");
-        //     stopSound(SOUND_UFO_HIGH);
-        // }
+        if ((a & 0x01) && !(last_port3 & 0x01)) {
+            playSound(SOUND_UFO_HIGH);
+        } else if (!(a & 0x01) && (last_port3 & 0x01)) {
+            stopSound(SOUND_UFO_HIGH);
+        }
         if ((a & 0x02) && !(last_port3 & 0x02)) {
             playSound(SOUND_SHOOT);
         }
