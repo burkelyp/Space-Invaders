@@ -6,6 +6,7 @@
 #include "loadrom.h"
 #include "emulator.h"
 #include "access_mmap.h"
+#include "sound.h"
 
 #if defined(_WIN32) || defined(_WIN64)
     #include <SDL.h>
@@ -15,6 +16,7 @@
 #endif
 
 #define VIDEO_MEMORY_START 0x2400
+#define VIDEO_MEMORY_END 0x3FFF
 #define SCREEN_WIDTH 224
 #define SCREEN_HEIGHT 256
 #define CYCLES_PER_INTERRUPT 16667
@@ -37,7 +39,7 @@ void DrawScreen(State8080* state, SDL_Renderer* renderer) {
     SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-    for (int addr = VIDEO_MEMORY_START; addr <= 0x3FFF; addr++) {
+    for (int addr = VIDEO_MEMORY_START; addr <= VIDEO_MEMORY_END; addr++) {
         uint8_t byte = state->memory[addr];
         int offset = addr - VIDEO_MEMORY_START;
         int col = offset / 32;
@@ -64,6 +66,9 @@ int main(int argc, char** argv) {
         std::cerr << "Usage: " << argv[0] << " <filename>\n";
         return 1;
     }
+    if (!initSoundSystem()) {
+        std::cerr << "Sound system failed to initialize.\n";
+    }
 
     State8080 state;
     if (init_mmap(&state)) {
@@ -80,102 +85,55 @@ int main(int argc, char** argv) {
 
     bool running = true;
     SDL_Event event;
-    uint64_t cycles_for_interrupt_timing = 0;
     int interrupt_num = 1;
+    int interrupts_per_frame = 0;
 
     bool paused = false;
     bool debug_mode = false;
     bool log_cycles = true;
     bool single_step = false;
 
-    uint32_t last_interrupt_time = SDL_GetTicks();
-    uint32_t last_frame_time = SDL_GetTicks();
-
+    uint32_t interrupt_timer = SDL_GetTicks();
+    uint32_t frame_timer = SDL_GetTicks();
 
     while (running) {
+        uint32_t frame_start = SDL_GetTicks();
+
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 running = false;
-            }
-            else if (event.type == SDL_KEYDOWN) {
+            } else if (event.type == SDL_KEYDOWN) {
                 switch (event.key.keysym.sym) {
-                case SDLK_p:
-                    paused = !paused;
-                    std::cout << (paused ? "Paused\n" : "Resumed\n");
-                    break;
-                case SDLK_d:
-                    debug_mode = !debug_mode;
-                    std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n");
-                    break;
-                case SDLK_l:
-                    log_cycles = !log_cycles;
-                    std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n");
-                    break;
-                case SDLK_n:
-                    if (paused) {
-                        single_step = true;
-                        std::cout << "Single step requested\n";
-                    }
-                    break;
-                case SDLK_c:
-                    *state.ports.port1 &= ~0x01;
-                    break;
-                case SDLK_1:
-                    *state.ports.port1 |= 0x04;
-                    break;
-                case SDLK_SPACE:
-                    *state.ports.port1 |= 0x10;
-                    break;
-                case SDLK_LEFT:
-                    *state.ports.port1 |= 0x20;
-                    break;
-                case SDLK_RIGHT:
-                    *state.ports.port1 |= 0x40;
-                    break;
-                default:
-                    break;
+                    case SDLK_p: paused = !paused; std::cout << (paused ? "Paused\n" : "Resumed\n"); break;
+                    case SDLK_d: debug_mode = !debug_mode; std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n"); break;
+                    case SDLK_l: log_cycles = !log_cycles; std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n"); break;
+                    case SDLK_n: if (paused) { single_step = true; std::cout << "Single step requested\n"; } break;
+                    case SDLK_c: *state.ports.port1 &= ~0x01; break;
+                    case SDLK_1: *state.ports.port1 |= 0x04; break;
+                    case SDLK_SPACE: *state.ports.port1 |= 0x10; break;
+                    case SDLK_LEFT: *state.ports.port1 |= 0x20; break;
+                    case SDLK_RIGHT: *state.ports.port1 |= 0x40; break;
+                    default: break;
                 }
-            }
-            else if (event.type == SDL_KEYUP) {
+            } else if (event.type == SDL_KEYUP) {
                 switch (event.key.keysym.sym) {
-                case SDLK_c:
-                    *state.ports.port1 |= 0x01;
-                    break;
-                case SDLK_1:
-                    *state.ports.port1 &= ~0x04;
-                    break;
-                case SDLK_SPACE:
-                    *state.ports.port1 &= ~0x10;
-                    break;
-                case SDLK_LEFT:
-                    *state.ports.port1 &= ~0x20;
-                    break;
-                case SDLK_RIGHT:
-                    *state.ports.port1 &= ~0x40;
-                    break;
-                    // case SDLK_2:
-                    //    state.ports.port1 &=  ;
-                    //    break;
-                default:
-                    break;
+                    case SDLK_c: *state.ports.port1 |= 0x01; break;
+                    case SDLK_1: *state.ports.port1 &= ~0x04; break;
+                    case SDLK_SPACE: *state.ports.port1 &= ~0x10; break;
+                    case SDLK_LEFT: *state.ports.port1 &= ~0x20; break;
+                    case SDLK_RIGHT: *state.ports.port1 &= ~0x40; break;
+                    default: break;
                 }
             }
         }
 
         if (paused && !single_step) {
-            //SDL_Delay(1);
+            SDL_Delay(1);
             continue;
         }
-
         if (paused && single_step) {
             single_step = false;
         }
-
-        uint64_t cycles_before_op = state.cycles;
-        Emulate8080Op(&state);
-        uint64_t op_cycles = state.cycles - cycles_before_op;
-        cycles_for_interrupt_timing += op_cycles;
-
         if (debug_mode) {
             std::cout << std::hex;
             std::cout << "[DEBUG] PC: " << state.pc
@@ -190,24 +148,10 @@ int main(int argc, char** argv) {
                 << std::dec << "\n";
         }
 
-        if (cycles_for_interrupt_timing >= CYCLES_PER_INTERRUPT) {
-            cycles_for_interrupt_timing -= CYCLES_PER_INTERRUPT;
-
-            uint32_t now = SDL_GetTicks();
-            uint32_t elapsed_interrupt = now - last_interrupt_time;
-            last_interrupt_time = now;
-
-            if (log_cycles) {
-                std::cout << "Time between interrupts: " << elapsed_interrupt << " ms\n";
-            }
-
-            if (interrupt_num == 0) {
-                uint32_t elapsed_frame = now - last_frame_time;
-                last_frame_time = now;
-
-                if (log_cycles) {
-                    std::cout << "Time for one full frame: " << elapsed_frame << " ms\n";
-                }
+        for (int interrupt = 0; interrupt < 2; ++interrupt) {
+            uint64_t cycles_this_interrupt = state.cycles;
+            while ((state.cycles - cycles_this_interrupt) < 16666) {
+                Emulate8080Op(&state);
             }
 
             if (state.interrupt_enabled) {
@@ -215,26 +159,26 @@ int main(int argc, char** argv) {
                 state.memory[state.sp - 1] = (state.pc >> 8) & 0xff;
                 state.memory[state.sp - 2] = state.pc & 0xff;
                 state.sp -= 2;
-
-                if (interrupt_num == 1) {
-                    state.pc = 0x0008;
-                }
-                else {
-                    state.pc = 0x0010;
-                }
+                state.pc = (interrupt_num == 1) ? 0x0008 : 0x0010;
                 state.cycles += 11;
                 interrupt_num ^= 1;
             }
-
-            DrawScreen(&state, renderer);
         }
 
-        //SDL_Delay(1);
+        DrawScreen(&state, renderer);
+
+        uint32_t frame_end = SDL_GetTicks();
+        uint32_t elapsed = frame_end - frame_start;
+        if (elapsed < 16) SDL_Delay(16 - elapsed);
+
+        if (log_cycles) {
+            std::cout << "Time for one full frame: " << (SDL_GetTicks() - frame_start) << " ms\n";
+        }
     }
 
-    std::free(state.memory);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+    shutdownSoundSystem();
     return 0;
 }
