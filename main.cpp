@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
                 }
             } else if (event.type == SDL_KEYUP) {
                 switch (event.key.keysym.sym) {
-                    case SDLK_c: *state.ports.port1 |= 0x01; break;
+                    case SDLK_c: *state.ports.port1 &= 0x01; break;
                     case SDLK_1: *state.ports.port1 &= ~0x04; break;
                     case SDLK_SPACE: *state.ports.port1 &= ~0x10; break;
                     case SDLK_LEFT: *state.ports.port1 &= ~0x20; break;
