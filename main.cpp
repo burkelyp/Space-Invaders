@@ -92,6 +92,7 @@ int main(int argc, char** argv) {
     bool debug_mode = false;
     bool log_cycles = true;
     bool single_step = false;
+    bool insert_coin = false;
 
     uint32_t interrupt_timer = SDL_GetTicks();
     uint32_t frame_timer = SDL_GetTicks();
@@ -108,7 +109,7 @@ int main(int argc, char** argv) {
                     case SDLK_d: debug_mode = !debug_mode; std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n"); break;
                     case SDLK_l: log_cycles = !log_cycles; std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n"); break;
                     case SDLK_n: if (paused) { single_step = true; std::cout << "Single step requested\n"; } break;
-                    case SDLK_c: *state.ports.port1 &= ~0x01; break;
+                    case SDLK_c: insert_coin = true; break;
                     case SDLK_1: *state.ports.port1 |= 0x04; break;
                     case SDLK_SPACE: *state.ports.port1 |= 0x10; break;
                     case SDLK_LEFT: *state.ports.port1 |= 0x20; break;
@@ -126,6 +127,13 @@ int main(int argc, char** argv) {
                 }
             }
         }
+
+        if (insert_coin) {
+            *state.ports.port1 |= 0x01;
+        } else {
+            *state.ports.port1 &= ~0x01;
+        }
+        insert_coin = false;
 
         if (paused && !single_step) {
             SDL_Delay(1);
