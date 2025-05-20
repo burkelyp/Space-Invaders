@@ -295,9 +295,9 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    D");
 		#endif // Decrement D
-        cpu->flags.ac = ((cpu->c & 0x0F) == 0);
+        cpu->flags.ac = ((cpu->d & 0x0F) == 0);
         cpu->d -= 1;
-        setZSPflags(cpu, cpu->c);
+        setZSPflags(cpu, cpu->d);
         cpu->pc += 1;
         cpu->cycles += 5;
         break;
