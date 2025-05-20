@@ -686,7 +686,7 @@ void Emulate8080Op(State8080* cpu) {
 		#endif // Decrement value in memory at HL
         uint16_t addr = (cpu->h << 8) | cpu->l;
         uint8_t value = cpu->memory[addr];
-        cpu->flags.ac = ((value & 0x0F) - 1) == 0);
+        cpu->flags.ac = ((value & 0x0F) == 0);
         value -= 1;
         cpu->memory[addr] = value;
         setZSPflags(cpu, value);
