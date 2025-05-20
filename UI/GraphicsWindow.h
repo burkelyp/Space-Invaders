@@ -26,6 +26,7 @@
 #include <qpaintevent>
 #include <qpainter.h>
 #include <qpixmap.h>
+#include <qsettings.h>
 #include <qtransform.h>
 #include <qwidget.h>
 
@@ -73,11 +74,11 @@ public:
 	bool setCombination(QString action, QString hotkey);
 
 protected:
-	QKeySequence* combos[KEYBIND_AMOUNT];
+	QKeySequence combos[KEYBIND_AMOUNT] = { 0 };
 	// Contains keybind Names
-	QString comboNames[KEYBIND_AMOUNT] = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
+	QStringList comboNames = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
 	// Contains default Bindings
-	QString defaultCombos[KEYBIND_AMOUNT] = { "A", "D", "W", "Return", "Left", "Right", "Up", "Num+Enter", "1"};
+	QStringList defaultCombos = { "Left", "Right", "Up", "Return", "Left", "Right", "Up", "Num+Enter", "C"};
 };
 
 /**
@@ -196,9 +197,9 @@ public:
 		P1Shoot = 12,
 		P1Left = 13,
 		P1Right = 14,
-		P2Shoot = 19,
-		P2Left = 20,
-		P2Right = 21
+		P2Shoot = 20,
+		P2Left = 21,
+		P2Right = 22
 	};
 
 private:
