@@ -24,13 +24,13 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 	colorMap = QImage("ColorMap.PNG");
 	
 	// Testing BitMap
-	uchar* m = map;
+	/*uchar* m = map;
 	
 	for (int i = 0; i <= SCREEN_RESOLUTION/8; i++) {
 		*m = 170;
 		//qDebug() << *m;
 		m++;
-	}
+	}*/
 
 	// Setting time to refresh 60 FPS
 	QTimer* timer = new QTimer(this);
@@ -38,7 +38,6 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
 	QObject::connect(timer, &QTimer::timeout, this, &GraphicsWindow::test);
 	timer->start(1000 / FRAME_RATE);
 	
-
 	// Load BitMap
 	//gameImage = QImage(map, 256, 224, QImage::Format_Mono);
 
@@ -450,7 +449,7 @@ void GraphicsWindow::keyPressEvent(QKeyEvent* event)
 		editMemInputBit(SIPortLocations::P2Start, true);
 	}
 	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(SIPortLocations::Insert_Coin, false);
+		editMemInputBit(SIPortLocations::Insert_Coin, true);
 	}
 	QOpenGLWidget::keyPressEvent(event);
 }
@@ -488,7 +487,7 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
 		editMemInputBit(SIPortLocations::P2Start, false);
 	}
 	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
-		editMemInputBit(SIPortLocations::Insert_Coin, true);
+		editMemInputBit(SIPortLocations::Insert_Coin, false);
 	}
 	QOpenGLWidget::keyReleaseEvent(event);
 }
@@ -510,9 +509,26 @@ void GraphicsWindow::editMemInputBit(int bit, bool set)
 SICombinations::SICombinations(QWidget* parent) :
 	QObject(parent)
 {
+	// Creating or using settings to keep track of user selected settings
+	QSettings settings("settings.ini", QSettings::IniFormat); // Using universal INI for cross platform use
+	settings.beginGroup("settings");
+	QString keybinds = settings.value("keybinds").toString(); // Getting user keybinds
+	settings.endGroup();
+
+	QStringList keybindList = keybinds.split(",");
+
+	// Setting default hotkeys if it is the first time launching the program
+	if (keybindList.size() != KEYBIND_AMOUNT) {
+		settings.beginGroup("settings");
+		settings.setValue("keybinds", defaultCombos.join(","));
+		settings.endGroup();
+		keybindList = defaultCombos;
+	} 
+
+	// Loading key combinations from user hotkeys
 	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
-		combos[i] = new QKeySequence(defaultCombos[i]);
-		qDebug() << combos[i]->toString();
+		combos[i] = QKeySequence((QString)(keybindList[i]));
+		qDebug() << combos[i].toString();
 	}
 }
 
@@ -520,7 +536,7 @@ QKeySequence* SICombinations::getCombination(QString action)
 {
 	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
 		if (comboNames[i] == action) {
-			return combos[i];
+			return &combos[i];
 		}
 	}
 	return nullptr;
@@ -530,7 +546,7 @@ bool SICombinations::setCombination(QString action, QString hotkey)
 {
 	for (int i = 0; i < KEYBIND_AMOUNT; i++) {
 		if (comboNames[i] == action) {
-			combos[i] = new QKeySequence(hotkey);
+			combos[i] = QKeySequence(hotkey);
 			qDebug() << "Sequence set: " << comboNames[i] << hotkey;
 			return true;
 		}

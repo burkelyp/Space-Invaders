@@ -1,5 +1,6 @@
 #pragma once
 
+#include <qpushbutton.h>
 #include <qevent.h>
 #include <qkeysequence.h>
 #include <qlayout.h>
@@ -114,9 +115,72 @@ public:
 	   Constructor sets defaults and style configuration for keyboard mapping
 
 	   @param parent - the parent widget
+	   @param actionList - list of action names
+	   @param keyList - list of key names
 	   @return void
 	*/
-	KeyEditTable(QWidget* parent = nullptr);
+	KeyEditTable(QWidget* parent = nullptr, QStringList actionList = {}, QStringList keyList = {});
+
+	/**
+	   Assigns the KeyEditTable a set of actions to display
+
+	   @param actionList - actions to set
+	   @return void
+	*/
+	void setActions(QStringList actionList);
+
+	/**
+	   Returns the assigned actions for the KeyEditTable
+
+	   @return QStringList list of actions
+	*/
+	QStringList getActions() { return actions; };
+
+	/**
+	   Returns the assigned action for the given index
+
+	   @param index - index of action to return
+	   @return QString action in given index
+	*/
+	QString getAction(int index) { return actions[index]; };
+
+	/**
+	   Assigns the KeyEditTable a set of keys to display
+
+	   @param keyList - actions to set
+	   @return void
+	*/
+	void setKeyList(QStringList keyList);
+
+	/**
+	   Returns the assigned keys for the KeyEditTable
+
+	   @return QStringList list of keys
+	*/
+	QStringList getKeys() { return keys; };
+
+	/**
+	   Returns the assigned key for the given index
+
+	   @param index - index of action to return
+	   @return QString key in given index
+	*/
+	QString getKey(int index) { return keys[index]; };
+
+	/**
+	   Assigns the KeyEditTable a prefix to append to actions when returning label
+
+	   @param prefix - new prefix
+	   @return void
+	*/
+	void setPrefix(QString pre) { prefix = pre; };
+
+	/**
+	   Returns the assigned prefix for the KeyEditTable
+
+	   @return QString of prefix if prefix else empty QString
+	*/
+	QString getPrefix() { return prefix; };
 
 private slots:
 	/**
@@ -127,7 +191,9 @@ private slots:
 	void editorFinished();
 
 private:
-	QString actions[4] = { "Left", "Right", "Shoot", "Start" };
+	QStringList actions;
+	QStringList keys;
+	QString prefix = "";
 };
 
 
@@ -149,7 +215,31 @@ public:
 	*/
 	KeyBoardMapper(QWidget* parent = nullptr);
 
+protected:
+	/**
+	   Overrided closeEvent, asks the user if they want to save 
+	   keybinds and closes if saved or discarded, ignored if cancelled.
+
+	   @param event - the close event
+	   @return void
+	*/
+	void closeEvent(QCloseEvent* event) override;
+
 protected slots:
+	/**
+	   Loads and assigns keybinds to children from settings
+
+	   @return void
+	*/
+	void loadKeybinds();
+
+	/**
+	   Saves the assigned keybinds to settings
+
+	   @return void
+	*/
+	void saveKeybinds(QString keybinds);
+
 	/**
 	   Indended to work with QTableWidgets currentCellChanged signal
 	   tests if the current cell has changed, if so, emit keyBindUpdated
@@ -162,11 +252,19 @@ protected slots:
 	*/
 	void emitKeyBindUpdated(int currentRow, int currentColumn, int previousRow, int previousColumn);
 
+	/**
+	   Emits signals for all updated keybinds and saves new keybinds 
+	   to settings.ini
+
+	   @return void
+	*/
+	void emitKeyBindsUpdated();
+
 signals:
 	void keyBindUpdated(const QString name, const QString hotkey);
 
 private:
 	KeyEditTable* p1EditTable;
+	KeyEditTable* p2EditTable;
 	QVBoxLayout* mainLayout;
-	QHBoxLayout* buttonLayout;
 };

@@ -1,8 +1,6 @@
 #define MINIAUDIO_IMPLEMENTATION
-#include "miniaudio.h"
-#include "sound.h"
 #include <iostream>
-
+#include "sound.h"
 ma_engine engine;
 ma_sound sounds[SOUND_COUNT];
 

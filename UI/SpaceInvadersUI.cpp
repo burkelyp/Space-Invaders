@@ -88,6 +88,7 @@ QString SIUI::findEmu()
 	#ifdef Q_OS_WIN
 			// Windows-specific code
 		if (app == "intel8080emu.exe") {
+			qDebug() << dir;
 			return dir;
 		}
 	#elif defined(Q_OS_LINUX)

@@ -22,6 +22,13 @@ void initCPU(State8080* state) {
         exit(1);
     }
 
+    *state->ports.port0 = 0;
+    *state->ports.port1 = 0;
+    *state->ports.port2 = 0;
+    *state->ports.port3 = 0;
+    *state->ports.port4 = 0;
+    *state->ports.port5 = 0;
+    *state->ports.port6 = 0;
     // memset(state->memory, 0, MEMORY_SIZE);
 }
 
