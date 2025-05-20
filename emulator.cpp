@@ -111,7 +111,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    B");
 		#endif
-        cpu->flags.ac = ((cpu->b & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->b & 0x0F) == 0);
         cpu->b -= 1;
         setZSPflags(cpu, cpu->b);
         cpu->pc += 1;
@@ -205,7 +205,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    C");
 		#endif // Decrement C
-        cpu->flags.ac = ((cpu->c & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->c & 0x0F) == 0);
         cpu->c -= 1;
         setZSPflags(cpu, cpu->c);
         cpu->pc += 1;
@@ -295,7 +295,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    D");
 		#endif // Decrement D
-        cpu->flags.ac = ((cpu->c & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->c & 0x0F) == 0);
         cpu->d -= 1;
         setZSPflags(cpu, cpu->c);
         cpu->pc += 1;
@@ -390,7 +390,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    E");
 		#endif // Decrement E
-        cpu->flags.ac = ((cpu->e & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->e & 0x0F) == 0);
         cpu->e -= 1;
         setZSPflags(cpu, cpu->e);
         cpu->pc += 1;
@@ -451,8 +451,8 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("SHLD   addr: %04x", addr);
 		#endif // Store HL direct: from HL to memory
-        cpu->memory[addr] = cpu->h;
-        cpu->memory[addr + 1] = cpu->l;
+        cpu->memory[addr] = cpu->l;
+        cpu->memory[addr + 1] = cpu->h;
         cpu->pc += 3;
         cpu->cycles += 16;
         break;
@@ -487,7 +487,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    H");
 		#endif // Decrement H
-        cpu->flags.ac = ((cpu->h & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->h & 0x0F) == 0);
         cpu->h -= 1;
         setZSPflags(cpu, cpu->h);
         cpu->pc += 1;
@@ -561,8 +561,8 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("LHLD   addr: %04x", addr);
 		#endif // Load HL direct: from memory to HL
-        cpu->h = cpu->memory[addr];
-        cpu->l = cpu->memory[addr + 1];
+        cpu->l = cpu->memory[addr];
+        cpu->h = cpu->memory[addr + 1];
         cpu->pc += 3;
         cpu->cycles += 16;
         break;
@@ -597,7 +597,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    L");
 		#endif // Decrement L
-        cpu->flags.ac = ((cpu->l & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->l & 0x0F) == 0);
         cpu->l -= 1;
         setZSPflags(cpu, cpu->l);
         cpu->pc += 1;
@@ -686,7 +686,7 @@ void Emulate8080Op(State8080* cpu) {
 		#endif // Decrement value in memory at HL
         uint16_t addr = (cpu->h << 8) | cpu->l;
         uint8_t value = cpu->memory[addr];
-        cpu->flags.ac = ((value & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((value & 0x0F) - 1) == 0);
         value -= 1;
         cpu->memory[addr] = value;
         setZSPflags(cpu, value);
@@ -776,7 +776,7 @@ void Emulate8080Op(State8080* cpu) {
         #ifdef DEBUG
 			printf("DCR    A");
 		#endif // Decrement A
-        cpu->flags.ac = ((cpu->a & 0x0F) - 1) < 0;
+        cpu->flags.ac = ((cpu->a & 0x0F) == 0);
         cpu->a -= 1;
         setZSPflags(cpu, cpu->a);
         cpu->pc += 1;
@@ -2307,7 +2307,7 @@ void Emulate8080Op(State8080* cpu) {
         uint16_t addr = (cpu->h << 8) | cpu->l;
         uint8_t value = cpu->memory[addr];
         uint8_t difference = cpu->a - value;
-        cpu->flags.c = (cpu->a < cpu->h);
+        cpu->flags.c = (cpu->a < value);
         cpu->flags.ac = (cpu->a & 0x0F) < (value & 0x0F);
         setZSPflags(cpu, difference);
         cpu->pc += 1;
@@ -2352,7 +2352,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->b = cpu->memory[cpu->sp + 1];
         cpu->sp += 2;
         cpu->pc += 1;
-        cpu->cycles += 1;
+        cpu->cycles += 10;
         break;
     }
     case 0Xc2:
@@ -2434,7 +2434,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode and multiplies it by 8
+        cpu->pc = 0x00;
         cpu->cycles += 11;
         break;
     }
@@ -2542,7 +2542,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode and multiplies it by 8
+        cpu->pc = 0x08;
         cpu->cycles += 11;
         break;
     }
@@ -2656,7 +2656,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x10;
         cpu->cycles += 11;
         break;
     }
@@ -2771,7 +2771,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x18;
         cpu->cycles += 11;
         break;
     }
@@ -2883,7 +2883,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x20;
         cpu->cycles += 11;
         break;
     }
@@ -2994,7 +2994,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x28;
         cpu->cycles += 11;
         break;
     }
@@ -3117,7 +3117,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x30;
         cpu->cycles += 11;
         break;
     }
@@ -3210,7 +3210,7 @@ void Emulate8080Op(State8080* cpu) {
 		#endif // Compare immediate with contents of A
         uint8_t difference = cpu->a - code[1];
         cpu->flags.c = (cpu->a < code[1]);
-        cpu->flags.ac = (cpu->a & 0x0F) < (code[1] & 0x0F);
+        cpu->flags.ac = ((cpu->a & 0x0F) < (code[1] & 0x0F));
         setZSPflags(cpu, difference);
         cpu->pc += 2;
         cpu->cycles += 7;
@@ -3224,7 +3224,7 @@ void Emulate8080Op(State8080* cpu) {
         cpu->memory[cpu->sp - 1] = (cpu->pc >> 8) & 0xFF;
         cpu->memory[cpu->sp - 2] = cpu->pc & 0xFF;
         cpu->sp -= 2;
-        cpu->pc = 8 * (((*code & 0x38) >> 3) & 0x07); // This gets bits 3,4,5 of the opcode
+        cpu->pc = 0x38;
         cpu->cycles += 11;
         break;
     }
