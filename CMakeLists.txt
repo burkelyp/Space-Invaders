@@ -44,7 +44,9 @@ else()
 endif()
 
 # --- Debug Mode ---
+# cmake path/to/directory -DCMAKE_BUILD_TYPE=debug
 if(CMAKE_BUILD_TYPE STREQUAL "debug")
+    add_definitions(-DDEBUG)
     target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
 endif()
 
