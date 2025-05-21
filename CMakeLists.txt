@@ -3,7 +3,7 @@ project(SpaceInvadersProject LANGUAGES CXX)
 
 # --- Platform Detection ---
 if(WIN32)
-    add_definitions(-DPLATFORM_WINDOWS)
+    add_definitions(-DPLATFORM_WINDOWS -DUNICODE -D_UNICODE)
 
     # Validate SDL2 paths passed from the build system
     if(NOT SDL2_INCLUDE_DIR OR NOT SDL2_LIBRARY OR NOT SDL2MAIN_LIBRARY)
