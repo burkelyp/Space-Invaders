@@ -1,9 +1,11 @@
 
+#include <qfontmetrics.h>
 #include <qheaderview.h>
 #include <qlabel.h>
 #include <qmessagebox.h>
 #include <qscrollbar.h>
 #include <qsettings.h>
+#include <qsizepolicy.h>
 
 #include "KeyboardMapper.h"
 
@@ -51,13 +53,24 @@ KeyBoardMapper::KeyBoardMapper(QWidget* parent)
 	p2EditTable->setPrefix("p2");
 	p2Layout->addWidget(p2EditTable, 0, Qt::AlignTop);
 
+	// Adding coin keybind
+	QLabel* otherHeader = new QLabel("Other:", this);
+	mainLayout->addWidget(otherHeader, 0, Qt::AlignHCenter | Qt::AlignTop);
+
+	coinTable = new KeyEditTable(this, { "Insert Coin" }, keybindList.mid(8));
+	mainLayout->addWidget(coinTable, 0, Qt::AlignHCenter | Qt::AlignTop);
+
+	QWidget* spacer = new QWidget();
+	spacer->setFixedHeight(200);
+	mainLayout->addWidget(spacer);
+
 	// Adding save or cancel buttons
 	QHBoxLayout* buttonLayout = new QHBoxLayout();
 	mainLayout->addLayout(buttonLayout);
 
 	QPushButton* resetButton = new QPushButton("Reset", this);
 	QObject::connect(resetButton, &QPushButton::pressed, this, &KeyBoardMapper::loadKeybinds);
-	//buttonLayout->addWidget(resetButton);
+	buttonLayout->addWidget(resetButton, 0, Qt::AlignHCenter);
 
 	QPushButton* saveButton = new QPushButton("Save", this);
 	QObject::connect(saveButton, &QPushButton::pressed, this, &KeyBoardMapper::emitKeyBindsUpdated);
@@ -76,6 +89,7 @@ void KeyBoardMapper::loadKeybinds() {
 	QStringList keybindList = keybinds.split(",");
 	p1EditTable->setKeyList(keybindList.mid(0, 4));
 	p2EditTable->setKeyList(keybindList.mid(4, 4));
+	coinTable->setKeyList(keybindList.mid(8));
 }
 
 void KeyBoardMapper::saveKeybinds(QString keybinds) {
@@ -88,8 +102,8 @@ void KeyBoardMapper::saveKeybinds(QString keybinds) {
 
 void KeyBoardMapper::closeEvent(QCloseEvent* event)
 {
-	QStringList keys = p1EditTable->getKeys() + p2EditTable->getKeys();
-	keys.append("C");
+	QStringList keys = p1EditTable->getKeys() + p2EditTable->getKeys() + coinTable->getKeys();
+	
 
 	// Getting setting keybind information
 	QSettings settings("settings.ini", QSettings::IniFormat);
@@ -155,11 +169,20 @@ void KeyBoardMapper::emitKeyBindsUpdated()
 		emit keyBindUpdated(*j, *i);
 	}
 
+	QStringList otherKeys = coinTable->getKeys();
+	QStringList otherActions = coinTable->getActions();
+
+	// Iterate over p2 keys and actions and emit signal
+	for (QString* i = otherKeys.begin(),* j = otherActions.begin(); i != otherKeys.end(); i++, j++) {
+		emit keyBindUpdated(*j, *i);
+	}
+
 	// Saving new keybinds
 	QString keybinds = p1Keys.join(",");
 	keybinds += ",";
 	keybinds += p2Keys.join(",");
-	keybinds += ",C"; // Temporary until I add coin input settings
+	keybinds += ","; 
+	keybinds += otherKeys.join(",");
 	saveKeybinds(keybinds);
 }
 
@@ -167,11 +190,13 @@ KeyEditTable::KeyEditTable(QWidget* parent, QStringList actionList, QStringList 
 	QTableWidget(parent)
 {
 	this->setFixedHeight(122);
+	this->setFixedWidth(185);
 
-	// Hiding column and row headers
+	// Hiding column, row headers, and scrollbars
 	this->horizontalHeader()->hide();
 	this->verticalHeader()->hide();
-	this->horizontalScrollBar()->hide();
+	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 	// Setting fixed column and row counts
 	this->setColumnCount(2);
@@ -206,17 +231,34 @@ void KeyEditTable::setActions(QStringList actionList)
 	// Adding Hotkey Labels
 	QTableWidgetItem* item;
 	int i = 0;
+
+	// Grabbing font metrics
+	QFontMetrics metrics(this->font());
+	int biggest = 0;
+
 	for (QString* a = actionList.begin(); a != actionList.end(); a++) {
 		item = new QTableWidgetItem(*a);
 		item->setFlags(item->flags() & Qt::ItemIsEditable);
 		this->setItem(i, 0, item);
 		i++;
+		if (metrics.horizontalAdvance(*a) > biggest)	// Tracking biggest
+			biggest = metrics.horizontalAdvance(*a); // Calculating based on font
 	}
+
+	// Adjusting table size based on actions size
+	this->setFixedHeight(actionList.size() * 30 + 1);
+	this->setColumnWidth(0, biggest + 13);
+	this->setColumnWidth(1, 183 - (biggest + 13)); // Offsetting second column by first column size
+
 	actions = actionList;
 }
 
 void KeyEditTable::setKeyList(QStringList keyList)
 {
+	// Error checking
+	if (keyList.size() != actions.size())
+		return;
+
 	// Adding Keys Labels
 	QTableWidgetItem* item;
 	int i = 0;

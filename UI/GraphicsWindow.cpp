@@ -448,7 +448,7 @@ void GraphicsWindow::keyPressEvent(QKeyEvent* event)
 	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::P2Start, true);
 	}
-	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+	if (keyBinds.getCombination("Insert Coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::Insert_Coin, true);
 	}
 	QOpenGLWidget::keyPressEvent(event);
@@ -486,9 +486,9 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
 	if (keyBinds.getCombination("p2Start")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::P2Start, false);
 	}
-	if (keyBinds.getCombination("coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
+	/*if (keyBinds.getCombination("Insert Coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::Insert_Coin, false);
-	}
+	}*/
 	QOpenGLWidget::keyReleaseEvent(event);
 }
 
