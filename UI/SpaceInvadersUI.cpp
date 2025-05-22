@@ -53,13 +53,13 @@ SIUI::SIUI(const QString emuPath)
 	QAction* openROM = new QAction("Open ROM", fileMenu);
 	fileMenu->addAction(openROM);
 	
-	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM);
+	QObject::connect(openROM, &QAction::triggered, this, &SIUI::SelectROM, Qt::UniqueConnection);
 
 	keyMenu = new QMenu("Settings", this);
 	QAction* mapKeys = new QAction("Configure Inputs", fileMenu);
 	keyMenu->addAction(mapKeys);
 
-	QObject::connect(mapKeys, &QAction::triggered, this, &SIUI::OpenKeyboardMapper);
+	QObject::connect(mapKeys, &QAction::triggered, this, &SIUI::OpenKeyboardMapper, Qt::UniqueConnection);
 
 	this->menuBar()->addMenu(fileMenu);
 	this->menuBar()->addMenu(keyMenu);
@@ -192,5 +192,5 @@ void SIUI::OpenKeyboardMapper()
 {
 	KeyBoardMapper* mapper = new KeyBoardMapper(this);
 	QObject::connect(mapper, &KeyBoardMapper::keyBindUpdated, window, &GraphicsWindow::updateKeyBind);
-	mapper->show();
+	mapper->show();	// Keyboard mapper automatically destroys itself when closed
 }

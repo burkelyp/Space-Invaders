@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#ifdef _WIN64
+#if defined(_WIN32) || defined(_WIN64)
     #include <Windows.h>
     #include <tchar.h>
     typedef LPVOID PlatformMemoryPtr;

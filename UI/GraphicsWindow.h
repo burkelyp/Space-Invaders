@@ -76,7 +76,7 @@ public:
 protected:
 	QKeySequence combos[KEYBIND_AMOUNT] = { 0 };
 	// Contains keybind Names
-	QStringList comboNames = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "coin"};
+	QStringList comboNames = { "p1Left", "p1Right", "p1Shoot", "p1Start", "p2Left", "p2Right", "p2Shoot", "p2Start", "Insert Coin"};
 	// Contains default Bindings
 	QStringList defaultCombos = { "Left", "Right", "Up", "Return", "Left", "Right", "Up", "Num+Enter", "C"};
 };
