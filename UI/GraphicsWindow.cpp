@@ -1,22 +1,16 @@
-// Citation for the following code :
-// Date : 04 / 21 / 2025
-// Adapted from : Qt shader documentation
-// Source URL : https://doc.qt.io/qt-6/qopenglshaderprogram.html#setUniformValue
 
 #include <qcolorspace.h>
 #include <qdebug.h>
-#include <qmatrix4x4.h>
 #include <qmenu.h>
 #include <qmenubar.h>
 #include <qmetaobject.h>
 #include <qobject.h>
-#include <qopenglfunctions.h>
 #include <qtimer.h>
 #include <qwidget.h>
 
 #include "GraphicsWindow.h"
 
-GraphicsWindow::GraphicsWindow(QWidget* parent) : QOpenGLWidget(parent)
+GraphicsWindow::GraphicsWindow(QWidget* parent) : QWidget(parent)
 {
 	setupMemMap();
 	this->setAutoFillBackground(false);
@@ -64,8 +58,6 @@ GraphicsWindow::~GraphicsWindow()
 	munmap(memptr, MEM_SIZE);
 #endif
 
-	makeCurrent();
-	delete m_texture;
 }
 
 void GraphicsWindow::updateKeyBind(const QString bind, const QString hotkey)
@@ -73,125 +65,10 @@ void GraphicsWindow::updateKeyBind(const QString bind, const QString hotkey)
 	keyBinds.setCombination(bind, hotkey);
 }
 
-void GraphicsWindow::initializeGL()
-{
-	/*QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
-	f->initializeOpenGLFunctions();
-	f->glEnable(GL_TEXTURE_2D);
-
-	//buff = new QOpenGLBuffer(QOpenGLBuffer::PixelPackBuffer);
-	//buff->create();
-	//buff->bind();
-
-	//vbo = new QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-	vbo.create();
-	vbo.bind();
-	vbo.setUsagePattern(QOpenGLBuffer::StaticDraw);
-
-	GLfloat vertices[] = {
-		 0.0f,			0.0f,			0.0f,
-		 rect.width(),	0.0f,			0.0f,
-		 rect.width(),	rect.height(),	0.0f,
-		 0.0f,			rect.height(),	0.0f };
-	GLfloat vertices[] = {
-		 0.0f,			0.0f,			0.0f, 0.0f, 0.0f,
-		 rect.width(),	0.0f,			0.0f, 1.0f, 0.0f,
-		 rect.width(),	rect.height(),	0.0f, 1.0f, 1.0f,
-		 0.0f,			rect.height(),	0.0f, 0.0f, 1.0f };
-
-	float texCo[] = {
-	0.0f, 0.0f,  // lower-left corner  
-	1.0f, 0.0f,  // lower-right corner
-	1.0f, 1.0f,  // top-right corner
-	0.0f, 1.0f   // top-left corner
-	};
-
-	vbo.allocate(vertices, sizeof(vertices));
-	//qDebug() << sizeof(GLfloat);
-	//f->glEnableVertexAttribArray(1);
-	//f->glEnableVertexAttribArray(1);
-	//f->glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-	//f->glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), reinterpret_cast<void*>(3 * sizeof(GLfloat)));
-
-	vbo.release();
-
-	qDebug() << glGetError();
-	program = new QOpenGLShaderProgram(this);
-	program->addShaderFromSourceCode(QOpenGLShader::Vertex,
-		"#version 150 core\n"
-		"attribute highp vec4 vertex;\n"
-		"uniform highp mat4 matrix;\n"
-        "in vec2 vertTexCoord;\n"
-        "out vec2 texCoord;\n"
-		"void main(void)\n"
-		"{\n"
-		"   gl_Position = matrix * vertex;\n"
-		"	texCoord = vertTexCoord; \n"
-		"}");
-	program->addShaderFromSourceCode(QOpenGLShader::Fragment,
-		"#version 150 core\n"
-        "uniform sampler2D tex;\n"
-        "in vec2 texCoord;\n"
-        "void main(void)\n"
-        "{\n"
-        "    gl_FragColor = texture2D(tex,texCoord);\n"
-        "}\n");
-
-	//program->bindAttributeLocation("vertex", 1);
-	//program->bindAttributeLocation("vertTexCoord", 1);
-
-	qDebug() << glGetError();
-	program->link();
-	program->bind();
-
-	vertexLocation = program->attributeLocation("vertex");
-	matrixLocation = program->uniformLocation("matrix");
-	texCoords = program->attributeLocation("vertTexCoord");
-
-	//vao = new QOpenGLVertexArrayObject();
-	if (vao.create()) {
-		qDebug() << "No VAO error";
-	}
-	vao.bind();
-
-	// Bind the vertex buffer to the VAO
-	//program->enableAttributeArray(vertexLocation);
-	f->glEnableVertexAttribArray(vertexLocation);
-	qDebug() << glGetError();
-	vbo.bind();
-	f->glVertexAttribPointer(vertexLocation, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-	qDebug() << glGetError();
-	//program->setAttributeBuffer(vertexLocation, GL_FLOAT, 0, 3, 0);
-	vao.release();
-
-	qDebug() << glGetError();
-	//program->disableAttributeArray(0);
-	//program->setAttributeArray(vertexLocation, vertices, 3);
-
-	QImage image = QImage("ColorMap.PNG");
-	delete m_texture;
-	m_texture = new QOpenGLTexture(image.flipped(), QOpenGLTexture::DontGenerateMipMaps);
-	m_texture->setWrapMode(QOpenGLTexture::ClampToEdge);
-
-	vbo.release();
-	program->release(); */
-}
-
-void GraphicsWindow::resizeGL(int w, int h)
-{
-	QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
-	m_width = w;
-	m_height = h;
-	//f->glViewport(0, -13, 220, h);
-}
-
 void GraphicsWindow::paintEvent(QPaintEvent* event)
 {
-	//resizeGL(event->rect().width(), event->rect().height());
+	
 	rect = event->rect();
-	//paintGL();
-	//((QWidget*)this->parent())->repaint();
-	//QOpenGLWidget::paintEvent(event);
 	
 	// Simple proof of concept animation
 	QPainter painter(this);
@@ -202,19 +79,6 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 	// Using bitmap as image mask 
 	uchar* m = map;
 	QImage image = colorMap.copy();
-
-	// Simple proof of concept animation
-	/**(map + o) = change;
-	o++;
-	if (o > SCREEN_RESOLUTION / 8) {
-		o = 0;
-		if (change == 85) {
-			change = 170;
-		}
-		else {
-			change = 85;
-		}
-	}*/
 
 	for (int i = 0; i < 224; i++) {
 		for (int j = 0; j < 256; j++) {
@@ -234,110 +98,11 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 
 	painter.drawImage(rect.topLeft(), image.scaled(rect.size()));
 	this->resize(rect.size());
-	//QOpenGLWidget::paintEvent(event);
-	//this->repaint();
 }
 
 void GraphicsWindow::test()
 {
 	update();
-}
-
-void GraphicsWindow::paintGL()
-{
-	return;
-	QOpenGLFunctions* f = QOpenGLContext::currentContext()->functions();
-	QOpenGLContext* context = QOpenGLContext::currentContext();
-
-	// Setting OpenGl options
-	f->glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	f->glEnable(GL_TEXTURE_2D);
-
-	program->bind();
-	m_texture->bind(0);
-	vao.bind();
-	vbo.bind();
-	f->glActiveTexture(GL_TEXTURE0);
-	//f->glPixelStorei(GL_UNPACK_SWAP_BYTES, GL_TRUE);
-
-	// Simple proof of concept animation
-	*(map + o) = change;
-	o++;
-	if (o > SCREEN_RESOLUTION / 8) {
-		o = 0;
-		if (change == 85) {
-			change = 170;
-		}
-		else {
-			change = 85;
-		}
-	}
-
-	float vertices[] = {
-		 0.0f,			0.0f,			0.0f,
-		 rect.width(),	0.0f,			0.0f,
-		 rect.width(),	rect.height(),	0.0f,
-		 0.0f,			rect.height(),	0.0f };
-
-	float texCo[] = {
-	0.0f, 0.0f,  // lower-left corner  
-	1.0f, 0.0f,  // lower-right corner
-	1.0f, 1.0f,  // top-right corner
-	0.0f, 1.0f   // top-left corner
-	};
-
-	QMatrix4x4 pmvMatrix;
-	pmvMatrix.ortho(rect);
-	QColor color(0, 255, 0, 255);
-
-	//program->enableAttributeArray(0); 
-	//f->glEnableVertexAttribArray(vertexLocation);
-	//program->enableAttributeArray(vertexLocation);
-	//program->setAttributeArray(vertexLocation, vertices, 3);
-	program->enableAttributeArray(texCoords);
-	program->setAttributeArray(texCoords, texCo, 2);
-	program->setUniformValue(matrixLocation, pmvMatrix);
-	//f->glEnableVertexAttribArray(0);
-
-	//f->glActiveTexture(GL_TEXTURE0);
-	program->setUniformValue("tex", 0);
-	qDebug() << f->glGetError();
-	f->glDrawArrays(GL_QUADS, 0, 4);
-
-	//qDebug() << f->glGetError();
-	//program->disableAttributeArray(0);
-	//program->disableAttributeArray(vertexLocation);
-	//f->glDisableVertexAttribArray(0);
-	//f->glDisableVertexAttribArray(vertexLocation);
-	program->disableAttributeArray(texCoords);
-
-	// Using bitmap as image mask 
-	uchar* m = map;
-	QImage image = colorMap.copy();
-	for (int i = 0; i < 224; i++) {
-		for (int j = 0; j < 256; j++) {
-			if ((i * 224 + j) % 8 == 0) {
-				m++;
-			}
-			if (!(*m & (1 << (7 - ((i * 224 + j) % 8))))) {
-				image.setPixelColor(QPoint(((j - (j % 8)) + (7 - (j % 8))), i), QColor(Qt::black));
-			}
-		}
-	}
-
-	// Rotating image Anti-Clockwise and mirring it for OpenGl y coordinate system
-	image = image.transformed(QTransform().rotate(90.0));
-	image = image.mirrored(true);
-
-	//buff->write(0, image.bits(), image.sizeInBytes());
-
-	//f->glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//f->glFlush();
-
-	program->release();
-	vbo.release();
-	vao.release();
-	//qDebug() << f->glGetError();
 }
 
 uchar* GraphicsWindow::setupMemMap()
@@ -451,7 +216,7 @@ void GraphicsWindow::keyPressEvent(QKeyEvent* event)
 	if (keyBinds.getCombination("Insert Coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::Insert_Coin, true);
 	}
-	QOpenGLWidget::keyPressEvent(event);
+	QWidget::keyPressEvent(event);
 }
 
 void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
@@ -489,7 +254,7 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent* event)
 	/*if (keyBinds.getCombination("Insert Coin")->matches(event->keyCombination()) > QKeySequence::NoMatch) {
 		editMemInputBit(SIPortLocations::Insert_Coin, false);
 	}*/
-	QOpenGLWidget::keyReleaseEvent(event);
+	QWidget::keyReleaseEvent(event);
 }
 
 void GraphicsWindow::editMemInputBit(int bit, bool set)

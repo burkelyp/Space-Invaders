@@ -71,7 +71,6 @@ SIUI::SIUI(const QString emuPath)
 
 	window = new GraphicsWindow(centralWidget);
 	layout->addWidget(window);
-	layout->addWidget(new QRadioButton());
 	this->setCentralWidget(centralWidget);
 }
 

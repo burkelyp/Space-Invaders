@@ -17,20 +17,12 @@
 #include <qevent.h>
 #include <qimage.h>
 #include <qlayout.h>
-#include <qmatrix4x4.h>
-#include <qopenglbuffer.h>
-#include <qopenglshaderprogram.h>
-#include <qopengltexture.h>
-#include <qopenglvertexarrayobject.h>
-#include <qopenglwidget.h>
 #include <qpaintevent>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qsettings.h>
 #include <qtransform.h>
 #include <qwidget.h>
-
-#include "SDL3/SDL.h"
 
 const int MEM_SIZE = 0x10007;
 const int SCREEN_RESOLUTION = 57344; //(256x224)
@@ -82,13 +74,13 @@ protected:
 };
 
 /**
- * Centralized openGL visuals renderer
+ * Centralized visuals renderer
  *
  * This class is the central widget that manages the space invaders 
  * inter-process communication and reads and displays space invaders 
  * video memory.
  */
-class GraphicsWindow : public QOpenGLWidget {
+class GraphicsWindow : public QWidget {
 	Q_OBJECT
 public:
 	/**
@@ -130,29 +122,6 @@ protected:
 	   @return void
 	*/
 	void test();
-
-	/**
-	   Overrided initializeGL, Initializes openGL shaders and buffers
-
-	   @return void
-	*/
-	void initializeGL() override;
-
-	/**
-	   Overrided resizeGL, Resizes openGL context
-
-	   @param w - the width to resize to
-	   @param h - the height to resize to
-	   @return void
-	*/
-	void resizeGL(int w, int h) override;
-
-	/**
-	   Overrided paintGL, renders openGL graphics onto the widget
-
-	   @return void
-	*/
-	void paintGL() override;
 
 	/**
 	   Initializes interprocess communication structure by setting up memory maps on a by-system basis
@@ -213,26 +182,9 @@ private:
 	int change = 85;
 
 	// Keyboard Binds
-
 	SICombinations keyBinds;
 
-	// OpenGL variables
+	// Variables
 	QImage colorMap;
-	//QImage gameImage;
-	int m_width;
-	int m_height;
-	QOpenGLTexture* m_texture = nullptr; 
-	QOpenGLBuffer* buff;
-	QOpenGLBuffer vbo = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
-	QOpenGLVertexArrayObject vao;
-	QOpenGLShader* vertex;
-	QOpenGLShader* shader;
-	QOpenGLShaderProgram* program;
-	int vertexLocation;
-	int matrixLocation;
-	int colorLocation;
-	int texCoords;
-	GLuint tex;
-	QMatrix4x4 m_proj;
 	QRect rect;
 };
