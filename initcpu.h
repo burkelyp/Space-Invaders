@@ -4,6 +4,7 @@
 #define MEMORY_SIZE 0x10007 //0x10003 For now
 #define PORT_LOCATION 0x10000 //0x10000 
 
+//#define DEBUG
 
 #include <iostream>
 //#include <conio.h>
