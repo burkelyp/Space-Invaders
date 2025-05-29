@@ -28,26 +28,26 @@ add_library(emulator_lib
 target_include_directories(emulator_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # --- Main Executable ---
-add_executable(SpaceInvaders main.cpp)
+add_executable(intel8080emu main.cpp)
 
 # Include project headers
-target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(intel8080emu PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # SDL2 setup
 if(WIN32)
-    target_include_directories(SpaceInvaders PRIVATE ${SDL2_INCLUDE_DIR})
-    target_link_libraries(SpaceInvaders PRIVATE emulator_lib ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})
+    target_include_directories(intel8080emu PRIVATE ${SDL2_INCLUDE_DIR})
+    target_link_libraries(intel8080emu PRIVATE emulator_lib ${SDL2_LIBRARY} ${SDL2MAIN_LIBRARY})
 else()
-    target_include_directories(SpaceInvaders PRIVATE ${SDL2_INCLUDE_DIRS})
+    target_include_directories(intel8080emu PRIVATE ${SDL2_INCLUDE_DIRS})
     link_directories(${SDL2_LIBRARY_DIRS})
-    target_link_libraries(SpaceInvaders PRIVATE emulator_lib ${SDL2_LIBRARIES})
+    target_link_libraries(intel8080emu PRIVATE emulator_lib ${SDL2_LIBRARIES})
 endif()
 
 # --- Debug Mode ---
 # cmake path/to/directory -DCMAKE_BUILD_TYPE=debug
 if(CMAKE_BUILD_TYPE STREQUAL "debug")
     add_definitions(-DDEBUG)
-    target_compile_definitions(SpaceInvaders PRIVATE DEBUG)
+    target_compile_definitions(intel8080emu PRIVATE DEBUG)
 endif()
 
 # --- Manual Test Executable ---

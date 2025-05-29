@@ -3,6 +3,8 @@
 // Adapted from : Qt shader documentation
 // Source URL : https://doc.qt.io/qt-6/qopenglshaderprogram.html#setUniformValue
 
+#define _POSIX_C_SOURCE 200112L
+
 #include <qcolorspace.h>
 #include <qdebug.h>
 #include <qmatrix4x4.h>
@@ -13,6 +15,12 @@
 #include <qopenglfunctions.h>
 #include <qtimer.h>
 #include <qwidget.h>
+
+#include <sys/mman.h>
+#include <sys/stat.h> /* For mode constants */
+#include <fcntl.h> /* For O_* constants */
+#include <unistd.h>
+#include <sys/types.h>
 
 #include "GraphicsWindow.h"
 
@@ -367,27 +375,55 @@ uchar* GraphicsWindow::setupMemMap()
 	map = memptr + 0x2400;
 	ports = memptr + 0x10000;
 
-	#elif defined(Q_OS_LINUX)
+    #elif defined(Q_OS_LINUX)
 		// Linux-specific code
+        
+        // Create Mapping
+        int handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, 0600); // Permissions must be numeric, not NULL
+        if (handle == -1) {
+            qDebug() << "Error mapping memory";
+            return nullptr;
+        }
 
-	// Create Mapping
-	int handle;
-	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+        // Set the size of the shared memory
+        if (ftruncate(handle, MEM_SIZE) == -1) {
+            qDebug() << "Error setting size of shared memory";
+            ::close(handle);
+            return nullptr;
+        }
 
-	if (handle == -1) {
-		qDebug() << "Error mapping memory";
-		return nullptr;
-	}
+        // Get Map location
+        memptr = static_cast<uchar*>(mmap(NULL, MEM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, handle, 0));
+        if (memptr == MAP_FAILED) {
+            qDebug() << "Error accessing memory";
+            ::close(handle);
+            return nullptr;
+        }
 
-	ftruncate(handle, MEM_SIZE);
+        ::close(handle);
 
-	// Get Map location
-	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
-	if (memptr == -1) {
-		qDebug() << "Error accessing memory";
-		return nullptr;
-	}
-	close(handle);
+        // Set up specific regions
+        map = memptr + 0x2400;
+        ports = memptr + 0x10000;
+
+	// // Create Mapping
+	// int handle;
+	// handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+
+	// if (handle == -1) {
+	// 	qDebug() << "Error mapping memory";
+	// 	return nullptr;
+	// }
+
+	// ftruncate(handle, MEM_SIZE);
+
+	// // Get Map location
+	// memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
+	// if (memptr == -1) {
+	// 	qDebug() << "Error accessing memory";
+	// 	return nullptr;
+	// }
+	// close(handle);
 
 	#elif defined(Q_OS_MAC)
 		// macOS-specific code

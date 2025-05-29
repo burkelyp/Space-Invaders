@@ -23,7 +23,7 @@
 #include <qopengltexture.h>
 #include <qopenglvertexarrayobject.h>
 #include <qopenglwidget.h>
-#include <qpaintevent>
+#include <QPaintEvent>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qsettings.h>
