@@ -4,13 +4,14 @@
 #define MEMORY_SIZE 0x10007 //0x10003 For now
 #define PORT_LOCATION 0x10000 //0x10000 
 
+//#define DEBUG
 
 #include <iostream>
 //#include <conio.h>
 #include <stdio.h>
 #include <stdint.h>
 
-#ifdef _WIN64
+#if defined(_WIN32) || defined(_WIN64)
     #include <Windows.h>
     #include <tchar.h>
     typedef LPVOID PlatformMemoryPtr;

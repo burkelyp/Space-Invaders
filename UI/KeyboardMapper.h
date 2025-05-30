@@ -266,5 +266,6 @@ signals:
 private:
 	KeyEditTable* p1EditTable;
 	KeyEditTable* p2EditTable;
+	KeyEditTable* coinTable;
 	QVBoxLayout* mainLayout;
 };
