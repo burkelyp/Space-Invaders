@@ -17,7 +17,7 @@
 #include <qevent.h>
 #include <qimage.h>
 #include <qlayout.h>
-#include <qpaintevent>
+#include <QPaintEvent>
 #include <qpainter.h>
 #include <qpixmap.h>
 #include <qsettings.h>

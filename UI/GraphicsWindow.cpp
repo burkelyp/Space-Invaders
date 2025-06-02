@@ -8,6 +8,14 @@
 #include <qtimer.h>
 #include <qwidget.h>
 
+#ifdef Q_OS_LINUX
+    #include <sys/mman.h>
+    #include <sys/stat.h> /* For mode constants */
+    #include <fcntl.h> /* For O_* constants */
+    #include <unistd.h>
+    #include <sys/types.h>
+#endif
+
 #include "GraphicsWindow.h"
 
 GraphicsWindow::GraphicsWindow(QWidget* parent) : QWidget(parent)
@@ -16,6 +24,16 @@ GraphicsWindow::GraphicsWindow(QWidget* parent) : QWidget(parent)
 	this->setAutoFillBackground(false);
 	this->setFocusPolicy(Qt::StrongFocus);
 	colorMap = QImage("ColorMap.PNG");
+    if (colorMap.isNull()) {
+        colorMap = QImage("ColorMap.png");
+        if (colorMap.isNull()) {
+            qDebug() << "Failed to load colormap.png!";
+        } else {
+        qDebug() << "Loaded colormap.png:" << colorMap.size();
+        }
+    } else {
+        qDebug() << "Loaded colormap.png:" << colorMap.size();
+    }
 	
 	// Testing BitMap
 	/*uchar* m = map;
@@ -93,9 +111,11 @@ void GraphicsWindow::paintEvent(QPaintEvent* event)
 	}
 
 	// Rotating image Anti-Clockwise and mirring it for OpenGl y coordinate system
-	image = image.transformed(QTransform().rotate(90.0));
-	image = image.mirrored(true);
-
+    qreal rotate_val = 90;
+    #ifdef Q_OS_LINUX
+        rotate_val = 270;
+    #endif
+	image = image.transformed(QTransform().rotate(rotate_val));
 	painter.drawImage(rect.topLeft(), image.scaled(rect.size()));
 	this->resize(rect.size());
 }
@@ -133,26 +153,54 @@ uchar* GraphicsWindow::setupMemMap()
 	ports = memptr + 0x10000;
 
 	#elif defined(Q_OS_LINUX)
-		// Linux-specific code
+	    // Linux-specific code
+        // Create Mapping
+        int fd = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, 0600); // Permissions must be numeric, not NULL
+        if (fd == -1) {
+            qDebug() << "Error mapping memory";
+            return nullptr;
+        }
 
-	// Create Mapping
-	int handle;
-	handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+        // Set the size of the shared memory
+        if (ftruncate(fd, MEM_SIZE) == -1) {
+            qDebug() << "Error setting size of shared memory";
+            ::close(fd);
+            return nullptr;
+        }
 
-	if (handle == -1) {
-		qDebug() << "Error mapping memory";
-		return nullptr;
-	}
+        // Get Map location
+        memptr = static_cast<uchar*>(mmap(NULL, MEM_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0));
+        if (memptr == MAP_FAILED) {
+            qDebug() << "Error accessing memory";
+            ::close(fd);
+            return nullptr;
+        }
 
-	ftruncate(handle, MEM_SIZE);
+        ::close(fd);
 
-	// Get Map location
-	memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
-	if (memptr == -1) {
-		qDebug() << "Error accessing memory";
-		return nullptr;
-	}
-	close(handle);
+        // Set up specific regions
+        memset(memptr, 0, MEM_SIZE);
+        map = memptr + 0x2400;
+        ports = memptr + 0x10000;
+
+	// // Create Mapping
+	// int handle;
+	// handle = shm_open(MAPPED_NAME, O_RDWR | O_CREAT, NULL);
+
+	// if (handle == -1) {
+	// 	qDebug() << "Error mapping memory";
+	// 	return nullptr;
+	// }
+
+	// ftruncate(handle, MEM_SIZE);
+
+	// // Get Map location
+	// memptr = mmap(NULL, MEM_SIZE, PROT_NONE, MAP_SHARED, handle, 0);
+	// if (memptr == -1) {
+	// 	qDebug() << "Error accessing memory";
+	// 	return nullptr;
+	// }
+	// close(handle);
 
 	#elif defined(Q_OS_MAC)
 		// macOS-specific code

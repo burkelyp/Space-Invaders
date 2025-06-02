@@ -155,26 +155,26 @@ void KeyBoardMapper::emitKeyBindsUpdated()
 	QStringList p1Actions = p1EditTable->getActions();
 	
 	// Iterate over p1 keys and actions and emit signal
-	for (QString* i = p1Keys.begin(),* j = p1Actions.begin(); i != p1Keys.end(); i++, j++) {
-		j->prepend("p1");
-		emit keyBindUpdated(*j, *i);
-	}
+	for (int i = 0; i < p1Keys.size() && i < p1Actions.size(); ++i) {
+        QString action = "p1" + p1Actions[i];
+        emit keyBindUpdated(action, p1Keys[i]);
+    }
 
 	QStringList p2Keys = p2EditTable->getKeys();
 	QStringList p2Actions = p2EditTable->getActions();
 
 	// Iterate over p2 keys and actions and emit signal
-	for (QString* i = p2Keys.begin(),* j = p2Actions.begin(); i != p2Keys.end(); i++, j++) {
-		j->prepend("p2");
-		emit keyBindUpdated(*j, *i);
-	}
+	for (int i = 0; i < p2Keys.size() && i < p2Actions.size(); ++i) {
+        QString action = "p2" + p2Actions[i];
+        emit keyBindUpdated(action, p2Keys[i]);
+    }
 
 	QStringList otherKeys = coinTable->getKeys();
 	QStringList otherActions = coinTable->getActions();
 
 	// Iterate over p2 keys and actions and emit signal
-	for (QString* i = otherKeys.begin(),* j = otherActions.begin(); i != otherKeys.end(); i++, j++) {
-		emit keyBindUpdated(*j, *i);
+	for (int i = 0; i < otherKeys.size(); i++) {
+		emit keyBindUpdated(otherActions[i], otherKeys[i]);
 	}
 
 	// Saving new keybinds
@@ -236,13 +236,13 @@ void KeyEditTable::setActions(QStringList actionList)
 	QFontMetrics metrics(this->font());
 	int biggest = 0;
 
-	for (QString* a = actionList.begin(); a != actionList.end(); a++) {
-		item = new QTableWidgetItem(*a);
+    for (const QString& action : actionList) {
+		item = new QTableWidgetItem(action);
 		item->setFlags(item->flags() & Qt::ItemIsEditable);
 		this->setItem(i, 0, item);
 		i++;
-		if (metrics.horizontalAdvance(*a) > biggest)	// Tracking biggest
-			biggest = metrics.horizontalAdvance(*a); // Calculating based on font
+		if (metrics.horizontalAdvance(action) > biggest)	// Tracking biggest
+			biggest = metrics.horizontalAdvance(action); // Calculating based on font
 	}
 
 	// Adjusting table size based on actions size
@@ -262,8 +262,8 @@ void KeyEditTable::setKeyList(QStringList keyList)
 	// Adding Keys Labels
 	QTableWidgetItem* item;
 	int i = 0;
-	for (QString* a = keyList.begin(); a != keyList.end(); a++) {
-		item = new QTableWidgetItem(*a);
+    for (const QString& key : keyList) {
+		item = new QTableWidgetItem(key);
 		//item->setFlags(item->flags() & Qt::ItemIsEditable);
 		this->setItem(i, 1, item);
 		i++;
