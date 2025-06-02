@@ -78,10 +78,20 @@ int main(int argc, char** argv) {
     loadROM(argv[1], &state, 0); // Load ROM into beginning of memory
 
     SDL_Init(SDL_INIT_VIDEO);
+
+    bool debug_mode = false;
+
+    if (argv[2] == "--debug") {
+        debug_mode = true;
+    }
+
+#ifdef DEBUG
     SDL_Window* window = SDL_CreateWindow("Space Invaders",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
         SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+#endif // DEBUG
+
 
     bool running = true;
     SDL_Event event;
@@ -89,7 +99,7 @@ int main(int argc, char** argv) {
     int interrupts_per_frame = 0;
 
     bool paused = false;
-    bool debug_mode = false;
+    
     bool log_cycles = true;
     bool single_step = false;
     bool insert_coin = false;
@@ -109,7 +119,7 @@ int main(int argc, char** argv) {
                     case SDLK_d: debug_mode = !debug_mode; std::cout << (debug_mode ? "Debug mode ON\n" : "Debug mode OFF\n"); break;
                     case SDLK_l: log_cycles = !log_cycles; std::cout << (log_cycles ? "Logging ON\n" : "Logging OFF\n"); break;
                     case SDLK_n: if (paused) { single_step = true; std::cout << "Single step requested\n"; } break;
-                    case SDLK_c: insert_coin = true; break;
+                    case SDLK_c: *state.ports.port1 |= 0x01;; break;
                     case SDLK_1: *state.ports.port1 |= 0x04; break;
                     case SDLK_SPACE: *state.ports.port1 |= 0x10; break;
                     case SDLK_LEFT: *state.ports.port1 |= 0x20; break;
@@ -128,12 +138,13 @@ int main(int argc, char** argv) {
             }
         }
 
-        if (insert_coin) {
-            *state.ports.port1 |= 0x01;
-        } else {
+        // Redid the coin validating system to work with remote launching
+        if (*state.ports.port1 & 0x01 && insert_coin == false)
+            insert_coin = true;
+        else {
+            insert_coin = false;
             *state.ports.port1 &= ~0x01;
         }
-        insert_coin = false;
 
         if (paused && !single_step) {
             SDL_Delay(1);
@@ -172,20 +183,23 @@ int main(int argc, char** argv) {
                 interrupt_num ^= 1;
             }
         }
-
+#ifdef DEBUG
         DrawScreen(&state, renderer);
+#endif // DEBUG
+
 
         uint32_t frame_end = SDL_GetTicks();
         uint32_t elapsed = frame_end - frame_start;
         if (elapsed < 16) SDL_Delay(16 - elapsed);
 
-        if (log_cycles) {
+        if (log_cycles && debug_mode) {
             std::cout << "Time for one full frame: " << (SDL_GetTicks() - frame_start) << " ms\n";
         }
     }
-
+#ifdef DEBUG
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+#endif // DEBUG
     SDL_Quit();
     shutdownSoundSystem();
     return 0;
