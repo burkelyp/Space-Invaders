@@ -9,9 +9,11 @@
 
 #include "KeyboardMapper.h"
 
-KeyBoardMapper::KeyBoardMapper(QWidget* parent)
+KeyBoardMapper::KeyBoardMapper(QWidget* parent) :
+	QWidget(parent)
 {
 	// Window Initialization
+	this->setWindowFlags(Qt::Window);
 	this->setAttribute(Qt::WA_DeleteOnClose);
 	this->setWindowTitle("Configure Keyboard");
 	this->setFixedSize(400, 450);
@@ -307,6 +309,8 @@ KeyEditor::KeyEditor(QWidget* parent) :
 	QLineEdit(parent)
 {
 	this->setReadOnly(true);
+	QObject::disconnect(this, &QLineEdit::returnPressed, nullptr, nullptr);
+	QObject::connect(this, &QLineEdit::returnPressed, this, &KeyEditor::triggerReturnRelease, Qt::DirectConnection);
 }
 
 char KeyEditor::convSymbols(const char sym)
@@ -368,24 +372,27 @@ void KeyEditor::keyPressEvent(QKeyEvent* event)
 
 	// Editing content to appropriate values
 	contentToChange = QString("");
-	QString ctrl = "Control + ";
+	QString ctrl = "Ctrl+";
 	Qt::KeyboardModifiers modifiers = event->keyCombination().keyboardModifiers();
 #if defined(Q_OS_MAC)
 	// Mac specific code for command key
 	ctrl = "Command + ";
 	if ((modifiers & Qt::MetaModifier) == Qt::MetaModifier) {
-		contentToChange.append("Control + ");
+		contentToChange.append("Ctrl+");
 	}
 #endif
 	// Universal key modifiers
 	if ((modifiers & Qt::ShiftModifier) == Qt::ShiftModifier) {
-		contentToChange.append("Shift + ");
+		contentToChange.append("Shift+");
 	}
 	if ((modifiers & Qt::AltModifier) == Qt::AltModifier) {
-		contentToChange.append("Alt + ");
+		contentToChange.append("Alt+");
 	}
 	if ((modifiers & Qt::ControlModifier) == Qt::ControlModifier) {
 		contentToChange.append(ctrl);
+	}
+	if ((modifiers & Qt::KeypadModifier) == Qt::KeypadModifier) {
+		contentToChange.append("Num+");
 	}
 
 	// Adding Keys
@@ -398,10 +405,14 @@ void KeyEditor::keyPressEvent(QKeyEvent* event)
 		contentToChange.append(k);
 	}
 	this->clear();
+	if (key == Qt::Key_Return || key == Qt::Key_Enter) {
+		keyReleaseEvent(event);
+	}
 }
 
 void KeyEditor::keyReleaseEvent(QKeyEvent* event)
 {
+
 	if (event->isAutoRepeat()) {
 		return;
 	}
@@ -410,4 +421,9 @@ void KeyEditor::keyReleaseEvent(QKeyEvent* event)
 	this->setText(contentToChange);
 	emit this->editingFinished();
 	emit this->editedWidget(this);
+}
+
+void KeyEditor::triggerReturnRelease()
+{
+	this->keyReleaseEvent(new QKeyEvent(QEvent::KeyRelease, 0, Qt::NoModifier, "Return"));
 }

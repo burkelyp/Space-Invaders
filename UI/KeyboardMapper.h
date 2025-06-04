@@ -55,6 +55,15 @@ protected:
 	*/
 	virtual void keyReleaseEvent(QKeyEvent* event) override;
 
+
+protected slots:
+	/**
+	   Helper function to trigger a keyRealeaseEvent on a return key press
+
+	   @return void
+	*/
+	virtual void triggerReturnRelease();
+
 private:
 	QString contentToChange;
 

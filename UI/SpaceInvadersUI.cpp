@@ -33,7 +33,6 @@ SIUI::SIUI(const QString emuPath)
 	// Initializing window
 	this->resize(448, 533);
 	this->setMinimumSize(224, 277);
-	currEmu = SPACE_INVADERS;
 
 	// Finding emulators
 	if (!emuPath.isEmpty()) {
@@ -113,6 +112,7 @@ void SIUI::startEmu(QString process, QStringList arguments)
 
 	// Close the process when this process terminates
 	QObject::connect(this, &QWidget::destroyed, emu, &QProcess::terminate);
+	QObject::connect(this, &SIUI::closeOpenEmus, emu, &QProcess::kill, Qt::DirectConnection);
 
 	processes.append(processCount);
 	processCount++;
@@ -125,9 +125,11 @@ void SIUI::SelectROM()
 		tr("Select Space Invaders ROM File(s)"), "/home");
 
 	// Checking if emulator already running (Will probably add multiple instance support in the future)
-	if (!currEmu) {
-		return;
+	if (currEmu != SIUI::Emulator::NO_EMU) {
+		emit closeOpenEmus();
 	}
+
+	currEmu = SPACE_INVADERS;
 
 	// Varify correctness of ROM files by comparing to correct size, maybe better way?
 	int totalSize = 0;
@@ -191,5 +193,8 @@ void SIUI::OpenKeyboardMapper()
 {
 	KeyBoardMapper* mapper = new KeyBoardMapper(this);
 	QObject::connect(mapper, &KeyBoardMapper::keyBindUpdated, window, &GraphicsWindow::updateKeyBind);
+	QObject::connect(mapper, &QWidget::destroyed, this, &QMainWindow::setEnabled);
+	this->setDisabled(true);	// Disable everything
+	mapper->setEnabled(true);	// Reenable child KeyBoardMapper
 	mapper->show();	// Keyboard mapper automatically destroys itself when closed
 }
