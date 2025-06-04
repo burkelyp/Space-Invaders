@@ -73,6 +73,9 @@ private slots:
 	*/
 	void OpenKeyboardMapper();
 
+signals:
+	void closeOpenEmus();
+
 private:
 	QMenu* fileMenu;
 	QMenu* keyMenu;
@@ -84,5 +87,5 @@ private:
 	static int processCount;
 
 protected:
-	Emulator currEmu;
+	Emulator currEmu = Emulator::NO_EMU;
 };
